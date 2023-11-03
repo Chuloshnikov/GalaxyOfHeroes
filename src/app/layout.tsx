@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Work_Sans } from 'next/font/google'
-import './globals.css'
+import './globals.css';
+import Layout from "@/components/Layout";
+import Navbar from '@/components/Navbar';
+
 
 const workS = Work_Sans({ subsets: ['latin'], variable: '--var-work' })
 
@@ -16,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={workS.variable}>{children}</body>
+      <body className={workS.variable}>
+        <Layout>
+          <Navbar/>
+          {children}
+        </Layout>
+      </body>
     </html>
   )
 }
