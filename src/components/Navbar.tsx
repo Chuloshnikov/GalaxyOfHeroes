@@ -17,7 +17,7 @@ const Navbar = () => {
     className='w-full sticky top-0 z-50 px-4'
     >
         <nav
-        className='max-w-contentContainer mt-5 mx-auto bg-mainBg py-5 px-8 rounded-[12px] flex justify-between items-center'
+        className='max-w-contentContainer mt-5 mx-auto bg-mainBg text-accentBg py-5 px-8 rounded-[12px] flex justify-between items-center'
         >
             {/*Logo */}
             <Link
@@ -32,7 +32,7 @@ const Navbar = () => {
             </Link>
             {/*nav links*/}
             <ul
-            className='hidden lg:flex items-center gap-5'
+            className='hidden lg:flex items-center gap-5 font-medium'
             >
                 <li>
                     <Link
