@@ -2,7 +2,13 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <div
+      className='max-w-contentContainer'
+      >
+
+      </div>
+    </footer>
   )
 }
 
