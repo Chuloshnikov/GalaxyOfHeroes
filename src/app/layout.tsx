@@ -3,6 +3,7 @@ import { Work_Sans } from 'next/font/google'
 import './globals.css';
 import Layout from "@/components/Layout";
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 
 const workS = Work_Sans({ subsets: ['latin'], variable: '--var-work' })
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Layout>
           <Navbar/>
           {children}
+          <Footer/>
         </Layout>
       </body>
     </html>
