@@ -29,6 +29,7 @@ const config: Config = {
       colors: {
         mainBg: "#FDF8F6",
         accentBg: "#582467",
+        smouthText: "#A275AF",
         accentBg2: "#B686C3",
         ahornBg: "#EEE7F0",
       }
