@@ -5,3 +5,7 @@
 
 
 
+input, textarea, select {
+    @apply appearance-none border-none bg-transparent outline-none;
+    @apply resize-none;
+}
