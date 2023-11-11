@@ -9,10 +9,10 @@ type Props = {
 const FooterInput = ({title}: Props) => {
   return (
     <div
-    className='flex flex-col gap-3 lg:gap-[32px]'
+    className='flex flex-col gap-3 mdl:gap-[32px]'
     >
         <h3
-        className='text-lg lg:text-5xl'
+        className='text-2xl mdl:text-5xl'
         >
           {title}
         </h3>
@@ -21,11 +21,11 @@ const FooterInput = ({title}: Props) => {
         >
             <input
             type="email"
-            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] lg:py-2 px-1 lg:px-5 rounded-3xl placeholder:text-smouthText'
+            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
             placeholder='email'
             />
             <button
-            className='py-[2px] lg:py-[10px] px-2 lg:px-5 bg-accentBg2 hover:bg-smouthText rounded-3xl text-sm duration-300'
+            className='py-1 mdl:py-3 px-2 mdl:px-5 bg-accentBg2 hover:bg-smouthText rounded-3xl text-xs lg:text-sm duration-300'
             >
               Sign Up
             </button>
