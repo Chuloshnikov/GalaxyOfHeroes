@@ -4,9 +4,10 @@ import React from 'react';
 
 type Props = {
     title: string;
+    button: string;
 }
 
-const FooterInput = ({title}: Props) => {
+const FooterInput = ({title, button}: Props) => {
   return (
     <div
     className='flex flex-col gap-3 mdl:gap-[32px]'
@@ -27,7 +28,7 @@ const FooterInput = ({title}: Props) => {
             <button
             className='py-1 mdl:py-3 px-2 mdl:px-5 bg-accentBg2 hover:bg-smouthText rounded-3xl text-xs lg:text-sm duration-300'
             >
-              Sign Up
+              {button}
             </button>
         </form>
     </div>

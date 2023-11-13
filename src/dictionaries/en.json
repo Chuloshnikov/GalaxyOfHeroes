@@ -1,0 +1,29 @@
+{
+    "navigation": {
+        "superheroes": "superheroes",
+        "horror": "horror",
+        "mystery": "mystery",
+        "adventure": "adventure",
+        "manga": "manga",
+        "historical": "historical"
+    },
+    "hero": {
+        "title": "Epic Tales Unleashed: Chronicles of Ink & Imagination",
+        "description": "Dive into a universe where every stroke unveils a new adventure and timeless heroes."
+    },
+    "footer": {
+    "title": "Let’s stay in touch.",
+    "iconsTitle": "Socials",
+    "navTitle": "Categories",
+    "companyTitle": "Company",
+    "button": "Sign up",
+    "allRights": "© 2023 | Galaxy of Heroes | All Rights Reserved",
+    "termsOfUse": "Terms Of Use",
+    "privacyPolicy": "Privacy Policy"
+    },
+    "companyNavigation": {
+    "aboutus": "About us",
+    "contact": "Contact",
+    "blog": "Blog"
+    }
+}

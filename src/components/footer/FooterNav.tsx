@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const FooterNav = () => {
+const FooterNav = ({footer, companyNavigation, navigation, lang}: {lang: Locale}) => {
   return (
     <div>
         <div
@@ -11,57 +11,57 @@ const FooterNav = () => {
             <h3
             className='text-smouthText'
             >
-              Categories
+              {footer.navTitle}
             </h3>
             <ul
             className='text-mainBg mt-4 flex flex-col gap-3'
             >
               <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/superheroes`}
                     className=''
                     >
-                        Superheroes
+                        {navigation.superheroes}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/horror`}
                     className=''
                     >
-                        Horror
+                        {navigation.horror}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/mystery`}
                     className=''
                     >
-                        Mystery
+                        {navigation.mystery}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/adventure`}
                     className=''
                     >
-                        Adventure
+                        {navigation.adventure}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/manga`}
                     className=''
                     >
-                        Manga
+                        {navigation.manga}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/historical`}
                     className=''
                     >
-                        Historical
+                        {navigation.historical}
                     </Link>
                 </li>
             </ul>
@@ -70,14 +70,14 @@ const FooterNav = () => {
             <h3
             className='text-smouthText'
             >
-              Company
+            {footer.companyTitle}
             </h3>
             <ul
             className='text-mainBg mt-4 flex flex-col gap-3'
             >
-              <li><Link href={"/"}>About Us</Link></li>
-              <li><Link href={"/"}>Contacts</Link></li>
-              <li><Link href={"/"}>Blog</Link></li>
+              <li><Link href={`/${lang}/aboutus`}>{companyNavigation.aboutus}</Link></li>
+              <li><Link href={`/${lang}/contacts`}>{companyNavigation.contact}</Link></li>
+              <li><Link href={`/${lang}/blog`}>{companyNavigation.blog}</Link></li>
             </ul>
           </div>
         </div>
