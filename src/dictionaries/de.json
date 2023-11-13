@@ -1,0 +1,29 @@
+{
+    "navigation": {
+    "superheroes": "Superhelden",
+    "horror": "Horror",
+    "mystery": "Mysteriös",
+    "adventure": "Abenteuer",
+    "manga": "Manga",
+    "historical": "Historisch"
+    },
+    "hero": {
+    "title": "Epische Geschichten entfesselt: Chroniken von Tinte & Vorstellung",
+    "description": "Tauchen Sie ein in ein Universum, in dem jeder Schlag ein neues Abenteuer und zeitlose Helden enthüllt."
+    },
+    "footer": {
+    "title": "Bleiben wir in Kontakt.",
+    "iconsTitle": "Soziale Medien",
+    "navTitle": "Kategorien",
+    "companyTitle": "Unternehmen",
+    "button": "anmelden",
+    "allRights": "© 2023 | Galaxie der Helden | Alle Rechte vorbehalten",
+    "termsOfUse": "Begriffe von allem",
+    "privacyPolicy": "Privatpolizei"
+    },
+    "companyNavigation": {
+    "aboutus": "Über uns",
+    "contact": "Kontakt",
+    "blog": "Blog"
+    }
+}

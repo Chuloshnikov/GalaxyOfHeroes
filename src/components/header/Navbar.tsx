@@ -1,17 +1,18 @@
-"use client"
-import React from 'react';
-import Logo from '../assets/logo.svg';
+import Logo from '../../assets/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RiEnglishInput, RiSearchLine, RiHeartLine } from 'react-icons/ri';
+import { RiSearchLine, RiHeartLine } from 'react-icons/ri';
 import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
 import {  HiMenuAlt2 } from 'react-icons/hi';
+import { getDictionary } from '../../lib/dictionary';
+import LocaleSwitcher from './LocaleSwitcher';
 
 
 
 
  
-const Navbar = () => {
+const Navbar = async ({lang}: {lang: Locale}) => {
+    const {navigation} = await getDictionary(lang);
   return (
     <header
     className='w-full sticky top-0 z-50 px-4'
@@ -36,50 +37,50 @@ const Navbar = () => {
             >
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/superheroes`}
                     className=''
                     >
-                        Superheroes
+                        {navigation.superheroes}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/horror`}
                     className=''
                     >
-                        Horror
+                        {navigation.horror}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/mystery`}
                     className=''
                     >
-                        Mystery
+                        {navigation.mystery}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/adventure`}
                     className=''
                     >
-                        Adventure
+                        {navigation.adventure}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/manga`}
                     className=''
                     >
-                        Manga
+                        {navigation.manga}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={"/"}
+                    href={`/${lang}/historical`}
                     className=''
                     >
-                        Historical
+                        {navigation.historical}
                     </Link>
                 </li>
             </ul>
@@ -88,7 +89,7 @@ const Navbar = () => {
             className='flex items-center gap-5'
             >
                 <RiSearchLine/>
-                <RiEnglishInput/>
+                <LocaleSwitcher lang={lang}/>
                 <RiHeartLine/>
                 <LuUserCircle2/>
                 <LuShoppingCart/>

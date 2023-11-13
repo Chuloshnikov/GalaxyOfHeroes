@@ -4,8 +4,12 @@ import IconsContainer from './IconsContainer';
 import FooterNav from './FooterNav';
 import ScrollUpButton from './ScrollUpButton';
 import Link from 'next/link';
+import { getDictionary } from '../../lib/dictionary';
 
-const Footer = () => {
+const Footer = async ({lang}: {lang: Locale}) => {
+  const { footer } = await getDictionary(lang);
+  const {companyNavigation} = await getDictionary(lang);
+  const {navigation} = await getDictionary(lang);
   return (
     <footer
     className='px-4'
@@ -19,13 +23,18 @@ const Footer = () => {
         <div
         className='flex flex-col gap-7 lg:gap-[143px]'
         >
-          <FooterInput title={"Let’s stay in touch."}/>
-          <IconsContainer title={"Follow us"}/>
+          <FooterInput button={footer.button} title={footer.title}/>
+          <IconsContainer title={footer.iconsTitle}/>
         </div>
         <div
         className='flex justify-between mdl:gap-4 mt-0 mdl:mt-[150px] lg:mt-0'
         >
-          <FooterNav/>
+          <FooterNav 
+          companyNavigation={companyNavigation} 
+          navigation={navigation} 
+          lang={lang}
+          footer={footer}
+          />
           <div
           className='flex flex-col justify-end'
           >
@@ -42,13 +51,13 @@ const Footer = () => {
             <div
             className='flex gap-10'
             >
-              <Link href={"/"}>Terms Of Use</Link>
-              <Link href={"/"}>Privacy Policy</Link>
+              <Link href={"/"}>{footer.termsOfUse}</Link>
+              <Link href={"/"}>{footer.privacyPolicy}</Link>
             </div>
             <p
               className='text-sm text-center'
               >
-                © 2023 | Galaxy of Heroes | All Rights Reserved
+                {footer.allRights}
               </p>
           </div>
         </div>

@@ -3,8 +3,9 @@ import Image from 'next/image';
 import heroImg from '../../assets/hero1.png';
 import mobileHeroImg from '../../assets/modilehero.png';
 import ScrollDownButton from './ScrollDownButton';
+import { getDictionary } from '../../lib/dictionary';
 
-const Hero = () => {
+const Hero = ({hero}) => {
   return (
     <div
     className='relative w-full rounded-b-3xl min-h-[570px] lg:max-h-[573px] -mt-[100px]'
@@ -25,12 +26,12 @@ const Hero = () => {
           <h1
           className='text-2xl mdl:text-4xl font-bold uppercase text-center'
           >
-            Epic Tales Unleashed: Chronicles of Ink & Imagination
+            {hero.title}
           </h1>
           <p
           className="text-sm mdl:text-lg font-bold text-center text-center max-w-[500px]"
           >
-            Dive into a universe where every stroke unveils a new adventure and timeless heroes.
+            {hero.description}
           </p>
           <ScrollDownButton/>
         </div>

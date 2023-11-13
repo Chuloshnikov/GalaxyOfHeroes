@@ -1,3 +1,5 @@
+import { Locale } from '../../../i18n.config';
+import { getDictionary } from '../../lib/dictionary';
 import Hero from '@/components/mein/Hero';
 import type { Metadata } from 'next';
 
@@ -9,10 +11,17 @@ export const metadata: Metadata = {
   }
 }
 
-export default function Home() {
+export default async function Home({
+  params: { lang }
+} : {
+  params: { lang: Locate }
+}) {
+
+  const { hero } = await getDictionary(lang);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-     <Hero/>
+     <Hero hero={hero}/>
     </main>
   )
 }
