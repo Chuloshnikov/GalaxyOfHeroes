@@ -47,7 +47,7 @@ const LocaleSwitcher = ({lang}: any) => {
                         {i18n.locales.map(locale => {
                         return (
                             <ul
-                            className='flex flex-col gap-2 '
+                            className='flex flex-col gap-2 font-medium'
                             >
                                 <li>
                                 <Link href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
