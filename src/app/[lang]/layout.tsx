@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import { Work_Sans } from 'next/font/google'
 import './globals.css';
-import Layout from "@/components/Layout";
 import Navbar from '@/components/header/Navbar';
 import Footer from '@/components/footer/Footer';
 import { Locale, i18n } from '../../../i18n.config';
+import Providers from './providers';
+
 
 
 const workS = Work_Sans({ subsets: ['latin'], variable: '--var-work' })
@@ -28,13 +29,13 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={workS.variable}>
-        <Layout>
+        <Providers>
           <Navbar lang={params.lang}/>
             <main>
               {children}
             </main>
           <Footer lang={params.lang}/>
-        </Layout>
+        </Providers>
       </body>
     </html>
   )
