@@ -1,9 +1,8 @@
 "use client"
-import react, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { i18n } from '../../../i18n.config';
-import { RiEnglishInput } from 'react-icons/ri';
 
 const LocaleSwitcher = ({lang}: any) => {
     const pathName = usePathname();
