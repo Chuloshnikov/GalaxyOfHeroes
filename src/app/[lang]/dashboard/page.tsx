@@ -1,5 +1,4 @@
-import { Locale } from '../../../../i18n.config';
-import { getDictionary } from '../../../lib/dictionary';
+
 
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../api/auth/[...nextauth]/route';

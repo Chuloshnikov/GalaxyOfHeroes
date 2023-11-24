@@ -4,7 +4,7 @@ import IconsContainer from './IconsContainer';
 import FooterNav from './FooterNav';
 import ScrollUpButton from './ScrollUpButton';
 import Link from 'next/link';
-import { getDictionary } from '../../lib/dictionary';
+import { getDictionary } from '../../lib/dictionaries';
 
 const Footer = async ({lang}: {lang: Locale}) => {
   const { footer } = await getDictionary(lang);
