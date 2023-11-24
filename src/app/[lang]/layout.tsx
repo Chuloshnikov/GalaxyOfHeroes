@@ -10,8 +10,11 @@ import Providers from './providers';
 const workS = Work_Sans({ subsets: ['latin'], variable: '--var-work' })
 
 export const metadata: Metadata = {
-  title: '',
-  description: '',
+  title: 'Galaxy of Heroes',
+  description: 'Galaxy of Heroes: Your Ultimate Comic Book Haven',
+  icons: {
+    icon: '/favicon.svg',
+  }
 }
 
 export async function generateStaticParams() {

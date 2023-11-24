@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Galaxy of Heroes',
   description: 'Galaxy of Heroes: Your Ultimate Comic Book Haven',
   icons: {
-    icon: '/logo.svg',
+    icon: '/favicon.svg',
   }
 }
 
