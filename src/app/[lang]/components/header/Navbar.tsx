@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { RiSearchLine, RiHeartLine } from 'react-icons/ri';
 import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
 import {  HiMenuAlt2 } from 'react-icons/hi';
-import { getDictionary } from '../../lib/dictionary';
+import { getDictionary } from '../../lib/dictionaries';
 import LocaleSwitcher from './LocaleSwitcher';
 
 

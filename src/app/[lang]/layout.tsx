@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Work_Sans } from 'next/font/google'
 import './globals.css';
-import Navbar from '@/components/header/Navbar';
-import Footer from '@/components/footer/Footer';
-import { Locale, i18n } from '../../../i18n.config';
+import Navbar from './components/header/Navbar';
+import Footer from './components/footer/Footer';
 import Providers from './providers';
 
 
@@ -16,8 +15,9 @@ export const metadata: Metadata = {
 }
 
 export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
+  return [{ lang: 'en' }, { lang: 'de' }, {lang: 'ua'}]
 }
+
 
 export default function RootLayout({
   children,
