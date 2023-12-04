@@ -15,13 +15,14 @@ export const metadata: Metadata = {
 
 export default async function Home({params: { lang }}) {
 
-  const { hero, bestSellers, communityMain } = await getDictionary(lang);
+  const { hero, bestSellers, communityMain, newProducts } = await getDictionary(lang);
 
   return (
     <main className="flex min-h-screen flex-col">
      <Hero hero={hero}/>
-     <ProductSection bestSellers={bestSellers} data={getData()}/>
+     <ProductSection sectionText={bestSellers} data={getData()}/>
      <CommunitySection communityMain={communityMain}/>
+     <ProductSection sectionText={newProducts} data={getData()}/>
     </main>
   )
 }

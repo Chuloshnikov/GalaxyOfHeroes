@@ -5,7 +5,7 @@ import { LuShoppingCart } from 'react-icons/lu';
 import { RiHeartLine } from 'react-icons/ri';
 
 
-const ProductSection = ({ data, bestSellers }) => {
+const ProductSection = ({ data, sectionText }) => {
 
     console.log(data);
 
@@ -30,7 +30,7 @@ const ProductSection = ({ data, bestSellers }) => {
             <h2
             className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4 xl:ml-0'
             >
-                {bestSellers.title}
+                {sectionText.title}
             </h2>
             <div
             className='flex flex-wrap gap-5 mt-[34px] lg:mt-[40px] items-center justify-center'
@@ -43,6 +43,15 @@ const ProductSection = ({ data, bestSellers }) => {
                             <div
                             className='w-[280px] h-[300px] overflow-hidden rounded-xl hoverLinkParent relative cursor-pointer'
                             >
+                                 {
+                                    product.topSeller && (
+                                                        <p
+                                                        className="z-30 absolute top-4 left-6 text-sm py-[1px] px-2 rounded-3xl bg-[#E7414B] text-white"
+                                                        >
+                                                            {sectionText.topSeller}
+                                                        </p>
+                                    )
+                                }
                                 <RiHeartLine
                                     className="w-6 h-6 text-mainBg z-30 absolute top-2 right-2 cursor-grab"
                                     />
@@ -62,7 +71,7 @@ const ProductSection = ({ data, bestSellers }) => {
                                 <span
                                     className="xs:hidden lg:inline"
                                     >
-                                    {bestSellers.basketLink}
+                                    {sectionText.basketLink}
                                 </span>
                                 <LuShoppingCart className="w-4 h-4"/>
                                 </Link>

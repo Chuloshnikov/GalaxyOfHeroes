@@ -4,7 +4,7 @@ import mageImg from "../../assets/mage.png";
 const CommunitySection = ({ communityMain }) => {
   return (
     <section
-    className='max-w-container mdl:mx-10 my-[56px]'
+    className='max-w-container mdl:mx-10 xl:mx-auto my-[56px]'
     >
         <div
         className="flex flex-col lg:flex-row gap-5"

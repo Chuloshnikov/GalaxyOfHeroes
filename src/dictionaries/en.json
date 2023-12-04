@@ -28,12 +28,17 @@
     },
     "bestSellers": {
     "title": "Best sellers",
-    "basketLink": "add to basket"
+    "basketLink": "add to basket",
+    "topSeller": "Top Seller"
     },
     "communityMain": {
         "title":"Galaxy of Heroes",
         "quote": "Your guide to the world of incredible stories.",
         "description": "Our community makes us unique. They have energy that reverberates around them. Their mission in life is to make sure that the miracle of the world does not go unnoticed."
+    },
+    "newProducts": {
+        "title": "New products",
+        "basketLink": "add to basket",
+        "topSeller": "Top Seller"
     }
-
 }
