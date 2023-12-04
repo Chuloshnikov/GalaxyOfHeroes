@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       maxWidth: {
-        container: "1520px",
+        container: "1200px",
         contentContainer: "1280px",
       },
       screens: {

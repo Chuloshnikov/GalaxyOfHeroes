@@ -25,15 +25,15 @@ const ProductSection = ({ data, bestSellers }) => {
     const lang = "ua";
   return (
     <section
-    className='max-w-contentContainer mx-auto lg:my-[56px]'
+    className='max-w-contentContainer mx-auto my-[12px] lg:my-[56px]'
     >
             <h2
-            className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4'
+            className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4 xl:ml-0'
             >
                 {bestSellers.title}
             </h2>
             <div
-            className='flex flex-wrap gap-2 mt-[34px] lg:mt-[40px] items-center justify-center'
+            className='flex flex-wrap gap-5 mt-[34px] lg:mt-[40px] items-center justify-center'
             >
                 {
                     data?.map(product => (

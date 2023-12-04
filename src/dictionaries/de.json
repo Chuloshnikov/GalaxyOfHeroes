@@ -29,5 +29,10 @@
     "bestSellers": {
     "title": "Bestseller",
     "basketLink": "zum warenkorb hinzufügen"
+    },
+    "communityMain": {
+    "title": "Galaxie der Helden",
+    "quote": "Dein Führer durch die Welt unglaublicher Geschichten.",
+    "description": "Unsere Gemeinschaft macht uns einzigartig. Sie haben eine Energie, die um sie herum widerhallt. Ihre Mission im Leben besteht darin, sicherzustellen, dass das Wunder der Welt nicht unbeachtet bleibt."
     }
 }
