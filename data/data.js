@@ -31,7 +31,8 @@ export default function getData() {
             },
             format: "56 pages, ebook",
             language: "English",
-            published: "November 17, 2021 by Europe Comics"
+            published: "November 17, 2021 by Europe Comics",
+            topSeller: false,
         },
         {
             _id: "2354",
@@ -64,7 +65,8 @@ export default function getData() {
             },
             format: "56 pages, ebook",
             language: "English",
-            published: "November 17, 2021 by Europe Comics"
+            published: "November 17, 2021 by Europe Comics",
+            topSeller: true
         },
         {
             id: "547",
@@ -97,7 +99,8 @@ export default function getData() {
             },
             format: "56 pages, ebook",
             language: "English",
-            published: "November 17, 2021 by Europe Comics"
+            published: "November 17, 2021 by Europe Comics",
+            topSeller: false
         },
         {
             _id: "4556",
@@ -130,7 +133,8 @@ export default function getData() {
             },
             format: "56 pages, ebook",
             language: "English",
-            published: "November 17, 2021 by Europe Comics"
+            published: "November 17, 2021 by Europe Comics",
+            topSeller: false
         },
     ]
     return data;
