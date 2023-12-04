@@ -25,5 +25,9 @@
     "aboutus": "About us",
     "contact": "Contact",
     "blog": "Blog"
+    },
+    "bestSellers": {
+    "title": "Best sellers",
+    "basketLink": "add to basket"
     }
 }

@@ -1,6 +1,8 @@
 import { getDictionary } from './lib/dictionaries';
 import Hero from './components/mein/Hero';
 import type { Metadata } from 'next';
+import ProductSection from './components/mein/ProductSection';
+import getData from "../../../data/data";
 
 export const metadata: Metadata = {
   title: 'Galaxy of Heroes',
@@ -12,11 +14,12 @@ export const metadata: Metadata = {
 
 export default async function Home({params: { lang }}) {
 
-  const { hero } = await getDictionary(lang);
+  const { hero, bestSellers } = await getDictionary(lang);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col">
      <Hero hero={hero}/>
+     <ProductSection bestSellers={bestSellers} data={getData()}/>
     </main>
   )
 }

@@ -7,8 +7,8 @@ import { getDictionary } from '../../lib/dictionary';
 
 const Hero = ({hero}) => {
   return (
-    <div
-    className='relative w-full rounded-b-3xl min-h-[570px] lg:max-h-[573px] -mt-[100px]'
+    <section
+    className='relative w-full rounded-b-3xl min-h-[570px] lg:max-h-[573px] -mt-[120px] pt-[20px]'
     >
         <Image
         src={heroImg}
@@ -18,7 +18,7 @@ const Hero = ({hero}) => {
          <Image
         src={mobileHeroImg}
         alt='heroImg'
-        className="lg:hidden w-full min-h-[500px] object-cover rounded-b-3xl "
+        className="lg:hidden w-full min-h-[520px] object-cover rounded-b-3xl "
         />
         <div
         className='text-white absolute absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 items-center'
@@ -35,7 +35,7 @@ const Hero = ({hero}) => {
           </p>
           <ScrollDownButton/>
         </div>
-    </div>
+    </section>
   )
 }
 
