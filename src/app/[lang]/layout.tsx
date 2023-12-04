@@ -34,9 +34,7 @@ export default function RootLayout({
       <body className={workS.variable}>
         <Providers>
           <Navbar lang={params.lang}/>
-            <main>
               {children}
-            </main>
           <Footer lang={params.lang}/>
         </Providers>
       </body>

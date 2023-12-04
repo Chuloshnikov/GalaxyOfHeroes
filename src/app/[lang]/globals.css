@@ -9,3 +9,12 @@ input, textarea, select {
     @apply appearance-none border-none bg-transparent outline-none;
     @apply resize-none;
 }
+
+.hoverLinkParent .linkToShow {
+    display: none;
+  }
+  
+  
+  .hoverLinkParent:hover .linkToShow {
+    display: flex;
+  }

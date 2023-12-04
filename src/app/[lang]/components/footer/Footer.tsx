@@ -15,7 +15,7 @@ const Footer = async ({lang}: {lang: Locale}) => {
     className='px-4'
     >
       <div
-      className='max-w-contentContainer mx-auto bg-accentBg text-mainBg rounded-[12px] py-[32px] px-[14px] lg:px-[48px] mb-24 lg:mb-[34px]'
+      className='max-w-contentContainer mx-auto bg-accentBg text-mainBg rounded-[12px] py-[32px] px-[14px] lg:px-[48px] mb-[18px] '
       >
         <div
         className='flex flex-col mdl:flex-row gap-11 mdl:justify-between'
@@ -55,7 +55,7 @@ const Footer = async ({lang}: {lang: Locale}) => {
               <Link href={"/"}>{footer.privacyPolicy}</Link>
             </div>
             <p
-              className='text-sm text-center'
+              className='text-sm text-center cursor-auto'
               >
                 {footer.allRights}
               </p>
