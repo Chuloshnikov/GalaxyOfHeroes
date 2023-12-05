@@ -9,7 +9,7 @@ const ProductSection = ({ data, sectionText }) => {
 
     console.log(data);
 
-    const  displayPrice = (prices, lang) => {
+    const  displayPrice = (prices:any, lang:any) => {
         switch (lang) {
             case 'ua':
                 return `${prices.uah.toFixed(2)} грн`;

@@ -10,18 +10,18 @@ const CommunitySection = ({ communityMain }) => {
         className="flex flex-col lg:flex-row gap-5"
         >
             <div
-            className="basis-1/2 flex flex-col gap-[32px] mdl:gap-0 mdl:justify-between"
+            className="basis-1/2 flex flex-col gap-[32px] mdl:gap-0 mdl:justify-between mx-4 mdl:mx-0"
             >
                 <div
                 className="flex flex-col gap-[32px] ml-4 xl:ml-0"
                 >
                     <h2
-                    className="text-xs mdl:text-base font-medium text-accentBg"
+                    className="text-xs mdl:text-base font-medium text-accentBg ml-[4px]"
                     >
                         {communityMain.title}
                     </h2>
                     <blockquote
-                    className="text-[32px] mdl:text-[68px] font-base text-accentBg leading-tight"
+                    className="text-[32px] mdl:text-[68px] font-base text-accentBg leading-tight ml-[4px]"
                     >
                         {communityMain.quote}
                     </blockquote>
