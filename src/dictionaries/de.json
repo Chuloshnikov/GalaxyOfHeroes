@@ -7,6 +7,11 @@
     "manga": "Manga",
     "historical": "Historisch"
     },
+    "cookieMessageText": {
+        "text": "Diese website verwendet cookies.",
+        "linkText": "Erfahren sie mehr",
+        "btnText": "ok"
+    },
     "hero": {
     "title": "Epische Geschichten entfesselt: Chroniken von Tinte & Vorstellung",
     "description": "Tauchen Sie ein in ein Universum, in dem jeder Schlag ein neues Abenteuer und zeitlose Helden enthüllt."
