@@ -7,29 +7,33 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 
 const NewsSection = ({ data, sectionText }) => {
   return (
     <section
-    className='max-w-contentContainer mx-auto my-[12px] lg:my-[56px]'
+    className='max-w-contentContainer mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px]'
     >
-         <h2
+          <h2
             className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4 xl:ml-0'
             >
                 {sectionText.title}
-            </h2>
+          </h2>
             <div
-            className='max-w-container mt-[34px] lg:mt-[40px]'
+            className='max-w-container mt-[34px] lg:mt-[40px] overflow-x-auto whitespace-no-wrap px-4'
             >
                 <Swiper
-                slidesPerView={3}
-                spaceBetween={2}
+                slidesPerView={1}
+                spaceBetween={30}
                 pagination={{
-                    clickable: true,
+                  clickable: true,
                 }}
-                modules={[Pagination]}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay, Pagination]}
                 className="mySwiper"
                 >
                 {

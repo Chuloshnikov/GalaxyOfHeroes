@@ -28,7 +28,7 @@ const ProductSection = ({ data, sectionText }) => {
     className='max-w-contentContainer mx-auto my-[12px] lg:my-[56px]'
     >
             <h2
-            className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4 xl:ml-0'
+            className='text-[28px] mdl:text-[36px] lg:text-[46px] text-accentBg font-medium ml-4 xl:ml-8'
             >
                 {sectionText.title}
             </h2>
