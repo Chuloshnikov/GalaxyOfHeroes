@@ -44,5 +44,9 @@
         "title": "New products",
         "basketLink": "add to basket",
         "topSeller": "Top Seller"
+    },
+    "categoriesMain": {
+        "title": "Categories",
+        "nav": ["Superheroes", "Horror", "Manga"]
     }
 }

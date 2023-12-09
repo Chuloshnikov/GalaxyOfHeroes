@@ -7,6 +7,7 @@ import CommunitySection from './components/mein/CommunitySection';
 
 import getData from "../../../data/data";
 import getNews from "../../../data/newsData";
+import CatrgoriesSection from './components/mein/CatrgoriesSection';
 
 
 export const metadata: Metadata = {
@@ -19,13 +20,14 @@ export const metadata: Metadata = {
 
 export default async function Home({params: { lang }}) {
 
-  const { hero, bestSellers, communityMain, mainNews, newProducts } = await getDictionary(lang);
+  const { hero, bestSellers, communityMain, mainNews, newProducts, categoriesMain } = await getDictionary(lang);
 
   return (
     <main className="flex min-h-screen flex-col">
      <Hero hero={hero}/>
      <ProductSection sectionText={bestSellers} data={getData()}/>
-     <CommunitySection communityMain={communityMain}/>
+     <CommunitySection sectionText={communityMain}/>
+     <CatrgoriesSection sectionText={categoriesMain}/>
      <NewsSection sectionText={mainNews} data={getNews()}/>
      <ProductSection sectionText={newProducts} data={getData()}/>
     </main>
