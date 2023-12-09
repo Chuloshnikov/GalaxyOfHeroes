@@ -6,17 +6,17 @@ import newsImg from "../../assets/Screenshot_1.png";
 const NewsCard = ({ news }) => {
   return (
       <div
-      className="text-[16px] flex flex-col gap-2"
+      className="text-[16px] flex flex-col gap-2 w-full"
         key={news.id}
         >
           <div
-          className="relative rounded-[30px] max-w-[270px] max-h-[250px]"
+          className="relative rounded-[30px] max-w-container max-h-[400px]"
           >
               <Image  
               width={600}
               height={800}
               loading="lazy" 
-              className="object-fit rounded-[30px]" 
+              className="object-cover rounded-[30px] max-w-container max-h-[400px]" 
               src={newsImg}
               alt="NewsImg"
               />
@@ -39,7 +39,7 @@ const NewsCard = ({ news }) => {
             </div>
         </div>
         <h3
-          className="text-accentBg font-normal text-[17px] max-w-[300px]"
+          className="text-accentBg font-medium text-base"
           >
           {news.title}
         </h3>
