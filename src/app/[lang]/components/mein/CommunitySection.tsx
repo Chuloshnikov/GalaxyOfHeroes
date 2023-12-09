@@ -1,7 +1,7 @@
 import Image from "next/image"
 import mageImg from "../../assets/mage.png";
 
-const CommunitySection = ({ communityMain }) => {
+const CommunitySection = ({ sectionText }) => {
   return (
     <section
     className='max-w-container mdl:mx-10 xl:mx-auto my-[56px]'
@@ -18,12 +18,12 @@ const CommunitySection = ({ communityMain }) => {
                     <h2
                     className="text-xs mdl:text-base font-medium text-accentBg ml-[4px]"
                     >
-                        {communityMain.title}
+                        {sectionText.title}
                     </h2>
                     <blockquote
                     className="text-[32px] mdl:text-[68px] font-base text-accentBg leading-tight ml-[4px]"
                     >
-                        {communityMain.quote}
+                        {sectionText.quote}
                     </blockquote>
                 </div>
                 <div
@@ -39,7 +39,7 @@ const CommunitySection = ({ communityMain }) => {
                     <p
                     className="text-accentBg text-[18px] font-medium basis-4/5 ml-4 xl:ml-0"
                     >
-                        {communityMain.description}
+                        {sectionText.description}
                     </p>
                 </div>
             </div>

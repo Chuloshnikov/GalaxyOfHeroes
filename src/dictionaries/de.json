@@ -44,6 +44,10 @@
         "title": "Neuzugänge",
         "basketLink": "zum warenkorb hinzufügen",
         "topSeller": "Top Verkäufe"
+    },
+    "categoriesMain": {
+        "title": "Kategorien",
+        "nav": ["Superhelden", "Horror", "Manga"]
     }
 }
 
