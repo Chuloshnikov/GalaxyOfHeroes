@@ -6,13 +6,15 @@ import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
 import {  HiMenuAlt2 } from 'react-icons/hi';
 import { getDictionary } from '../../lib/dictionaries';
 import LocaleSwitcher from './LocaleSwitcher';
+import CookieMessage from './CookieMessage';
 
 
 
 
  
 const Navbar = async ({lang}: {lang: Locale}) => {
-    const {navigation} = await getDictionary(lang);
+    const { navigation, cookieMessageText } = await getDictionary(lang);
+    console.log(cookieMessageText)
   return (
     <header
     className='w-full sticky top-0 z-50 px-4'
@@ -98,6 +100,8 @@ const Navbar = async ({lang}: {lang: Locale}) => {
                 />
             </div>
         </nav>
+        {/* cookie message*/}
+        <CookieMessage messageText={cookieMessageText}/>
     </header>
   )
 }
