@@ -27,9 +27,9 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
             case 'de':
                 return `${prices.eur.toFixed(2)} EUR`;
             case 'en':
-                return `${prices.usd.toFixed(2)} USD`;
+                return `$${prices.usd.toFixed(2)}`;
             default:
-                return `${prices.usd.toFixed(2)} USD`;
+                return `$${prices.usd.toFixed(2)}`;
         }
     };
 
@@ -91,7 +91,9 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                     height={50}
                                     alt="productImg"
                                     />
-                                    <div>
+                                    <div
+                                    className='flex items-center'
+                                    >
                                         <h4
                                         className='text-lg font-medium'
                                         >

@@ -23,7 +23,7 @@ const Navbar = async ({lang}: {lang: Locale}) => {
         >
             {/*Logo */}
             <Link
-            href={"/"}
+            href={`/${lang}`}
             >
                 <Image
                 src={Logo}
