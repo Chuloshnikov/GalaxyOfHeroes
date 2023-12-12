@@ -7,6 +7,11 @@
     "manga": "Manga",
     "historical": "Historisch"
     },
+    "searchPopup": {
+        "inputHolder": "Suchen...",
+        "searchMessage": "Es konnten keine ergebnisse gefunden werden.",
+        "clearBtn": "klar"
+    },
     "cookieMessageText": {
         "text": "Diese website verwendet cookies.",
         "linkText": "Erfahren sie mehr",

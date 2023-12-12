@@ -25,11 +25,11 @@ export default async function Home({params: { lang }}) {
   return (
     <main className="flex min-h-screen flex-col">
      <Hero hero={hero}/>
-     <ProductSection sectionText={bestSellers} data={getData()}/>
+     <ProductSection lang={lang} sectionText={bestSellers} data={getData()}/>
      <CommunitySection sectionText={communityMain}/>
      <CatrgoriesSection sectionText={categoriesMain}/>
      <NewsSection sectionText={mainNews} data={getNews()}/>
-     <ProductSection sectionText={newProducts} data={getData()}/>
+     <ProductSection lang={lang} sectionText={newProducts} data={getData()}/>
     </main>
   )
 }

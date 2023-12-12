@@ -1,8 +1,10 @@
+import image from "./blacksad.png";
+
 export default function getData() {
     const data =  [
         {
             _id: "123",
-            img: "./blacksad.png",
+            img: image,
             title: "They All Fall Down, Part 2",
             reviews: 22,
             ratings: 4.35,
@@ -36,7 +38,7 @@ export default function getData() {
         },
         {
             _id: "2354",
-            img: "./blacksad.png",
+            img: image,
             title: "They All Fall Down, Part 2",
             reviews: 22,
             ratings: 4.35,
@@ -70,7 +72,7 @@ export default function getData() {
         },
         {
             id: "547",
-            img: "./blacksad.png",
+            img: image,
             title: "They All Fall Down, Part 2",
             reviews: 22,
             ratings: 4.35,
@@ -104,7 +106,7 @@ export default function getData() {
         },
         {
             _id: "4556",
-            img: "./blacksad.png",
+            img: image,
             title: "They All Fall Down, Part 2",
             reviews: 22,
             ratings: 4.35,
