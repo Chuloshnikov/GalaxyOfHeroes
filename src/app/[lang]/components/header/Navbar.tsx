@@ -1,26 +1,25 @@
 import Logo from '../../assets/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RiSearchLine, RiHeartLine } from 'react-icons/ri';
-import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
-import {  HiMenuAlt2 } from 'react-icons/hi';
+
 import { getDictionary } from '../../lib/dictionaries';
-import LocaleSwitcher from './LocaleSwitcher';
+
 import CookieMessage from './CookieMessage';
+import NavbarIcons from './NavbarIcons';
 
 
 
 
  
 const Navbar = async ({lang}: {lang: Locale}) => {
-    const { navigation, cookieMessageText } = await getDictionary(lang);
+    const { navigation, cookieMessageText, searchPopup } = await getDictionary(lang);
     console.log(cookieMessageText)
   return (
     <header
     className='w-full sticky top-0 z-50 px-4'
     >
         <nav
-        className='max-w-contentContainer mt-5 mx-auto bg-mainBg text-accentBg py-5 px-8 rounded-[12px] flex justify-between items-center'
+        className='shadow max-w-contentContainer mt-5 mx-auto bg-mainBg text-accentBg py-5 px-8 rounded-[12px] flex justify-between items-center'
         >
             {/*Logo */}
             <Link
@@ -87,18 +86,10 @@ const Navbar = async ({lang}: {lang: Locale}) => {
                 </li>
             </ul>
             {/*icons*/}
-            <div
-            className='flex items-center gap-5'
-            >
-                <RiSearchLine/>
-                <LocaleSwitcher lang={lang}/>
-                <RiHeartLine/>
-                <LuUserCircle2/>
-                <LuShoppingCart/>
-                <HiMenuAlt2
-                className="block lg:hidden"
-                />
-            </div>
+           <NavbarIcons 
+           searchPopup={searchPopup} 
+           lang={lang}
+           />
         </nav>
         {/* cookie message*/}
         <CookieMessage messageText={cookieMessageText}/>

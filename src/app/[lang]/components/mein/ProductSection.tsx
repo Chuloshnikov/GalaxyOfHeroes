@@ -5,7 +5,7 @@ import { LuShoppingCart } from 'react-icons/lu';
 import { RiHeartLine } from 'react-icons/ri';
 
 
-const ProductSection = ({ data, sectionText }) => {
+const ProductSection = ({ data, sectionText, lang }) => {
 
     console.log(data);
 
@@ -22,7 +22,6 @@ const ProductSection = ({ data, sectionText }) => {
         }
     };
 
-    const lang = "ua";
   return (
     <section
     className='max-w-contentContainer mx-auto my-[12px] lg:my-[56px]'

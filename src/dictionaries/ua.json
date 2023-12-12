@@ -7,6 +7,11 @@
         "manga": "манга",
         "historical": "історичні"
     },
+    "searchPopup": {
+        "inputHolder": "Пошук...",
+        "searchMessage": "Нічого не знайдено.",
+        "clearBtn": "Очистити"
+    },
     "cookieMessageText": {
         "text": "Цей сайт використовує кукі.",
         "linkText": "Дізнатись більше",
