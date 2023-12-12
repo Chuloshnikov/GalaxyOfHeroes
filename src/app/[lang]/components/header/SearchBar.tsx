@@ -56,7 +56,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                         }}
                     />
                     <div
-                        className='flex gap-2 cursor-pointer'
+                        className='flex gap-2 items-center cursor-pointer'
                     >
                         <span
                             onClick={() => {
@@ -74,7 +74,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                     </div>
                 </form>
                 <div 
-                className='h-screen'
+                className='max-h-max overflow-y-scroll'
                 >
                     {!isInputEmpty && filteredItems && filteredItems.length > 0 ? (
                         <ul 
@@ -92,7 +92,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                     alt="productImg"
                                     />
                                     <div
-                                    className='flex items-center'
+                                    className='flex flex-col gap-2'
                                     >
                                         <h4
                                         className='text-lg font-medium'
