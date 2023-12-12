@@ -87,6 +87,7 @@ const Navbar = async ({lang}: {lang: Locale}) => {
             </ul>
             {/*icons*/}
            <NavbarIcons 
+           navigation={navigation}
            searchPopup={searchPopup} 
            lang={lang}
            />
