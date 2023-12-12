@@ -5,9 +5,11 @@ import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
 import {  HiMenuAlt2 } from 'react-icons/hi';
 import LocaleSwitcher from './LocaleSwitcher';
 import SearchBar from './SearchBar';
+import MobileMenu from './MobileMenu';
 
-const NavbarIcons = ({lang, searchPopup}) => {
+const NavbarIcons = ({lang, searchPopup, navigation}) => {
     const [searchBarOpen, setSearchBarOpen] = useState(false);
+    const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
     const handlePopupToggle = () => {
         setSearchBarOpen(!searchBarOpen);
@@ -21,6 +23,13 @@ const NavbarIcons = ({lang, searchPopup}) => {
         e.stopPropagation();
       };
     
+      const handleMenuToggle = () => {
+        setOpenMobileMenu(!openMobileMenu);
+      };
+
+      const handleMenuBackgroundClick = () => {
+        setOpenMobileMenu(false)
+      }
   return (
     <div
     className='flex items-center gap-4 mdl:gap-5'
@@ -34,6 +43,7 @@ const NavbarIcons = ({lang, searchPopup}) => {
         <LuUserCircle2/>
         <LuShoppingCart/>
         <HiMenuAlt2
+        onClick={handleMenuToggle}
         className="block lg:hidden"
         />
         {searchBarOpen && (
@@ -44,6 +54,14 @@ const NavbarIcons = ({lang, searchPopup}) => {
         handleBackgroundClick={handleBackgroundClick}
         handleSearchBarClick={handleSearchBarClick}
         />
+        )}
+        {openMobileMenu && (
+            <MobileMenu
+            lang={lang}
+            navigation={navigation}
+            handleMenuBackgroundClick={handleMenuBackgroundClick}
+            handleMenuToggle={handleMenuToggle}
+            />
         )}
     </div>
   )

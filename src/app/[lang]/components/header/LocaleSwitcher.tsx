@@ -8,11 +8,11 @@ const LocaleSwitcher = ({lang}: any) => {
 
   return (
     <div
-    className=''
+    className='hidden lg:flex'
     >
         {!lengOpen ? (
             <div 
-            className='cursor-pointer font-medium'
+            className='cursor-pointer font-medium '
             onClick={() => setLengOpen(!lengOpen)}
             >
                 <span

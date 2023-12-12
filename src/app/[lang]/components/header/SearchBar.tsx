@@ -36,11 +36,11 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
     return (
         <div
             onClick={handleBackgroundClick}
-            className='absolute -top-5 left-0 bg-white/50 w-screen h-screen'
+            className='absolute -top-5 left-0 bg-white/50 w-screen h-[1000%]'
         >
             <div
                 onClick={handleSearchBarClick}
-                className='z-50 absolute top-2 right-4 xl:right-[5%] shadow bg-mainBg w-[90%] h-[700%] rounded-2xl p-6 xl:p-10'
+                className='z-50 absolute top-2 right-4 xl:right-[5%] shadow bg-mainBg w-[95%] xl:w-[90%] h-screen rounded-2xl p-6 xl:p-10'
             >
                 <form
                     className='border-b-2 border-accentBg flex items-center'
