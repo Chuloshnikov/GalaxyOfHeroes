@@ -74,11 +74,11 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                     </div>
                 </form>
                 <div 
-                className='max-h-max overflow-y-scroll'
+                className='h-screen'
                 >
                     {!isInputEmpty && filteredItems && filteredItems.length > 0 ? (
                         <ul 
-                        className='flex flex-col gap-2'
+                        className='flex flex-col gap-2 overflow-y-scroll'
                         >
                             {filteredItems.map(item => (
                                 <li 
