@@ -36,7 +36,8 @@ const ProductSection = ({ data, sectionText, lang }) => {
             >
                 {
                     data?.map(product => (
-                        <div 
+                        <Link
+                        href={`/${product._id}`}
                         key={product._id}
                         >
                             <div
@@ -87,7 +88,7 @@ const ProductSection = ({ data, sectionText, lang }) => {
                                     {displayPrice(product.prices, lang)}
                                 </span>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 }
             </div>
