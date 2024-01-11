@@ -4,6 +4,7 @@ import StarRating from "../components/ui/StarRating";
 import ProductSection from "../components/mein/ProductSection";
 import   {getDictionary } from "../lib/dictionaries";
 import getData from "../../../../data/data";
+import ReviewsComponent from "../components/ReviewsComponent";
 
 export default async function ProductPage({params: { lang }}) {
   const { bestSellers } = await getDictionary(lang);
@@ -17,8 +18,13 @@ export default async function ProductPage({params: { lang }}) {
       >
         {/*PRODUCT IMAGE*/}
         <div
-        className="max-w-[400px] max-h-[500px] rounded-xl p-8"
+        className="relative max-w-[400px] max-h-[500px] rounded-xl p-8"
         >
+          <p
+            className="z-30 absolute top-9 left-10 text-sm py-[1px] px-2 rounded-3xl bg-[#E7414B] text-white"
+            >
+              Top seller
+          </p>
           <Image 
           className="rounded-xl"
           src={productImg} 
@@ -50,15 +56,36 @@ export default async function ProductPage({params: { lang }}) {
               <StarRating/>
           </div>
           <div
-          className="max-w-xl mt-8 flex flex-col gap-2"
+          className="relative max-w-xl mt-4 flex flex-col gap-2"
           >
+            {/*prise*/}
+            <p
+            className="absolute top-8 right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
+            >
+              12.99$
+            </p>
             <p
             className="font-medium"
             >
-             ( Juan Díaz Canales, {" "} Juanjo Guarnido )
+            Authors & Artist: ( Juan Díaz Canales, {" "} Juanjo Guarnido )
             </p>
             <p
-            className="text-xl"
+            className="font-medium"
+            >
+              Format: 56 pages, ebook
+            </p>
+            <p
+            className="font-medium"
+            >
+              Language: English
+            </p>
+            <p
+            className="font-medium"
+            >
+              Published: November 17, 2021 by Europe Comics
+            </p>
+            <p
+            className="text-base font-medium"
             >
               Everyone's favorite cat detective is back, and yes, we mean John Blacksad. 
               This time, he's on a particularly thorny case, as he's responsible for protecting the president 
@@ -68,6 +95,17 @@ export default async function ProductPage({params: { lang }}) {
               Towering above them all is the figure of Solomon, a construction magnate well on his way to rebuilding 
               the five boroughs, come hell or high water.
             </p>
+            <div 
+            className="flex flex-wrap gap-1 text-sm font-semibold mt-2"
+            >
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Graphic Novels</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Bande Dessinée</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Comics</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Crime</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Comics Manga</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Fiction</span>
+              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Thriller</span>
+            </div>
           </div>
           <button
           className="bg-accentBg text-mainBg font-medium w-full px-4 py-2 rounded-xl mt-4"
@@ -75,12 +113,89 @@ export default async function ProductPage({params: { lang }}) {
             Add to Cart
           </button>
           {/* ADITIONAL PRODUCTS*/}
-          <div>
-            
+          <div
+          className="flex flex-col gap-1"
+          >
+            <h2
+            className="text-xl font-bold"
+            >
+              Aditional Products
+            </h2>
+            {/*CARTS*/}
+              <div
+              className="flex gap-1"
+              >
+                <Image 
+                src={productImg} 
+                width={70} 
+                height={80} 
+                className="rounded-xl"
+                alt="comics"
+                />
+                <div
+                className="text-base font-medium"
+                >
+                  <h3>They All Fall Down, Part 2</h3>
+                  <p>Juan Díaz Canales, {" "} Juanjo Guarnido</p>
+                  <p>15.99$</p>
+                  <button
+                  className="py-1 px-2 bg-accentBg rounded-lg text-mainBg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>  
+              <div
+              className="flex gap-1"
+              >
+                <Image 
+                src={productImg} 
+                width={70} 
+                height={80} 
+                className="rounded-xl"
+                alt="comics"
+                />
+                <div
+                className="text-base font-medium"
+                >
+                  <h3>They All Fall Down, Part 2</h3>
+                  <p>Juan Díaz Canales, {" "} Juanjo Guarnido</p>
+                  <p>15.99$</p>
+                  <button
+                  className="py-1 px-2 bg-accentBg rounded-lg text-mainBg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div> 
+              <div
+              className="flex gap-1"
+              >
+                <Image 
+                src={productImg} 
+                width={70} 
+                height={80} 
+                className="rounded-xl"
+                alt="comics"
+                />
+                <div
+                className="text-base font-medium"
+                >
+                  <h3>They All Fall Down, Part 2</h3>
+                  <p>Juan Díaz Canales, {" "} Juanjo Guarnido</p>
+                  <p>15.99$</p>
+                  <button
+                  className="py-1 px-2 bg-accentBg rounded-lg text-mainBg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>  
           </div>
         </div>
       </div>
       <div>
+        <ReviewsComponent/>
         <ProductSection lang={lang} sectionText={bestSellers} data={getData()}/>
       </div>
     </section>
