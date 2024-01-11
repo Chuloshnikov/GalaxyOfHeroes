@@ -98,13 +98,13 @@ export default async function ProductPage({params: { lang }}) {
             <div 
             className="flex flex-wrap gap-1 text-sm font-semibold mt-2"
             >
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Graphic Novels</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Bande Dessinée</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Comics</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Crime</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Comics Manga</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Fiction</span>
-              <span className="bg-accentBg p-1 text-mainBg items-center text-nowrap rounded-xl">Thriller</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Graphic Novels</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Bande Dessinée</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Comics</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Crime</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Comics Manga</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Fiction</span>
+              <span className="bg-accentBg py-1 px-2 text-mainBg items-center text-nowrap rounded-xl">Thriller</span>
             </div>
           </div>
           <button
@@ -123,7 +123,7 @@ export default async function ProductPage({params: { lang }}) {
             </h2>
             {/*CARTS*/}
               <div
-              className="flex gap-1"
+              className="flex gap-1 border border-accentBg rounded-xl p-1"
               >
                 <Image 
                 src={productImg} 
@@ -146,7 +146,7 @@ export default async function ProductPage({params: { lang }}) {
                 </div>
               </div>  
               <div
-              className="flex gap-1"
+              className="flex gap-1 border border-accentBg rounded-xl p-1"
               >
                 <Image 
                 src={productImg} 
@@ -169,7 +169,7 @@ export default async function ProductPage({params: { lang }}) {
                 </div>
               </div> 
               <div
-              className="flex gap-1"
+              className="flex gap-1 border border-accentBg rounded-xl p-1"
               >
                 <Image 
                 src={productImg} 
