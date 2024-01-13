@@ -4,7 +4,7 @@ import StarRating from "../components/ui/StarRating";
 import ProductSection from "../components/mein/ProductSection";
 import   {getDictionary } from "../lib/dictionaries";
 import getData from "../../../../data/data";
-import ReviewsComponent from "../components/ReviewsComponent";
+import ReviewsComponent from "../components/ui/ReviewsComponent";
 
 export default async function ProductPage({params: { lang }}) {
   const { bestSellers } = await getDictionary(lang);
