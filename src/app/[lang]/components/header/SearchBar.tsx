@@ -41,7 +41,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
         >
             <div
                 onClick={handleSearchBarClick}
-                className='z-50 absolute top-2 right-4 xl:right-[5%] shadow bg-mainBg w-[95%] xl:w-[90%] h-screen rounded-2xl p-6 xl:p-10'
+                className='z-50 absolute top-2 right-2 md:right-4 xl:right-[5%] shadow bg-mainBg w-[95%] xl:w-[90%] h-screen rounded-2xl p-6 xl:p-10'
             >
                 <form
                     className='border-b-2 border-accentBg flex items-center'
@@ -79,10 +79,11 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                 >
                     {!isInputEmpty && filteredItems && filteredItems.length > 0 ? (
                         <ul 
-                        className='flex flex-col gap-2 overflow-y-scroll'
+                        className='flex flex-col gap-2 overflow-y-scroll pt-4'
                         >
                             {filteredItems.map(item => (
                                 <li 
+                                className='m'
                                 key={item._id}
                                 >
                                 <Link
@@ -91,6 +92,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                 className='flex gap-2'
                                 >
                                     <Image 
+                                    className='rounded-xl'
                                     src={item.img}
                                     width={50}
                                     height={50}
