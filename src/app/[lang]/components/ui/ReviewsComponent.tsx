@@ -3,13 +3,14 @@ import { Rating } from '@mui/material';
 import {LinearProgress} from '@mui/material';
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ReviewList from './ReviewList';
 
 const theme = createTheme({
   components: {
     MuiLinearProgress: {
       styleOverrides: {
         barColorPrimary: {
-          backgroundColor: "#582467",
+          backgroundColor: "#582434",
         },
       },
     },
@@ -44,7 +45,7 @@ const ReviewsComponent = () => {
                         >
                         5.0
                         </div>
-                            <Rating name="half-rating-read" sx={{color: "#582467"}} defaultValue={2.5} precision={0.5} readOnly />
+                            <Rating name="half-rating-read" sx={{color: "#582434"}} defaultValue={2.5} precision={0.5} readOnly />
                         </div>
                     </div>
             </div>
@@ -57,7 +58,7 @@ const ReviewsComponent = () => {
                     Quality
                 </p>
                 <ThemeProvider theme={theme}>
-                    <LinearProgress style={{backgroundColor: "#B686C3",  barColorPrimary: {backgroundColor: 'green'}}} variant="determinate" value={30}/>
+                    <LinearProgress style={{backgroundColor: "#FDA172",  barColorPrimary: {backgroundColor: '#582434'}}} variant="determinate" value={30}/>
                 </ThemeProvider>
                 <div
                 className='text-xs font-semibold flex items-center justify-between'
@@ -66,6 +67,14 @@ const ReviewsComponent = () => {
                     <span>Excellent</span>
                 </div>
             </div>
+        </div>
+        <div
+        className='mt-5 border-t-2 border-accentBg'
+        >
+          <ReviewList/>
+          <ReviewList/>
+          <ReviewList/>
+          <ReviewList/>
         </div>
     </div>
   )
