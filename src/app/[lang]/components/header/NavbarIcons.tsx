@@ -48,6 +48,7 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
         />
         {searchBarOpen && (
         <SearchBar 
+        close={setSearchBarOpen}
         searchPopup={searchPopup}
         lang={lang}
         handlePopupToggle={handlePopupToggle} 

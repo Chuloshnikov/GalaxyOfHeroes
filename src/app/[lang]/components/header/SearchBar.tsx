@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
 import getData from "../../../../../data/data";
 import Image from 'next/image';
+import Link from 'next/link';
 
-const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick, handleSearchBarClick }) => {
+const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick, handleSearchBarClick, close }) => {
     const [filteredItems, setFilteredItems] = useState(null);
     const [query, setQuery] = useState("");
     const [isInputEmpty, setIsInputEmpty] = useState(true); // Додаємо стан для перевірки, чи інпут порожній
@@ -82,8 +83,12 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                         >
                             {filteredItems.map(item => (
                                 <li 
-                                className='flex gap-2'
                                 key={item._id}
+                                >
+                                <Link
+                                onClick={() => close(false)}
+                                href={`/${item._id}`}
+                                className='flex gap-2'
                                 >
                                     <Image 
                                     src={item.img}
@@ -101,6 +106,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                         </h4>
                                         <span>{displayPrice(item.prices, lang)}</span>
                                     </div>
+                                </Link>
                                 </li>
                             ))}
                         </ul>
