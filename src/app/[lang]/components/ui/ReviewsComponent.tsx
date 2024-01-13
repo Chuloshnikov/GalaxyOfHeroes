@@ -20,7 +20,7 @@ const theme = createTheme({
 const ReviewsComponent = () => {
   return (
     <div
-    className='text-accentBg mt-4'
+    className='text-accentBg mt-4 mx-4 xl:ml-0'
     >
         <div
         className='flex gap-1 text-2xl font-semibold items-center'
@@ -29,10 +29,10 @@ const ReviewsComponent = () => {
             <span>(25)</span>
         </div>
        <div 
-       className='bg-white rounded-xl mt-8 max-w-max flex p-5'
+       className='bg-white rounded-xl mt-8 max-w-max flex p-5 flex flex-col md:flex-row'
        >
             <div
-            className='border-r-2 border-accentBg'
+            className='md:border-r-2 border-accentBg mb-2 md:mb-0'
             >
                 <div
                 className='flex flex-col gap-1'
@@ -50,7 +50,7 @@ const ReviewsComponent = () => {
                     </div>
             </div>
             <div
-            className='ml-5 min-w-[170px] flex flex-col -mt-1 text-accentBg'
+            className='border-t-2 border-accentBg md:border-0 md:ml-5 min-w-[170px] flex flex-col -mt-1 text-accentBg'
             >
                 <p
                 className='font-semibold text-sm'
