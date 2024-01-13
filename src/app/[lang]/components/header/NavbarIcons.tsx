@@ -6,10 +6,12 @@ import {  HiMenuAlt2 } from 'react-icons/hi';
 import LocaleSwitcher from './LocaleSwitcher';
 import SearchBar from './SearchBar';
 import MobileMenu from './MobileMenu';
+import AuthMenu from "./authmenu/AuthMenu";
 
 const NavbarIcons = ({lang, searchPopup, navigation}) => {
     const [searchBarOpen, setSearchBarOpen] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
+    const [openAuthMenu, setOpenAuthMenu] =useState(false);
 
     const handlePopupToggle = () => {
         setSearchBarOpen(!searchBarOpen);
@@ -30,6 +32,14 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
       const handleMenuBackgroundClick = () => {
         setOpenMobileMenu(false)
       }
+
+      const handleAuthMenuBackgroundClick = () => {
+        setOpenAuthMenu(!openAuthMenu)
+      }
+
+      const handleAuthMenuClick = (e) => {
+        e.stopPropagation();
+      };
   return (
     <div
     className='flex items-center gap-4 mdl:gap-5'
@@ -40,7 +50,7 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
         />
         <LocaleSwitcher lang={lang}/>
         <RiHeartLine/>
-        <LuUserCircle2/>
+        <LuUserCircle2 onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
         <LuShoppingCart/>
         <HiMenuAlt2
         onClick={handleMenuToggle}
@@ -63,6 +73,14 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
             handleMenuBackgroundClick={handleMenuBackgroundClick}
             handleMenuToggle={handleMenuToggle}
             />
+        )}
+        {openAuthMenu && (
+          <AuthMenu
+          close={setOpenAuthMenu}
+          backgroundClick={handleAuthMenuBackgroundClick}
+          handleAuthMenuClick={handleAuthMenuClick}
+
+          />
         )}
     </div>
   )
