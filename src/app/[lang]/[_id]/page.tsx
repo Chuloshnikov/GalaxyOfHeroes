@@ -14,11 +14,11 @@ export default async function ProductPage({params: { lang }}) {
     className="max-w-contentContainer mx-auto min-h-max"
     >
       <div
-      className="flex gap-5"
+      className="flex gap-2 md:gap-5 flex-col lg:flex-row"
       >
         {/*PRODUCT IMAGE*/}
         <div
-        className="relative max-w-[400px] max-h-[500px] rounded-xl p-8"
+        className="relative max-w-[400px] min-h-[500px] rounded-xl p-8"
         >
           <p
             className="z-30 absolute top-9 left-10 text-sm py-[1px] px-2 rounded-3xl bg-[#E7414B] text-white"
@@ -32,6 +32,46 @@ export default async function ProductPage({params: { lang }}) {
           height={500} 
           alt="comics"
           />
+          <div
+          className="flex flex-wrap gap-2 mt-2 items-center justify-center"
+          >
+            {/*small images*/}
+            <Image
+            className="rounded-md"
+            src={productImg} 
+            width={60} 
+            height={70} 
+            alt="comics"
+            />
+            <Image
+            className="rounded-md"
+            src={productImg} 
+            width={60} 
+            height={70}
+            alt="comics"
+            />
+            <Image
+            className="rounded-md"
+            src={productImg} 
+            width={60} 
+            height={70} 
+            alt="comics"
+            />
+            <Image
+            className="rounded-md"
+            src={productImg} 
+            width={60} 
+            height={70}
+            alt="comics"
+            />
+            <Image
+            className="rounded-md"
+            src={productImg} 
+            width={60} 
+            height={70}
+            alt="comics"
+            />
+          </div>
         </div>
         {/*PRODUCT DESCRIPTION*/}
         <div
@@ -46,7 +86,7 @@ export default async function ProductPage({params: { lang }}) {
           className="flex gap-5"
           >
               <div
-              className="border-2 border-green-500 rounded-full px-2 max-w-max"
+              className="border-2 border-green-500 rounded-full px-1 sm:px-2 max-w-max"
               >
                 <p
                 className="text-green-500 text-sm font-medium "
@@ -60,7 +100,7 @@ export default async function ProductPage({params: { lang }}) {
           >
             {/*prise*/}
             <p
-            className="absolute top-8 right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
+            className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
             >
               12.99$
             </p>
