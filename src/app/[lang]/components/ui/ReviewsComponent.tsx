@@ -69,12 +69,17 @@ const ReviewsComponent = () => {
             </div>
         </div>
         <div
-        className='mt-5 border-t-2 border-accentBg'
+        className='mt-5 border-t-2 border-accentBg flex flex-col items-center'
         >
           <ReviewList/>
           <ReviewList/>
           <ReviewList/>
           <ReviewList/>
+          <button
+          className='bg-accentBg text-mainBg py-4 px-10 rounded-xl font-semibold mt-10'
+          >
+            Upload more reviews
+          </button>
         </div>
     </div>
   )
