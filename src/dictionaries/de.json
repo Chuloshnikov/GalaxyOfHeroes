@@ -39,7 +39,15 @@
     "bestSellers": {
     "title": "Bestseller",
     "basketLink": "zum warenkorb hinzufügen",
-    "topSeller": "Top Verkäufe"
+    "topSeller": "Top Verkäufe",
+    "stockOn": "auf Lager",
+    "stockOut": "nicht vorrätig",
+    "toOrder": "bestellen",
+    "reviewsText": "Bewertungen",
+    "qualityText": "Qualität",
+    "poorText": "Schlecht",
+    "excellentText": "Perfekt",
+    "uploadMore": "Weitere Bewertungen"
     },
     "communityMain": {
     "title": "Galaxie der Helden",

@@ -8,6 +8,7 @@ import ReviewsComponent from "../../../components/ui/ReviewsComponent";
 
 export default async function ProductPage({params: { lang }}) {
   const { bestSellers } = await getDictionary(lang);
+  console.log({lang});
 
   return (
     <section
@@ -23,7 +24,7 @@ export default async function ProductPage({params: { lang }}) {
           <p
             className="z-30 absolute top-9 left-10 text-sm py-[1px] px-2 rounded-3xl bg-[#E7414B] text-white"
             >
-              Top seller
+              {bestSellers.topSeller}
           </p>
           <Image 
           className="rounded-xl"
@@ -90,7 +91,7 @@ export default async function ProductPage({params: { lang }}) {
               >
                 <p
                 className="text-green-500 text-sm font-medium "
-                >in stock
+                >{bestSellers.stockOn}
                 </p>
               </div>
               <StarRating/>
@@ -150,7 +151,7 @@ export default async function ProductPage({params: { lang }}) {
           <button
           className="bg-accentBg text-mainBg font-medium w-full px-4 py-2 rounded-xl mt-4"
           >
-            Add to Cart
+            {bestSellers.basketLink}
           </button>
           {/* ADITIONAL PRODUCTS*/}
           <div
@@ -235,7 +236,7 @@ export default async function ProductPage({params: { lang }}) {
         </div>
       </div>
       <div>
-        <ReviewsComponent/>
+        <ReviewsComponent sectionText={bestSellers}/>
         <ProductSection lang={lang} sectionText={bestSellers} data={getData()}/>
       </div>
     </section>

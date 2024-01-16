@@ -17,7 +17,7 @@ const theme = createTheme({
   },
 });
 
-const ReviewsComponent = () => {
+const ReviewsComponent = ({sectionText}: any) => {
   return (
     <div
     className='text-accentBg mt-4 mx-4 xl:ml-0'
@@ -25,7 +25,7 @@ const ReviewsComponent = () => {
         <div
         className='flex gap-1 text-2xl font-semibold items-center'
         >
-            <h4>Reviews</h4>
+            <h4>{sectionText.reviewsText}</h4>
             <span>(25)</span>
         </div>
        <div 
@@ -55,7 +55,7 @@ const ReviewsComponent = () => {
                 <p
                 className='font-semibold text-sm'
                 >
-                    Quality
+                    {sectionText.qualityText}
                 </p>
                 <ThemeProvider theme={theme}>
                     <LinearProgress style={{backgroundColor: "#FDA172",  barColorPrimary: {backgroundColor: '#582434'}}} variant="determinate" value={30}/>
@@ -63,22 +63,22 @@ const ReviewsComponent = () => {
                 <div
                 className='text-xs font-semibold flex items-center justify-between'
                 >
-                    <span>Poor</span>
-                    <span>Excellent</span>
+                    <span>{sectionText.poorText}</span>
+                    <span>{sectionText.excellentText}</span>
                 </div>
             </div>
         </div>
         <div
         className='mt-5 border-t-2 border-accentBg flex flex-col items-center'
         >
-          <ReviewList/>
-          <ReviewList/>
-          <ReviewList/>
-          <ReviewList/>
+          <ReviewList sectionText={sectionText}/>
+          <ReviewList sectionText={sectionText}/>
+          <ReviewList sectionText={sectionText}/>
+          <ReviewList sectionText={sectionText}/>
           <button
           className='bg-accentBg text-mainBg py-4 px-10 rounded-xl font-semibold mt-10'
           >
-            Upload more reviews
+            {sectionText.uploadMore}
           </button>
         </div>
     </div>
