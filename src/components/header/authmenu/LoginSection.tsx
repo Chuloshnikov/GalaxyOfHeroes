@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 
-const LoginSection = () => {
+const LoginSection = ({ authMenuText }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginInProgress, setLoginInProgress] = useState(false)
@@ -16,20 +16,20 @@ const LoginSection = () => {
         onChange={e => setEmail(e.target.value)}
         className='border-2 border-accentBg2' 
         type="email" 
-        placeholder={"email"}
+        placeholder={authMenuText.emailPlaceholder}
         />
         <input 
         onChange={e => setPassword(e.target.value)}
         className='border-2 border-accentBg2' 
         type="password" 
-        placeholder={"password"}
+        placeholder={authMenuText.passwordPlaceholder}
         />
         <button 
-            className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-20 rounded-full mx-12'
+            className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-[90px] rounded-full mx-8'
             type="submit"
             disabled={loginInProgress}
             >
-                Login
+                {authMenuText.loginButtonText}
             </button>
         <button
             className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-7 rounded-full flex gap-2 items-center justify-center'
@@ -38,13 +38,13 @@ const LoginSection = () => {
             
             >
                 <FcGoogle/>
-                Login with google
+                {authMenuText.googleButtonText}
             </button>
       </form>
       <div
       className='text-accentBg2 text-sm font-semibold px-7 mt-8 text-center'
       >
-        <p>You can login with credentials or with Google</p>
+        <p>{authMenuText.loginText}</p>
       </div>
     </div>
   )

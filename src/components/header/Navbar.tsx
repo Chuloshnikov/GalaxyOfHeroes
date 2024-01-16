@@ -12,7 +12,7 @@ import NavbarIcons from './NavbarIcons';
 
  
 const Navbar = async ({lang}: {lang: Locale}) => {
-    const { navigation, cookieMessageText, searchPopup } = await getDictionary(lang);
+    const { navigation, cookieMessageText, searchPopup, authMenuText } = await getDictionary(lang);
     console.log(cookieMessageText)
   return (
     <header
@@ -87,6 +87,7 @@ const Navbar = async ({lang}: {lang: Locale}) => {
             </ul>
             {/*icons*/}
            <NavbarIcons 
+           authMenuText={authMenuText}
            navigation={navigation}
            searchPopup={searchPopup} 
            lang={lang}

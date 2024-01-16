@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 import MobileMenu from './MobileMenu';
 import AuthMenu from "./authmenu/AuthMenu";
 
-const NavbarIcons = ({lang, searchPopup, navigation}) => {
+const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
     const [searchBarOpen, setSearchBarOpen] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [openAuthMenu, setOpenAuthMenu] =useState(false);
@@ -76,6 +76,7 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
         )}
         {openAuthMenu && (
           <AuthMenu
+          authMenuText={authMenuText}
           close={setOpenAuthMenu}
           backgroundClick={handleAuthMenuBackgroundClick}
           handleAuthMenuClick={handleAuthMenuClick}

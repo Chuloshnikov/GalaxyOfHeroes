@@ -27,7 +27,7 @@
     "navTitle": "Kategorien",
     "companyTitle": "Unternehmen",
     "button": "anmelden",
-    "allRights": "© 2023 | Galaxie der Helden | Alle Rechte vorbehalten",
+    "allRights": "© 2024 | Galaxie der Helden | Alle Rechte vorbehalten",
     "termsOfUse": "Begriffe von allem",
     "privacyPolicy": "Privatpolizei"
     },
@@ -66,6 +66,15 @@
     "categoriesMain": {
         "title": "Kategorien",
         "nav": ["Superhelden", "Horror", "Manga"]
+    },
+    "authMenuText": {
+        "loginButtonText": "Login",
+        "registerButtonText": "Anmeldung",
+        "emailPlaceholder": "email",
+        "passwordPlaceholder": "passwort",
+        "googleButtonText": "Login mit Google",
+        "loginText": "Sie können sich mit Ihren Zugangsdaten oder mit Google anmelden",
+        "registerText": "Sie können sich bei Google registrieren oder anmelden"
     }
 }
 
