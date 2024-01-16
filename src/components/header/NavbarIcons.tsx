@@ -50,7 +50,7 @@ const NavbarIcons = ({lang, searchPopup, navigation}) => {
         />
         <LocaleSwitcher lang={lang}/>
         <RiHeartLine/>
-        <LuUserCircle2 onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
+        <LuUserCircle2 className="cursor-pointer" onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
         <LuShoppingCart/>
         <HiMenuAlt2
         onClick={handleMenuToggle}

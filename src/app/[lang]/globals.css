@@ -48,5 +48,9 @@ input, textarea, select {
     background-color: #582467 !important;
   }
 
-  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    @apply bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText;
+  }
   

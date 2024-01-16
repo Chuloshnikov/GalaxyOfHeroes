@@ -4,7 +4,7 @@ import horrorImg from "../../assets/castle.png";
 import superheroImg from "../../assets/soperhero.png";
 import mangaImg from "../../assets/manga.png";
 
-const CatrgoriesSection = ({ sectionText }) => {
+const CategoriesSection = ({ sectionText }) => {
   return (
     <section
     className='max-w-contentContainer mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px]'
@@ -80,4 +80,4 @@ const CatrgoriesSection = ({ sectionText }) => {
   )
 }
 
-export default CatrgoriesSection;
+export default CategoriesSection;
