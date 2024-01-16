@@ -27,7 +27,7 @@
         "navTitle": "Категорії",
         "companyTitle": "Компанія",
         "button": "Підписка",
-        "allRights": "© 2023 | Галактика Героїв | Всі права захищені",
+        "allRights": "© 2024 | Галактика Героїв | Всі права захищені",
         "termsOfUse": "Умови використання",
         "privacyPolicy": "Політика конфіденційності"
     },
@@ -66,5 +66,14 @@
     "categoriesMain": {
         "title": "Категорії",
         "nav": ["Супергерої", "Хорори", "Манга"]
+    },
+    "authMenuText": {
+        "loginButtonText": "Логін",
+        "registerButtonText": "Реєстрація",
+        "emailPlaceholder": "емейл",
+        "passwordPlaceholder": "пароль",
+        "googleButtonText": "Логін з Google",
+        "loginText": "Ви можете ввійти за допомогою облікових даних або за допомогою Google",
+        "registerText": "Ви можете зареєструватись aбо увійти через Google"
     }
 }

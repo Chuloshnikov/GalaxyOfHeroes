@@ -27,7 +27,7 @@
     "navTitle": "Categories",
     "companyTitle": "Company",
     "button": "Sign up",
-    "allRights": "© 2023 | Galaxy of Heroes | All Rights Reserved",
+    "allRights": "© 2024 | Galaxy of Heroes | All Rights Reserved",
     "termsOfUse": "Terms Of Use",
     "privacyPolicy": "Privacy Policy"
     },
@@ -66,5 +66,14 @@
     "categoriesMain": {
         "title": "Categories",
         "nav": ["Superheroes", "Horror", "Manga"]
+    },
+    "authMenuText": {
+        "loginButtonText": "Login",
+        "registerButtonText": "Register",
+        "emailPlaceholder": "email",
+        "passwordPlaceholder": "password",
+        "googleButtonText": "Login with google",
+        "loginText": "You can login with credentials or with Google",
+        "registerText": "You can register or login with Google"
     }
 }

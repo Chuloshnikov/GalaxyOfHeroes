@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 import LoginSection from './LoginSection';
 import RegisterSection from './RegisterSection';
+import { getDictionary } from '../../../lib/dictionaries';
 
-const AuthMenu = ({close, backgroundClick, handleAuthMenuClick}) => {
+const AuthMenu = ({close, backgroundClick, handleAuthMenuClick, authMenuText}) => {
   const [authSelect, setAuthSelect] = useState("login");
 
 
@@ -34,16 +35,16 @@ const AuthMenu = ({close, backgroundClick, handleAuthMenuClick}) => {
                 onClick={() => setAuthSelect('register')}
                   className={`cursor-pointer py-4 w-[50%] rounded-l-xl ${authSelect === 'register' ? selectedVariation : unselectedVariation}`}
                 >
-                    Register
+                    {authMenuText.registerButtonText}
                 </button>
                 <button
                 onClick={() => setAuthSelect('login')}
                 className={`cursor-pointer py-4 w-[50%] rounded-r-xl ${authSelect === 'login' ? selectedVariation : unselectedVariation}`}
                 >
-                    Login
+                    {authMenuText.loginButtonText}
                 </button>
               </div>
-              {authSelect === "login" ? (<LoginSection/>) : (<RegisterSection/>) }
+              {authSelect === "login" ? (<LoginSection authMenuText={authMenuText}/>) : (<RegisterSection authMenuText={authMenuText}/>) }
           </div>
     </div>
   )

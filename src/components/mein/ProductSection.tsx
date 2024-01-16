@@ -62,7 +62,7 @@ const ProductSection = ({ data, sectionText, lang }) => {
                                 className='object-fill hover:scale-105 duration-300'
                                 alt="productImg"
                                 />
-                                <Link
+                                <button
                                 className="z-30 linkToShow absolute top-[85%] right-0 text-mainBg p-1 
                                 lg:px-2 lg:py-1 rounded lg:rounded-md bg-accentBg mr-[18px] mb-[14px] 
                                 text-[14px] flex lg:gap-[10px] items-center justify-center cursor-grab"
@@ -74,7 +74,7 @@ const ProductSection = ({ data, sectionText, lang }) => {
                                     {sectionText.basketLink}
                                 </span>
                                 <LuShoppingCart className="w-4 h-4"/>
-                                </Link>
+                                </button>
                             </div>
                             <div>
                                 <h3
