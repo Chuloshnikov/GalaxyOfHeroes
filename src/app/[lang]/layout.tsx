@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Work_Sans } from 'next/font/google'
 import './globals.css';
-import Navbar from './components/header/Navbar';
-import Footer from './components/footer/Footer';
+import Navbar from '../../components/header/Navbar';
+import Footer from '../../components/footer/Footer';
 import Providers from './providers';
 
 

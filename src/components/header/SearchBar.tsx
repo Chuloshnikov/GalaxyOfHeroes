@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
-import getData from "../../../../../data/data";
+import getData from "../../../data/data";
 import Image from 'next/image';
 import Link from 'next/link';
 

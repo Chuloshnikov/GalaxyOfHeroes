@@ -1,13 +1,13 @@
-import { getDictionary } from './lib/dictionaries';
-import Hero from './components/mein/Hero';
+import { getDictionary } from '../../lib/dictionaries';
+import Hero from '../../components/mein/Hero';
 import type { Metadata } from 'next';
-import ProductSection from './components/mein/ProductSection';
-import NewsSection from './components/mein/NewsSection';
-import CommunitySection from './components/mein/CommunitySection';
+import ProductSection from '../../components/mein/ProductSection';
+import NewsSection from '../../components/mein/NewsSection';
+import CommunitySection from '../../components/mein/CommunitySection';
 
 import getData from "../../../data/data";
 import getNews from "../../../data/newsData";
-import CatrgoriesSection from './components/mein/CatrgoriesSection';
+import CategoriesSection from '../../components/mein/CategoriesSection';
 
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default async function Home({params: { lang }}) {
      <Hero hero={hero}/>
      <ProductSection lang={lang} sectionText={bestSellers} data={getData()}/>
      <CommunitySection sectionText={communityMain}/>
-     <CatrgoriesSection sectionText={categoriesMain}/>
+     <CategoriesSection sectionText={categoriesMain}/>
      <NewsSection sectionText={mainNews} data={getNews()}/>
      <ProductSection lang={lang} sectionText={newProducts} data={getData()}/>
     </main>

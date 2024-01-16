@@ -17,28 +17,28 @@ const AuthMenu = ({close, backgroundClick, handleAuthMenuClick}) => {
         >
           <div
           onClick={handleAuthMenuClick}
-          className='z-20 bg-mainBg shadow-xl absolute top-5 right-3 md:right-6 w-[300px] h-[500px] flex flex-col rounded-xl'
+          className='z-20 bg-mainBg shadow-xl absolute top-5 right-3 md:right-6 w-[300px] h-[450px] flex flex-col rounded-xl'
           >
               <div
               className='flex items-center justify-end p-4'
               >
                 <IoMdClose 
-                className="w-4 h-4"
+                className="w-6 h-6 cursor-pointer"
                 onClick={() => close()}
                 />
               </div>
               <div
-              className='flex items-center justify-between text-xl font-semibold'
+              className='flex items-center justify-between text-xl font-semibold px-2'
               >
                 <button
                 onClick={() => setAuthSelect('register')}
-                  className={`cursor-pointer py-4 w-[50%] ${authSelect === 'register' ? selectedVariation : unselectedVariation}`}
+                  className={`cursor-pointer py-4 w-[50%] rounded-l-xl ${authSelect === 'register' ? selectedVariation : unselectedVariation}`}
                 >
                     Register
                 </button>
                 <button
                 onClick={() => setAuthSelect('login')}
-                className={`cursor-pointer py-4 w-[50%] ${authSelect === 'login' ? selectedVariation : unselectedVariation}`}
+                className={`cursor-pointer py-4 w-[50%] rounded-r-xl ${authSelect === 'login' ? selectedVariation : unselectedVariation}`}
                 >
                     Login
                 </button>
