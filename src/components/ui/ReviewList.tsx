@@ -16,7 +16,7 @@ const theme = createTheme({
   },
 });
 
-const RewiewList = () => {
+const RewiewList = ({sectionText}: any) => {
   return (
     <div
     className='bg-white rounded-xl mt-8 max-w-max flex p-5 flex flex-col pb-8'
@@ -56,7 +56,7 @@ const RewiewList = () => {
               <p
               className='font-semibold text-lg'
               >
-                  Quality
+                  {sectionText.qualityText}
               </p>
           <ThemeProvider theme={theme}>
               <LinearProgress style={{backgroundColor: "#FDA172",  barColorPrimary: {backgroundColor: '#582434'}}} variant="determinate" value={30}/>
@@ -64,8 +64,8 @@ const RewiewList = () => {
             <div
             className='text-base font-semibold flex items-center justify-between'
             >
-              <span>Poor</span>
-              <span>Excellent</span>
+              <span>{sectionText.poorText}</span>
+              <span>{sectionText.excellentText}</span>
             </div>
           </div>
          

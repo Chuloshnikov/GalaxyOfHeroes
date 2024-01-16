@@ -39,7 +39,15 @@
     "bestSellers": {
     "title": "Топ продажів",
     "basketLink": "додати в кошик",
-    "topSeller": "Топ продажів"
+    "topSeller": "Топ продажів",
+    "stockOn": "в наявності",
+    "stockOut": "нема в наявності",
+    "toOrder": "під замовлення",
+    "reviewsText": "Відгуки",
+    "qualityText": "Якість",
+    "poorText": "Низька",
+    "excellentText": "Ідеальна",
+    "uploadMore": "Більше відгуків"
     },
     "communityMain": {
     "title":"Галактика героїв",

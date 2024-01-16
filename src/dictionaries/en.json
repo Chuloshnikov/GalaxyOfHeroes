@@ -39,7 +39,15 @@
     "bestSellers": {
     "title": "Best sellers",
     "basketLink": "add to basket",
-    "topSeller": "Top Seller"
+    "topSeller": "Top Seller",
+    "stockOn": "in stock",
+    "stockOut": "out of stock",
+    "toOrder": "to order",
+    "reviewsText": "reviews",
+    "qualityText": "Quality",
+    "poorText": "Poor",
+    "excellentText": "Excellent",
+    "uploadMore": "Upload more reviews"
     },
     "communityMain": {
         "title":"Galaxy of Heroes",
