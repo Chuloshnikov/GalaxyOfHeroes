@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 
-const LoginSection = ({ authMenuText }) => {
+const LoginSection = ({ authMenuText, lang }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginInProgress, setLoginInProgress] = useState(false)

@@ -76,6 +76,7 @@ const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
         )}
         {openAuthMenu && (
           <AuthMenu
+          lang={lang}
           authMenuText={authMenuText}
           close={setOpenAuthMenu}
           backgroundClick={handleAuthMenuBackgroundClick}
