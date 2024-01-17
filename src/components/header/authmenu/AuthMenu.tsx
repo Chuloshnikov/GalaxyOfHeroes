@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 import LoginSection from './LoginSection';
 import RegisterSection from './RegisterSection';
-import { getDictionary } from '../../../lib/dictionaries';
 
-const AuthMenu = ({close, backgroundClick, handleAuthMenuClick, authMenuText}) => {
+const AuthMenu = ({close, backgroundClick, handleAuthMenuClick, authMenuText, lang}) => {
   const [authSelect, setAuthSelect] = useState("login");
 
 
@@ -44,7 +43,7 @@ const AuthMenu = ({close, backgroundClick, handleAuthMenuClick, authMenuText}) =
                     {authMenuText.loginButtonText}
                 </button>
               </div>
-              {authSelect === "login" ? (<LoginSection authMenuText={authMenuText}/>) : (<RegisterSection authMenuText={authMenuText}/>) }
+              {authSelect === "login" ? (<LoginSection authMenuText={authMenuText} lang={lang}/>) : (<RegisterSection authMenuText={authMenuText} lang={lang}/>) }
           </div>
     </div>
   )

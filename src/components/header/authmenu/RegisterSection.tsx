@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
 import { FcGoogle } from "react-icons/fc";
 
-const RegisterSection = ({authMenuText}) => {
+const RegisterSection = ({authMenuText, lang}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [creatingUser, setCreatingUser] = useState(false);
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState(false);
+  console.log(lang)
 
-  async function handleFormSubmit(e) {
+  async function handleFormSubmit(e: any) {
     e.preventDefault();
     setCreatingUser(true);
     setError(false);
     setUserCreated(false);
-    const response = await fetch('/api/register', {
+    const response = await fetch(`${lang}/api/register`, {
       method: 'POST',
       body: JSON.stringify({email, password}),
       headers: {'Content-Type': 'application/json'},
