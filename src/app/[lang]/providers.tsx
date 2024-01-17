@@ -6,7 +6,9 @@ import React from 'react';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SessionProvider>{children}</SessionProvider>
+    <SessionProvider>
+              {children}
+    </SessionProvider>
   )
 }
 

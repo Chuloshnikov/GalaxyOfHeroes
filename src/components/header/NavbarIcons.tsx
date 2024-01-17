@@ -7,8 +7,11 @@ import LocaleSwitcher from './LocaleSwitcher';
 import SearchBar from './SearchBar';
 import MobileMenu from './MobileMenu';
 import AuthMenu from "./authmenu/AuthMenu";
+import { useSession } from 'next-auth/react';
 
 const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
+  const session = useSession();
+  console.log(session);
     const [searchBarOpen, setSearchBarOpen] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [openAuthMenu, setOpenAuthMenu] =useState(false);

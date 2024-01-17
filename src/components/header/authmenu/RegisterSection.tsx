@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { FcGoogle } from "react-icons/fc";
+import Link from 'next/link';
+import {signIn} from "next-auth/react";
 
 const RegisterSection = ({authMenuText, lang}: any) => {
   const [email, setEmail] = useState('');
@@ -7,7 +9,6 @@ const RegisterSection = ({authMenuText, lang}: any) => {
   const [creatingUser, setCreatingUser] = useState(false);
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState(false);
-  console.log(lang)
 
   async function handleFormSubmit(e: any) {
     e.preventDefault();
@@ -35,7 +36,7 @@ const RegisterSection = ({authMenuText, lang}: any) => {
         <div className="my-4 text-center">
           User created.<br />
           Now you can{' '}
-          <Link className="underline" href={'/login'}>Login &raquo;</Link>
+          <Link className="underline text-green-700" href={`/${lang}/login`}>Login &raquo;</Link>
         </div>
       )}
       {error && (
@@ -46,7 +47,7 @@ const RegisterSection = ({authMenuText, lang}: any) => {
       )}
       <form
       onSubmit={handleFormSubmit}
-      className='mx-auto flex flex-col gap-2 justify-center items-center'
+      className='mx-auto flex flex-col gap-2 justify-center items-center my-4'
       >
         <input 
         onChange={e => setEmail(e.target.value)}
@@ -72,7 +73,7 @@ const RegisterSection = ({authMenuText, lang}: any) => {
         <button
             className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-7 rounded-full flex gap-2 items-center justify-center'
             type="button"
-            onClick={() => signIn('google', {callbackUrl: '/'})}
+            onClick={() => signIn('google', {callbackUrl: `/${lang}`})}
             >
                 <FcGoogle/>
                 {authMenuText.googleButtonText}
