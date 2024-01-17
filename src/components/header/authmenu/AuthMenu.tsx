@@ -17,7 +17,7 @@ const AuthMenu = ({close, backgroundClick, handleAuthMenuClick, authMenuText, la
         >
           <div
           onClick={handleAuthMenuClick}
-          className='z-20 bg-mainBg shadow-xl absolute top-5 right-3 md:right-6 w-[300px] h-[450px] flex flex-col rounded-xl'
+          className='z-20 bg-mainBg shadow-xl absolute top-5 right-3 md:right-6 w-[300px] h-[470px] flex flex-col rounded-xl'
           >
               <div
               className='flex items-center justify-end p-4'
