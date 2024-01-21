@@ -1,3 +1,4 @@
+"use client"
 import React, {useState} from 'react';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
@@ -73,7 +74,7 @@ const RegisterSection = ({authMenuText, lang}: any) => {
         <button
             className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-7 rounded-full flex gap-2 items-center justify-center'
             type="button"
-            onClick={() => signIn('google', {callbackUrl: `/${lang}`})}
+            onClick={() => signIn('google', {callbackUrl: `/`})}
             >
                 <FcGoogle/>
                 {authMenuText.googleButtonText}
