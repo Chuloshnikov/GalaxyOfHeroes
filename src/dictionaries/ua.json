@@ -70,6 +70,7 @@
     "authMenuText": {
         "loginButtonText": "Логін",
         "registerButtonText": "Реєстрація",
+        "namePlaceholder": "iм'я",
         "emailPlaceholder": "емейл",
         "passwordPlaceholder": "пароль",
         "googleButtonText": "Логін з Google",

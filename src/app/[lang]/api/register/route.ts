@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { User } from "@/models/User";
-import bcrypt from "bcrypt";
+import { hash } from "bcryptjs";
 import mongoose from "mongoose";
 
 export async function POST(request: NextRequest) {
@@ -12,10 +12,9 @@ export async function POST(request: NextRequest) {
     throw new Error('Password must be at least 5 characters');
   }
 
-  const notHashedPassword = pass;
-  const salt = bcrypt.genSaltSync(10);
-  body.password = bcrypt.hashSync(notHashedPassword, salt);
+  const {name, email, password } = body;
+  const hashedPassword = await hash(password, 12)
+  const createdUser = await User.create({name, email, password: hashedPassword});
 
-  const createdUser = await User.create(body);
-  return NextResponse.json(createdUser);
+  return Response.json(createdUser);
 }
