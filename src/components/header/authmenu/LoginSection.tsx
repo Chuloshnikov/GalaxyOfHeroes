@@ -13,7 +13,7 @@ const LoginSection = ({ authMenuText, lang }) => {
     e.preventDefault();
     setLoginInProgress(true);
 
-    const logIn = await signIn('credentials', {email, password, callbackUrl: `/`});
+    const logIn = await signIn('credentials', {email, password, callbackUrl: `/${lang}`});
     if (logIn) {
       setLoginInProgress(false);
     } else {
@@ -55,7 +55,7 @@ const LoginSection = ({ authMenuText, lang }) => {
         <button
             className='bg-mainBg text-accentBg font-semibold border-2 border-accentBg py-2 px-7 rounded-full flex gap-2 items-center justify-center'
             type="button"
-            onClick={() => signIn('google', {callbackUrl: `/`})}
+            onClick={() => signIn('google', {callbackUrl: `/${lang}`})}
             
             >
                 <FcGoogle/>
