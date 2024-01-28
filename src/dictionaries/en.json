@@ -70,6 +70,7 @@
     "authMenuText": {
         "loginButtonText": "Login",
         "registerButtonText": "Register",
+        "namePlaceholder": "name",
         "emailPlaceholder": "email",
         "passwordPlaceholder": "password",
         "googleButtonText": "Login with google",

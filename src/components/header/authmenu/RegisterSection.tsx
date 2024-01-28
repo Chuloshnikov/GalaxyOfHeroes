@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {signIn} from "next-auth/react";
 
 const RegisterSection = ({authMenuText, lang}: any) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [creatingUser, setCreatingUser] = useState(false);
@@ -18,7 +19,7 @@ const RegisterSection = ({authMenuText, lang}: any) => {
     setUserCreated(false);
     const response = await fetch(`${lang}/api/register`, {
       method: 'POST',
-      body: JSON.stringify({email, password}),
+      body: JSON.stringify({name, email, password}),
       headers: {'Content-Type': 'application/json'},
     });
     if (response.ok) {
@@ -50,6 +51,13 @@ const RegisterSection = ({authMenuText, lang}: any) => {
       onSubmit={handleFormSubmit}
       className='mx-auto flex flex-col gap-2 justify-center items-center my-4'
       >
+         <input 
+        onChange={e => setName(e.target.value)}
+        className='border-2 border-accentBg2 bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText' 
+        type="text" 
+        placeholder={authMenuText.namePlaceholder}
+        disabled={creatingUser}
+        />
         <input 
         onChange={e => setEmail(e.target.value)}
         className='border-2 border-accentBg2' 
