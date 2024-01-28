@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 import NextAuth from "next-auth";
 import { User } from "@/models/User";
-import bcrypt from 'bcrypt';
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import clientPromise from "@/lib/mongoConnect";
+import { compare } from "bcryptjs";
+import dbConnect from "../../../../../lib/dbConnect";
 
 interface Credentials {
   email: string;
@@ -13,27 +12,27 @@ interface Credentials {
 }
 
 export const authOptions = {
-    adapter: MongoDBAdapter(clientPromise),
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            profileFields: ['name', 'email'], 
         }),
         CredentialsProvider({
             name: "Credentials",
+            id: "credentials",
             credentials: {
               username: { label: "Email", type: "email", placeholder: "text@example.com" },
               password: { label: "Password", type: "password" }
             },
             async authorize(credentials: Credentials, req: any) {
+              await dbConnect().catch(error => { error: "Connection Failed...!"});
               console.log(credentials);
               const email = credentials?.email;
               const password = credentials?.password;
               
               mongoose.connect(process.env.MONGODB_URL);
               const user = await User.findOne({email});
-              const passwordOk = user && bcrypt.compareSync(password, user.password);
+              const passwordOk = user && await compare(password, user.password);
 
               if (passwordOk) {
                 return user;
