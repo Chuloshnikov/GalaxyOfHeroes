@@ -8,6 +8,7 @@ import SearchBar from './SearchBar';
 import MobileMenu from './MobileMenu';
 import AuthMenu from "./authmenu/AuthMenu";
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
   const session = useSession();
@@ -53,7 +54,12 @@ const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
         />
         <LocaleSwitcher lang={lang}/>
         <RiHeartLine/>
-        <LuUserCircle2 className="cursor-pointer" onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
+        {session.status === "authenticated" ? (
+          <Link href={'/profile'}><LuUserCircle2 className="cursor-pointer"/></Link>
+        ) : (
+          <LuUserCircle2 className="cursor-pointer" onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
+        )
+        } 
         <LuShoppingCart/>
         <HiMenuAlt2
         onClick={handleMenuToggle}

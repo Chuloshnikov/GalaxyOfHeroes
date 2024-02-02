@@ -76,6 +76,15 @@
         "googleButtonText": "Login mit Google",
         "loginText": "Sie können sich mit Ihren Zugangsdaten oder mit Google anmelden",
         "registerText": "Sie können sich bei Google registrieren oder anmelden"
+    },
+    "profilePage": {
+        "title": "Profil",
+        "description": "Hier können Sie Änderungen in Ihrem Sonderkonto vornehmen, Ihre Versandadresse und Telefonnummer zur Kontaktaufnahme angeben. Bewundern Sie auch Ihre Ehegeschichte",
+        "namePlaceholder": "name",
+        "emailPlaceholder": "email",
+        "passwordPlaceholder": "passwort",
+        "addressPlaceholder": "bearbeiten",
+        "avatarButton": "speichern"
     }
 }
 
