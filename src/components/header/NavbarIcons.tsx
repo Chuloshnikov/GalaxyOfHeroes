@@ -55,7 +55,7 @@ const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
         <LocaleSwitcher lang={lang}/>
         <RiHeartLine/>
         {session.status === "authenticated" ? (
-          <Link href={'/profile'}><LuUserCircle2 className="cursor-pointer"/></Link>
+          <Link href={`/${lang}/profile`}><LuUserCircle2 className="cursor-pointer"/></Link>
         ) : (
           <LuUserCircle2 className="cursor-pointer" onClick={() => setOpenAuthMenu(!openAuthMenu)}/>
         )

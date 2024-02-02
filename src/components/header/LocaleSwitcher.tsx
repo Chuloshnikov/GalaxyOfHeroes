@@ -45,7 +45,7 @@ const LocaleSwitcher = ({lang}: any) => {
                                 <Link href={"/de"}>DE</Link>
                                 </li>
                                 <li>
-                                <Link href={"ua"}>UA</Link>
+                                <Link href={"/ua"}>UA</Link>
                                 </li>
                             </ul>
                     </div>

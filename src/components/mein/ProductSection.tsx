@@ -37,7 +37,7 @@ const ProductSection = ({ data, sectionText, lang }) => {
                 {
                     data?.map(product => (
                         <Link
-                        href={`/${lang}/${product._id}`}
+                        href={`/${lang}/products/${product._id}`}
                         key={product._id}
                         >
                             <div
