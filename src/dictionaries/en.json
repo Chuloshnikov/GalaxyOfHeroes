@@ -76,5 +76,14 @@
         "googleButtonText": "Login with google",
         "loginText": "You can login with credentials or with Google",
         "registerText": "You can register or login with Google"
+    },
+    "profilePage": {
+        "title": "Profile",
+        "description": "here you can make changes to your personal account, specify your shipping address and contact phone number. Also see your order history",
+        "namePlaceholder": "name",
+        "emailPlaceholder": "email",
+        "passwordPlaceholder": "password",
+        "addressPlaceholder": "edit",
+        "avatarButton": "save"
     }
 }

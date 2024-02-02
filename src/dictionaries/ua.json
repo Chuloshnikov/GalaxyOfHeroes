@@ -76,5 +76,14 @@
         "googleButtonText": "Логін з Google",
         "loginText": "Ви можете ввійти за допомогою облікових даних або за допомогою Google",
         "registerText": "Ви можете зареєструватись aбо увійти через Google"
+    },
+    "profilePage": {
+        "title": "Особистий кабінет",
+        "description": "тут ви можете внести зміни у свій особистий кабінет, вказати свою адресу для відправки та номер телефону для звязку. Також подивитись свою історію замовлень",
+        "namePlaceholder": "iм'я",
+        "emailPlaceholder": "емейл",
+        "passwordPlaceholder": "пароль",
+        "addressPlaceholder": "Внести зміни",
+        "avatarButton": "Редагувати"
     }
 }
