@@ -24,7 +24,7 @@ export default async function Profile({params: { lang }}: {params: { lang: Local
                     {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang}>
-                        <ProfilePage/>
+                        <ProfilePage lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>
