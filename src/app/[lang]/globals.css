@@ -52,4 +52,10 @@ input, textarea, select {
   input[type="password"] {
     @apply bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText;
   }
+
+  input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled {
+  @apply bg-gray-400 border-0 cursor-not-allowed text-gray-700
+}
   
