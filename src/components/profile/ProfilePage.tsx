@@ -10,6 +10,8 @@ const ProfilePage = ({lang}) => {
     const {status} = session;
     const [userName, setUserName] = useState<string>('');
     const [phone, setPhone] = useState<String>('');
+    const [address, setAddress] = useState<String>('');
+    const [zipcode, setZipcode] = useState<Number>('');
     const [userImage, setUserImage] = useState<string>('');
     const [user, setUser] = useState<any>(null);
     const [isAdmin, setIsAdmin] = useState(false);
@@ -31,7 +33,8 @@ const ProfilePage = ({lang}) => {
                 body: JSON.stringify({
                     name: userName,
                     phone,
-
+                    zipcode,
+                    address,
                 })
             });
     }
@@ -75,19 +78,25 @@ const ProfilePage = ({lang}) => {
                             value={session.data?.user.email}
                             />
                             <input 
+                            onChange={e => setPhone(e.target.value)}
                             className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="tel"
                             placeholder='phone'
+                            value={phone}
                             />
                             <input 
+                            onChange={e => setAddress(e.target.value)}
                             className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder='address'
+                            value={address}
                             />
                             <input 
+                            onChange={e => setZipcode(e.target.value)}
                             className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder='zip code'
+                            value={zipcode}
                             />
                             <button 
                             className='bg-mainBg py-2 px-4 rounded-3xl text-assentBg font-semibold border-2 border-accentBg'
