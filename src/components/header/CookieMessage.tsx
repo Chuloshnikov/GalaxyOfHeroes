@@ -1,16 +1,26 @@
 "use client"
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 const CookieMessage = ({ messageText }: any) => {
-    const storedCookieMessage = localStorage.getItem('cookieMessage');
-    const [cookieMessage, setCookieMessage] = useState(storedCookieMessage !== null ? JSON.parse(storedCookieMessage) : true);
+    const [cookieMessage, setCookieMessage] = useState(true);
 
     useEffect(() => {
-        localStorage.setItem('cookieMessage', JSON.stringify(cookieMessage));
-    }, [cookieMessage]);
+        
+        const cookieMessageShown = Cookies.get('cookieMessageShown');
+        if (cookieMessageShown) {
+          setCookieMessage(false); 
+        }
+      }, []);
 
-    if (!cookieMessage) {
+    const handleOkClick = () => {
+        setCookieMessage(false);
+        Cookies.set('welcomeMessageShown', 'true', { expires: 365 });
+    };
+
+
+    if (cookieMessage) {
         return null;
     } else {
         return (
@@ -32,7 +42,7 @@ const CookieMessage = ({ messageText }: any) => {
                 </div>
                 <div>
                     <button
-                        onClick={() => setCookieMessage(!cookieMessage)}
+                        onClick={handleOkClick}
                         className='py-2 px-6 text-mainBg font-semibold bg-accentBg hover:bg-smouthText duration-300 rounded-lg'
                     >
                         {messageText.btnText}
@@ -41,6 +51,8 @@ const CookieMessage = ({ messageText }: any) => {
             </div>
         );
     }
+    
+    
 }
 
 export default CookieMessage;
