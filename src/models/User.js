@@ -6,8 +6,10 @@ const UserSchema = new Schema({
   password: {type: String, required: true},
   image: {type: String},
   phone: {type: String, maxlength: 60},
-  address: {type: String, maxlength: 300},
-  zipcode: {type: Number, maxlength: 20}
+  streetAddress: {type: String, maxlength: 200},
+  postalCode: {type: String, maxlength: 20},
+  city: {type: String, maxlength: 200},
+  country: {type: String, maxlength: 200},
 }, {timestamps: true});
 
 export const User = models?.User || model('User', UserSchema);

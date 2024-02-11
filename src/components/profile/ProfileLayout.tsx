@@ -25,23 +25,23 @@ if (status === "unauthenticated") {
     className='max-w-contentContainer mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px]'
     >
          <div
-              className='flex items-center justify-between text-xl font-semibold'
+              className='flex xs:flex-col sm:flex-row items-center justify-between text-xl font-semibold'
               >
                 <Link
                 href={`/${lang}/profile`}
-                  className={`cursor-pointer text-center py-4 w-[50%] rounded-l-xl ${pathname === '1' ? selectedVariation : unselectedVariation}`}
+                  className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] xs:rounded-t-xl sm:rounded-r-none sm:rounded-l-xl ${pathname === '1' ? selectedVariation : unselectedVariation}`}
                 >
                     Profile Info
                 </Link>
                 <button
                 onClick={() => signOut()}
-                className={`cursor-pointer text-center py-4 w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
+                className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
                 >
                   Log out
                 </button>
                 <Link
                 href={`/${lang}/profile/customer-orders`}
-                className={`cursor-pointer text-center py-4 w-[50%] rounded-r-xl ${pathname === '2' ? selectedVariation : unselectedVariation}`}
+                className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] xs:rounded-b-xl sm:rounded-l-none sm:rounded-r-xl ${pathname === '2' ? selectedVariation : unselectedVariation}`}
                 >
                     Orders
                 </Link>
