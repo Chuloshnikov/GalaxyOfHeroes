@@ -108,17 +108,17 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                 className="max-w-md mx-auto mt-4"
                 >
                     {saved && (
-                        <SavingBox text="Profile saved!" frame="bg-green-100 border border-green-400"/>
+                        <SavingBox text={text.profileSaved} frame="bg-green-100 border border-green-400"/>
                         
                     )}
                     {isSaving && (
-                        <SavingBox text="Saving..." frame="bg-blue-200 border border-blue-400"/>
+                        <SavingBox text={text.saving} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isUploading && (
-                        <SavingBox text="Uploading..." frame="bg-blue-200 border border-blue-400"/>
+                        <SavingBox text={text.uploading} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isError && (
-                        <SavingBox text="Error" frame="bg-red-200 border border-bed-400"/>
+                        <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
                     )}
                     <div
                     className="flex gap-4"
