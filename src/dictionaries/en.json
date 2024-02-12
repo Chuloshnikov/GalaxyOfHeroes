@@ -90,6 +90,10 @@
         "postalCode": "Postal code",
         "city": "City",
         "country": "Country",
+        "profileSaved": "Profile Saved!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "error": "Error!",
         "saveButton": "save",
         "avatarButton": "edit"
     }

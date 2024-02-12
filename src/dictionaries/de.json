@@ -90,6 +90,10 @@
         "postalCode": "Postleitzahl",
         "city": "Stadt",
         "country": "Land",
+        "profileSaved": "Profil gespeichert!",
+        "saving": "Speichern...",
+        "uploading": "Hochladen…",
+        "error": "Fehler!",
         "saveButton": "speichern",
         "avatarButton": "bearbeiten" 
     }

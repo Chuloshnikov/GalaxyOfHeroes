@@ -90,6 +90,10 @@
         "postalCode": "поштовий індекс",
         "city": "Місто",
         "country": "Крaїна",
+        "profileSaved": "Зміни збережено!",
+        "saving": "Збереження...",
+        "uploading": "Завантаження...",
+        "error": "Помилка!",
         "saveButton": "Внести зміни",
         "avatarButton": "Редагувати"
     }
