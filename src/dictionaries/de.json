@@ -78,13 +78,20 @@
         "registerText": "Sie können sich bei Google registrieren oder anmelden"
     },
     "profilePage": {
+        "profileInfo": "Profil Info",
+        "logOut": "Ausloggen",
+        "orders": "Aufträge",
         "title": "Profil",
         "description": "Hier können Sie Änderungen in Ihrem Sonderkonto vornehmen, Ihre Versandadresse und Telefonnummer zur Kontaktaufnahme angeben. Bewundern Sie auch Ihre Ehegeschichte",
-        "namePlaceholder": "name",
-        "emailPlaceholder": "email",
-        "passwordPlaceholder": "passwort",
-        "addressPlaceholder": "bearbeiten",
-        "avatarButton": "speichern"
+        "firstAndLastName": "Vor- und Nachname",
+        "email": "email",
+        "phoneNumber": "Telefonnummer",
+        "streetAddress": "Straßenadresse",
+        "postalCode": "Postleitzahl",
+        "city": "Stadt",
+        "country": "Land",
+        "saveButton": "speichern",
+        "avatarButton": "bearbeiten" 
     }
 }
 
