@@ -47,8 +47,12 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
             setTimeout(() => {
                 setSaved(false);
             }, 2000);
+        } else if (isError) {
+            setTimeout(() => {
+                setIsError(false);
+            }, 2000);
         }
-    }, [saved])
+    }, [saved, isError])
 
 
     const handleProfileInfoUpdate = async (e) => {
@@ -63,13 +67,17 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                     name: userName,
                     image,
                     phone,
-    
+                    streetAddress,
+                    postalCode,
+                    city,
+                    country
                 }),
             });
             if (response.ok) {
                 setIsSaving(false);
                 setSaved(true);   
             } else {
+                setIsSaving(false);
                 setIsError(true);
             }
     }
@@ -213,7 +221,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                                 {text.country}:
                             </label>
                             <input 
-                            onChange={e => setCCountry(e.target.value)}
+                            onChange={e => setCountry(e.target.value)}
                             className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder={text.country}
