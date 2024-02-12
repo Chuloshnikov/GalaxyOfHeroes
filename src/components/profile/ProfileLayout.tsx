@@ -4,7 +4,7 @@ import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import {redirect} from "next/navigation";
 
-const ProfileLayout = ({ children, lang }: { children: React.ReactNode }) => {
+const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, lang: any, text: any }) => {
   const session = useSession();
   const status = session?.status;
     const pathname = "1";
@@ -31,19 +31,19 @@ if (status === "unauthenticated") {
                 href={`/${lang}/profile`}
                   className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] xs:rounded-t-xl sm:rounded-r-none sm:rounded-l-xl ${pathname === '1' ? selectedVariation : unselectedVariation}`}
                 >
-                    Profile Info
+                    {text.profileInfo}
                 </Link>
                 <button
                 onClick={() => signOut()}
                 className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
                 >
-                  Log out
+                  {text.logOut}
                 </button>
                 <Link
                 href={`/${lang}/profile/customer-orders`}
                 className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] xs:rounded-b-xl sm:rounded-l-none sm:rounded-r-xl ${pathname === '2' ? selectedVariation : unselectedVariation}`}
                 >
-                    Orders
+                    {text.orders}
                 </Link>
               </div>
         {children}

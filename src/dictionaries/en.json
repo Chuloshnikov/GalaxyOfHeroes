@@ -78,12 +78,19 @@
         "registerText": "You can register or login with Google"
     },
     "profilePage": {
+        "profileInfo": "Profile Info",
+        "logOut": "Log out",
+        "orders": "Orders",
         "title": "Profile",
         "description": "here you can make changes to your personal account, specify your shipping address and contact phone number. Also see your order history",
-        "namePlaceholder": "name",
-        "emailPlaceholder": "email",
-        "passwordPlaceholder": "password",
-        "addressPlaceholder": "edit",
-        "avatarButton": "save"
+        "firstAndLastName": "First and last name",
+        "email": "email",
+        "phoneNumber": "Phone number",
+        "streetAddress": "Street address",
+        "postalCode": "Postal code",
+        "city": "City",
+        "country": "Country",
+        "saveButton": "save",
+        "avatarButton": "edit"
     }
 }

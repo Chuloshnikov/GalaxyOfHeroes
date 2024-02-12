@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ["images-na.ssl-images-amazon.com"],
+        domains: ["images-na.ssl-images-amazon.com", "galaxy-of-heroes.s3.amazonaws.com"],
       },
       typescript: {
         ignoreBuildErrors: true,

@@ -78,12 +78,19 @@
         "registerText": "Ви можете зареєструватись aбо увійти через Google"
     },
     "profilePage": {
+        "profileInfo": "Інфо профілю",
+        "logOut": "Вийти",
+        "orders": "Замовлення",
         "title": "Особистий кабінет",
         "description": "тут ви можете внести зміни у свій особистий кабінет, вказати свою адресу для відправки та номер телефону для звязку. Також подивитись свою історію замовлень",
-        "namePlaceholder": "iм'я",
-        "emailPlaceholder": "емейл",
-        "passwordPlaceholder": "пароль",
-        "addressPlaceholder": "Внести зміни",
+        "firstAndLastName": "Ім'я та побатькові",
+        "email": "емейл",
+        "phoneNumber": "номер телефону",
+        "streetAddress": "Вулиця",
+        "postalCode": "поштовий індекс",
+        "city": "Місто",
+        "country": "Крaїна",
+        "saveButton": "Внести зміни",
         "avatarButton": "Редагувати"
     }
 
