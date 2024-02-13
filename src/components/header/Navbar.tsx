@@ -13,7 +13,6 @@ import NavbarIcons from './NavbarIcons';
  
 const Navbar = async ({lang}: {lang: Locale}) => {
     const { navigation, cookieMessageText, searchPopup, authMenuText } = await getDictionary(lang);
-    console.log(cookieMessageText)
   return (
     <header
     className='w-full sticky top-0 z-50 px-4'
