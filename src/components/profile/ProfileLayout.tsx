@@ -39,6 +39,24 @@ if (status === "unauthenticated") {
                 >
                   {text.logOut}
                 </button>
+                <button
+                onClick={() => signOut()}
+                className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
+                >
+                  {text.logOut}
+                </button>
+                <button
+                onClick={() => signOut()}
+                className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
+                >
+                  {text.logOut}
+                </button>
+                <button
+                onClick={() => signOut()}
+                className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] ${pathname === '2' ? selectedVariation : unselectedVariation}`}
+                >
+                  {text.logOut}
+                </button>
                 <Link
                 href={`/${lang}/profile/customer-orders`}
                 className={`cursor-pointer text-center py-4 xs:w-full sm:w-[50%] xs:rounded-b-xl sm:rounded-l-none sm:rounded-r-xl ${pathname === '2' ? selectedVariation : unselectedVariation}`}
