@@ -25,7 +25,7 @@ export default async function CustomerOrders({params: { lang }}: {params: { lang
             >
               {profilePage.description}
             </p>
-            <ProfileLayout lang={lang}>
+            <ProfileLayout lang={lang} text={profilePage}>
                     Orders
             </ProfileLayout>
         </div>

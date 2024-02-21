@@ -79,6 +79,9 @@
     },
     "profilePage": {
         "profileInfo": "Profile Info",
+        "categories": "Categories",
+        "items": "Items",
+        "users": "Users",
         "logOut": "Log out",
         "orders": "Orders",
         "title": "Profile",
