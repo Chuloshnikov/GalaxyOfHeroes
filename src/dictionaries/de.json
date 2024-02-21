@@ -79,6 +79,9 @@
     },
     "profilePage": {
         "profileInfo": "Profil Info",
+        "categories": "Kategorien",
+        "items": "Artikel",
+        "users": "Benutzer",
         "logOut": "Ausloggen",
         "orders": "Aufträge",
         "title": "Profil",

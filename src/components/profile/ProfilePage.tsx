@@ -36,6 +36,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                     setPostalCode(data.postalCode);
                     setCity(data.city);
                     setCountry(data.country);
+                    setIsAdmin(data.admin);
                 })
             })
         }

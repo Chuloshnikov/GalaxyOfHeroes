@@ -78,7 +78,10 @@
         "registerText": "Ви можете зареєструватись aбо увійти через Google"
     },
     "profilePage": {
-        "profileInfo": "Інфо профілю",
+        "profileInfo": "Профіль",
+        "categories": "Категорії",
+        "items": "Товари",
+        "users": "Користувачі",
         "logOut": "Вийти",
         "orders": "Замовлення",
         "title": "Особистий кабінет",
