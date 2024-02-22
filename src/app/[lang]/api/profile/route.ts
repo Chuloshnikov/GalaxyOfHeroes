@@ -3,50 +3,61 @@ import { authOptions } from "../../api/auth/[...nextauth]/route";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import {User} from '@/models/User';
-import {UserMeta} from '@/models/UserMeta';
+import generateRandomString from "../../../../lib/createRandomString";
+import { hash } from "bcryptjs";
 
+export async function POST(request: NextRequest) {
+  try {
+    await mongoose.connect(process.env.MONGODB_URL);
+    
+    const body = await request.json();
+    const { email } = body;
 
-export async function PUT(request: NextRequest) {
-    mongoose.connect(process.env.MONGODB_URL);
-    const data = await request.json();
-    const {_id, name, image, ...otherUserInfo} = data;
-  
-    let filter = {};
-    if (_id) {
-      filter = {_id};
+    if (email) {
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        // Пользователь с таким email уже существует
+        return NextResponse.json({ error: 'User with this email already exists' }, { status: 400 });
+      }
+
+      // Пользователя с таким email нет в базе, можно создать нового пользователя
+      const { name, password, image } = body;
+      const generatedPassword = generateRandomString(32);
+      const hashedPassword = await hash(generatedPassword, 12);
+
+      const newUser = await User.create({ name, email, password: hashedPassword, image });
+      return NextResponse.json(newUser);
     } else {
-      const session = await getServerSession(authOptions);
-      const email = session.user.email;
-      filter = {email};
+      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
-  
-    const user = await User.findOne(filter);
-    await User.updateOne(filter, {name, image});
-    await UserMeta.findOneAndUpdate({email:user.email}, otherUserInfo, {upsert:true});
-  
-    return NextResponse.json(true);
+  } catch (error) {
+    console.error('Error:', error);
+    return NextResponse.error(error);
+  }
 }
 
-export async function GET(request: NextRequest) {
-    mongoose.connect(process.env.MONGODB_URL);
 
-  const url = new URL(request.url);
-  const _id = url.searchParams.get('_id');
+export async function PUT(req) {
+  mongoose.connect(process.env.MONGODB_URL);
+  const data = await req.json();
+  const session = await getServerSession(authOptions);
+  const email = session.user.email;
 
-  let filterUser = {};
-  if (_id) {
-    filterUser = {_id};
-  } else {
-    const session = await getServerSession(authOptions);
-    const email = session?.user?.email;
-    if (!email) {
+  
+      await User.updateOne({email}, data);
+
+
+  return Response.json(true);
+}
+
+export async function GET() {
+  mongoose.connect(process.env.MONGODB_URL);
+  const session = await getServerSession(authOptions);
+  const email = session?.user?.email;
+  if (!email) {
       return Response.json({});
-    }
-    filterUser = {email};
   }
-
-  const user = await User.findOne(filterUser).lean();
-  const userInfo = await UserMeta.findOne({email:user.email}).lean();
-
-  return Response.json({...user, ...userInfo});
+  return Response.json(
+      await User.findOne({email})
+  )
 }

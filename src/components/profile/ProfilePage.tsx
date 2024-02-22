@@ -24,11 +24,11 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
     const [isSaving, setIsSaving] = useState<boolean>(false);
     const [isUploading, setIsUploading] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
-    console.log(text);
+
 
     useEffect(() => {
         if (status === 'authenticated') {
-            fetch('/api/profile').then(response => {
+            fetch('/api/profile', ).then(response => {
                 response.json().then(data => {
                     setUserName(data?.name);
                     setImage(data?.image);
