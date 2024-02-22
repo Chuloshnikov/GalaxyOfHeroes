@@ -58,4 +58,12 @@ input[type="password"]:disabled,
 input[type="text"]:disabled {
   @apply bg-gray-400 border-0 cursor-not-allowed text-gray-700
 }
+
+.selectedVariation {
+  @apply bg-accentBg text-mainBg border-2 border-accentBg
+}
+
+.unselectedVariation {
+  @apply bg-mainBg border-2 border-accentBg text-accentBg
+}
   
