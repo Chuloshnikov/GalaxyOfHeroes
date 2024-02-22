@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RiSearchLine, RiHeartLine } from 'react-icons/ri';
 import { LuUserCircle2, LuShoppingCart } from 'react-icons/lu';
 import {  HiMenuAlt2 } from 'react-icons/hi';
@@ -16,6 +16,23 @@ const NavbarIcons = ({lang, searchPopup, navigation, authMenuText}) => {
     const [searchBarOpen, setSearchBarOpen] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [openAuthMenu, setOpenAuthMenu] =useState(false);
+
+    const gmailCredentials = session.data?.user.email.indexOf("gmail");
+
+    useEffect(() => {
+      if (gmailCredentials) {
+        fetch('/api/profile', {
+          method: 'POST',
+          headers: {'Content-type': 'application/json'},
+          body: JSON.stringify({
+              email: session.data?.user.email,
+              name: session.data?.user.name,
+              image: session.data?.user.image,
+              password: "notshown",
+          }),
+      });
+      }
+    },[gmailCredentials]);
 
     const handlePopupToggle = () => {
         setSearchBarOpen(!searchBarOpen);
