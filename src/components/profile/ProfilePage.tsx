@@ -4,6 +4,7 @@ import {useSession} from "next-auth/react";
 import Image from 'next/image';
 import Avatar from "../../../public/avatar.png";
 import SavingBox from '../ui/SavingBox';
+import {redirect} from "next/navigation";
 
 
 const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
@@ -29,14 +30,14 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
         if (status === 'authenticated') {
             fetch('/api/profile').then(response => {
                 response.json().then(data => {
-                    setUserName(data.name);
-                    setImage(data.image);
-                    setPhone(data.phone);
-                    setStreetAddress(data.streetAddress);
-                    setPostalCode(data.postalCode);
-                    setCity(data.city);
-                    setCountry(data.country);
-                    setIsAdmin(data.admin);
+                    setUserName(data?.name);
+                    setImage(data?.image);
+                    setPhone(data?.phone);
+                    setStreetAddress(data?.streetAddress);
+                    setPostalCode(data?.postalCode);
+                    setCity(data?.city);
+                    setCountry(data?.country);
+                    setIsAdmin(data?.admin);
                 })
             })
         }
@@ -99,11 +100,13 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
             setIsUploading(false);
         }
     }
+
+    if (status === "unauthenticated") {
+        return redirect('/');
+    }
     
   return (
-    <div
-    className=''
-    >
+    <section>
         <form 
                 onSubmit={handleProfileInfoUpdate}
                 className="max-w-md mx-auto mt-4"
@@ -237,7 +240,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                         </div>
                     </div>
                 </form>
-    </div>
+    </section>
   )
 }
 

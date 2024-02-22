@@ -9,6 +9,7 @@ import LoaderSpinner from '../ui/LoaderSpinner';
 const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, lang: any, text: any }) => {
   const session = useSession();
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [profileFetched, setProfileFetched] = useState<boolean>(false);
   const status = session?.status;
   const pathname = usePathname();
   
@@ -17,7 +18,8 @@ const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, la
     if (status === 'authenticated') {
         fetch('/api/profile').then(response => {
             response.json().then(data => {
-                setIsAdmin(data.admin);
+                setIsAdmin(data?.admin);
+                setProfileFetched(true);
             })
         })
     }
@@ -25,12 +27,16 @@ const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, la
 }, [session, status]);
 
 
-    const selectedVariation = 'bg-accentBg text-mainBg border-2 border-accentBg';
-  const unselectedVariation = 'bg-mainBg border-2 border-accentBg text-accentBg';
+   
 
   if (status === "loading") {
     return (
-      <LoaderSpinner/>
+      <div
+      className="pt-[200px] pb-[200px] w-full flex items-center justify-center"
+      >
+          <LoaderSpinner/>
+      </div>
+      
     );
 }
 
@@ -47,7 +53,7 @@ if (status === "unauthenticated") {
               >
                 <Link
                 href={`/${lang}/profile`}
-                  className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-t-xl mdl:rounded-r-none mdl:rounded-l-xl ${pathname === `/${lang}/profile` ? selectedVariation : unselectedVariation}`}
+                  className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-t-xl mdl:rounded-r-none mdl:rounded-l-xl ${pathname === `/${lang}/profile` ? 'selectedVariation' : 'unselectedVariation'}`}
                 >
                     {text.profileInfo}
                 </Link>
@@ -55,19 +61,19 @@ if (status === "unauthenticated") {
                   <>
                     <Link
                     href={`/${lang}/profile/categories`}
-                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('categories') ? selectedVariation : unselectedVariation}`}
+                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('categories') ? 'selectedVariation' : 'unselectedVariation'}`}
                     >
                       {text.categories}
                     </Link>
                     <Link
                     href={`/${lang}/profile/items`}
-                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('items') ? selectedVariation : unselectedVariation}`}
+                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('items') ? 'selectedVariation' : 'unselectedVariation'}`}
                     >
                       {text.items}
                     </Link>
                     <Link
                     href={`/${lang}/profile/users`}
-                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('items') ? selectedVariation : unselectedVariation}`}
+                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('items') ? 'selectedVariation' : 'unselectedVariation'}`}
                     >
                       {text.users}
                     </Link>
@@ -77,13 +83,13 @@ if (status === "unauthenticated") {
                   )}
                 <button
                 onClick={() => signOut()}
-                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${unselectedVariation}`}
+                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${'unselectedVariation'}`}
                 >
                   {text.logOut}
                 </button>
                 <Link
                 href={`/${lang}/profile/customer-orders`}
-                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-b-xl mdl:rounded-l-none mdl:rounded-r-xl ${pathname.includes('customer-orders') ? selectedVariation : unselectedVariation}`}
+                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-b-xl mdl:rounded-l-none mdl:rounded-r-xl ${pathname.includes('customer-orders') ? 'selectedVariation' : 'unselectedVariation'}`}
                 >
                     {text.orders}
                 </Link>
