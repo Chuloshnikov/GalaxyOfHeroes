@@ -78,9 +78,10 @@
         "registerText": "Sie können sich bei Google registrieren oder anmelden"
     },
     "profilePage": {
-        "profileInfo": "Profil Info",
+        "profileInfo": "Profil",
         "categories": "Kategorien",
         "items": "Artikel",
+        "news": "Nachricht",
         "users": "Benutzer",
         "logOut": "Ausloggen",
         "orders": "Aufträge",
@@ -99,6 +100,18 @@
         "error": "Fehler!",
         "saveButton": "speichern",
         "avatarButton": "bearbeiten" 
+    },
+    "createCategoriesPage": {
+        "newCategory": "Neuer Kategoriename",
+        "createButton": "Erstellen",
+        "updateButton": "Aktualisieren",
+        "deleteButton": "löschen",
+        "editCategory": "Kategorie bearbeiten",
+        "categorySaved": "Kategorie gespeichert!",
+        "categoryDeleted": "Kategorie gelöscht!",
+        "saving": "Speichern...",
+        "uploading": "Hochladen…",
+        "error": "Fehler!"
     }
 }
 

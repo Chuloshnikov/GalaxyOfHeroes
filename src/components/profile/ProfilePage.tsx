@@ -28,6 +28,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
 
     useEffect(() => {
         if (status === 'authenticated') {
+            setProfileFetched(true);
             fetch('/api/profile', ).then(response => {
                 response.json().then(data => {
                     setUserName(data?.name);
@@ -40,6 +41,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                     setIsAdmin(data?.admin);
                 })
             })
+            setProfileFetched(false);
         }
 
     }, [session, status]);
@@ -103,6 +105,10 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
 
     if (status === "unauthenticated") {
         return redirect('/');
+    }
+
+    if (profileFetched) {
+        return "Profile fetching..."
     }
     
   return (

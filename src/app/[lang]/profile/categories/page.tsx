@@ -5,7 +5,7 @@ import { getDictionary } from '../../../../lib/dictionaries';
 import CategoriesPage from '@/components/categories/CategoriesPage';
 
 export default async function Categories({params: { lang }}: {params: { lang: Locale }}) {
-    const { profilePage, auth } = await getDictionary(lang);
+    const { createCategoriesPage, profilePage, auth } = await getDictionary(lang);
 
     return (
         <section
@@ -25,7 +25,7 @@ export default async function Categories({params: { lang }}: {params: { lang: Lo
                   {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang} text={profilePage}>
-                        <CategoriesPage/>
+                        <CategoriesPage text={createCategoriesPage} lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>

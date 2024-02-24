@@ -78,9 +78,10 @@
         "registerText": "You can register or login with Google"
     },
     "profilePage": {
-        "profileInfo": "Profile Info",
+        "profileInfo": "Profile",
         "categories": "Categories",
         "items": "Items",
+        "news": "News",
         "users": "Users",
         "logOut": "Log out",
         "orders": "Orders",
@@ -99,5 +100,17 @@
         "error": "Error!",
         "saveButton": "save",
         "avatarButton": "edit"
+    },
+    "createCategoriesPage": {
+        "newCategory": "New category name",
+        "createButton": "Create",
+        "updateButton": "Update",
+        "deleteButton": "Delete",
+        "editCategory": "Edit category",
+        "categorySaved": "Category Saved!",
+        "categoryDeleted": "Category Deleted!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "error": "Error!"
     }
 }
