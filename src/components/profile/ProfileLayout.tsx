@@ -27,7 +27,7 @@ const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, la
 }, [session, status]);
 
 
-   
+   {}
 
   if (status === "loading") {
     return (
@@ -46,7 +46,7 @@ if (status === "unauthenticated") {
 
   return (
     <div
-    className='max-w-contentContainer mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px]'
+    className='max-w-contentContainer mdl:mx-4 xl:mx-auto my-[12px] lg:my-[56px]'
     >
          <div
               className='flex xs:flex-col mdl:flex-row items-center justify-between font-semibold xs:text-sm mdl:text-xl'
@@ -72,8 +72,14 @@ if (status === "unauthenticated") {
                       {text.items}
                     </Link>
                     <Link
+                    href={`/${lang}/profile/news`}
+                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('news') ? 'selectedVariation' : 'unselectedVariation'}`}
+                    >
+                      {text.news}
+                    </Link>
+                    <Link
                     href={`/${lang}/profile/users`}
-                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('items') ? 'selectedVariation' : 'unselectedVariation'}`}
+                    className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('users') ? 'selectedVariation' : 'unselectedVariation'}`}
                     >
                       {text.users}
                     </Link>

@@ -81,6 +81,7 @@
         "profileInfo": "Профіль",
         "categories": "Категорії",
         "items": "Товари",
+        "news": "Новини",
         "users": "Користувачі",
         "logOut": "Вийти",
         "orders": "Замовлення",
@@ -99,6 +100,18 @@
         "error": "Помилка!",
         "saveButton": "Внести зміни",
         "avatarButton": "Редагувати"
+    },
+    "createCategoriesPage": {
+        "newCategory": "Нава категорія",
+        "editCategory": "Редагувати категорію",
+        "createButton": "Створити",
+        "updateButton": "Змінити",
+        "deleteButton": "Видалити",
+        "categorySaved": "Категорія створена!",
+        "categoryDeleted": "Категорія видалена!",
+        "saving": "Збереження...",
+        "uploading": "Завантаження...",
+        "error": "Помилка!"
     }
 
 }
