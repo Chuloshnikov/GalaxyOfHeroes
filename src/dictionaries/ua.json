@@ -103,6 +103,7 @@
     },
     "createCategoriesPage": {
         "newCategory": "Нава категорія",
+        "updateCategory": "Змінити категорію",
         "editCategory": "Редагувати категорію",
         "createButton": "Створити",
         "updateButton": "Змінити",
@@ -111,6 +112,8 @@
         "categoryDeleted": "Категорія видалена!",
         "saving": "Збереження...",
         "uploading": "Завантаження...",
+        "updating": "Oновлення...",
+        "deleting": "Видалення...",
         "error": "Помилка!"
     }
 

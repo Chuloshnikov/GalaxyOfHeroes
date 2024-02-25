@@ -8,8 +8,11 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
     const [categories, setCategories] = useState<any>([]);
     const [editedCategory, setEditedCategory] = useState(null);
     const [saved, setSaved] = useState<boolean>(false);
+    const [deleted, setDeleted] = useState<boolean>(false);
     const [isSaving, setIsSaving] = useState<boolean>(false);
+    const [isUpdating, setIsUpdating] = useState<boolean>(false);
     const [isUploading, setIsUploading] = useState<boolean>(false);
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
     const {loading: profileLoading, data: profileData} = useProfile();
 
@@ -17,6 +20,10 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
         if (saved) {
             setTimeout(() => {
                 setSaved(false);
+            }, 2000);
+        } else if (deleted) {
+            setTimeout(() => {
+                setDeleted(false);
             }, 2000);
         } else if (isError) {
             setTimeout(() => {
@@ -55,21 +62,43 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
         e.preventDefault();
         setSaved(false);
         setIsSaving(true);
+        const data = {name: categoryName};
+        if (editedCategory) {
+            setIsSaving(false);
+            setIsUpdating(true);
+            data._id = editedCategory._id;
+        }
         const response = await fetch('/api/categories', {
-            method: 'POST',
+            method: editedCategory ? 'PUT' : 'POST',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({name: categoryName}),
+            body: JSON.stringify(data),
         });
         setCategoryName('');
         fetchCategories();
         if (response.ok) {
             setIsSaving(false);
+            setIsUpdating(false);
             setSaved(true);   
         } else {
             setIsSaving(false);
             setIsError(true);
         }
     }
+
+    async function handleDelete(_id) {
+          setIsDeleting(true);
+          const response = await fetch('/api/categories?_id='+_id, {
+            method: 'DELETE',
+          });
+          fetchCategories();
+          if (response.ok) {
+            setIsDeleting(false);
+            setDeleted(true);
+          } else {
+            setIsDeleting(false);
+            setIsError(true);
+          }
+        };
 
   return (
     <section
@@ -78,16 +107,24 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
         <form
         onSubmit={handleCategorySubmit}
         className='flex flex-col gap-2'
-        >
-             {saved && (
+        >           
+                    {saved && (
                         <SavingBox text={text.categorySaved} frame="bg-green-100 border border-green-400"/>
-                        
+                    )}
+                     {deleted && (
+                        <SavingBox text={text.categoryDeleted} frame="bg-green-100 border border-green-400"/>
                     )}
                     {isSaving && (
                         <SavingBox text={text.saving} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isUploading && (
                         <SavingBox text={text.uploading} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isUpdating && (
+                        <SavingBox text={text.updating} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isDeleting && (
+                        <SavingBox text={text.deleting} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isError && (
                         <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
@@ -98,7 +135,12 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                 <label
                 className='text-sm lg:text-base font-medium text-accentBg'
                 >
-                    {text.newCategory}
+                    {editedCategory ? text.updateCategory : text.newCategory}
+                    {editedCategory && (
+                        <>
+                            :{editedCategory.name}
+                        </>
+                    )}
                 </label>
                 <input 
                 onChange={e => setCategoryName(e.target.value)}
@@ -112,33 +154,49 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                 className='bg-mainBg py-2 px-4 rounded-3xl max-w-max text-assentBg font-semibold border-2 border-accentBg'
                 type='submit'
                 >
-                    Create
+                    {editedCategory ? text.updateButton : text.createButton}
                 </button>
             </div>
-            <div
+        </form>
+        <div
             className='mt-4'
             >
                 <h2 className='font-semibold text-lg text-accentBg'>{text.editCategory}:</h2>
                 {categories?.length > 0 && categories.map(category => (
                         <div
-                        className='bg-white rounded-3xl text-accentBg font-semibold cursor-pointer flex justify-between'
+                        className='bg-white rounded-3xl text-accentBg font-semibold  flex justify-between mt-1'
                         >
                             <div
-                            className='flex gap-2 border-2 border-accentBg py-2 px-4 rounded-3xl'
+                            className='py-2 px-4 text-xl'
                             >
-                                <span>{text.editCategory}:</span>
+                                
                                 <span>{category.name}</span>
                             </div>
+                            <div
+                            className='flex gap-2'
+                            >
                                 <button
-                                className=' border-2 border-accentBg py-2 px-4 rounded-3xl'
+                                onClick={() => {
+                                    setEditedCategory(category);
+                                    setCategoryName(category.name);
+                                }}
+                                className='flex gap-2 border-2 border-accentBg py-2 px-4 rounded-3xl cursor-pointer'
+                                >
+                                    {text.editCategory}
+                                </button>
+                                <button
+                                 label="Delete"
+                                 onClick={() => handleDelete(category._id)}
+                                className=' border-2 border-accentBg py-2 px-4 rounded-3xl cursor-pointer'
                                 >
                                     {text.deleteButton}
                                 </button>
+                            </div>
+                               
                         </div>
                     ))
                 }
             </div>
-        </form>
     </section>
   )
 }

@@ -103,6 +103,7 @@
     },
     "createCategoriesPage": {
         "newCategory": "Neuer Kategoriename",
+        "updateCategory": "Aktualisieren Kategoriename",
         "createButton": "Erstellen",
         "updateButton": "Aktualisieren",
         "deleteButton": "löschen",
@@ -111,6 +112,8 @@
         "categoryDeleted": "Kategorie gelöscht!",
         "saving": "Speichern...",
         "uploading": "Hochladen…",
+        "updating": "Aktualisiert…",
+        "deleting": "Löschen…",
         "error": "Fehler!"
     }
 }

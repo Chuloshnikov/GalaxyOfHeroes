@@ -103,6 +103,7 @@
     },
     "createCategoriesPage": {
         "newCategory": "New category name",
+        "updateCategory": "Update category",
         "createButton": "Create",
         "updateButton": "Update",
         "deleteButton": "Delete",
@@ -111,6 +112,8 @@
         "categoryDeleted": "Category Deleted!",
         "saving": "Saving...",
         "uploading": "Uploading...",
+        "updating": "Updating...",
+        "deleting": "Deleting...",
         "error": "Error!"
     }
 }
