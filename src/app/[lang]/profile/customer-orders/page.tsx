@@ -1,11 +1,10 @@
 import ProfileLayout from '@/components/profile/ProfileLayout';
-import React from 'react';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '../../../../lib/dictionaries';
 
 
 export default async function CustomerOrders({params: { lang }}: {params: { lang: Locale }}) {
-  const { profilePage, auth } = await getDictionary(lang);
+  const { profilePage } = await getDictionary(lang);
 
 
   return (
