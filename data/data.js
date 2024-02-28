@@ -4,6 +4,7 @@ export default function getData() {
     const data =  [
         {
             _id: "123",
+            SKU: "45678",
             img: image,
             title: "They All Fall Down, Part 2",
             brand: "dark horse",
@@ -27,6 +28,11 @@ export default function getData() {
                 "Fiction",
                 "Thriller"
             ],
+            salePrices: {
+                usd: 12.45,
+                eur: 8.99,
+                uah: 2716.50,
+            },
             prices: {
                 usd: 12.45,
                 eur: 8.99,
@@ -39,6 +45,7 @@ export default function getData() {
         },
         {
             _id: "2354",
+            SKU: "45678",
             img: image,
             title: "They All Fall Down, Part 2",
             brand: "dc commics",
@@ -62,6 +69,11 @@ export default function getData() {
                 "Fiction",
                 "Thriller"
             ],
+            salePrices: {
+                usd: 12.45,
+                eur: 8.99,
+                uah: 2716.50,
+            },
             prices: {
                 usd: 12.45,
                 eur: 8.99,
@@ -97,6 +109,11 @@ export default function getData() {
                 "Fiction",
                 "Thriller"
             ],
+            salePrices: {
+                usd: 12.45,
+                eur: 8.99,
+                uah: 2716.50,
+            },
             prices: {
                 usd: 12.45,
                 eur: 8.99,
@@ -109,6 +126,7 @@ export default function getData() {
         },
         {
             _id: "4556",
+            SKU: "45678",
             img: image,
             title: "They All Fall Down, Part 2",
             brand: "Marvel",
@@ -132,6 +150,11 @@ export default function getData() {
                 "Fiction",
                 "Thriller"
             ],
+            salePrices: {
+                usd: 12.45,
+                eur: 8.99,
+                uah: 2716.50,
+            },
             prices: {
                 usd: 12.45,
                 eur: 8.99,

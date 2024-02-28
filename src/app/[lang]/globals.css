@@ -45,7 +45,7 @@ input, textarea, select {
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #582467 !important;
+    background-color: #582434 !important;
   }
 
   input[type="email"],
@@ -65,5 +65,9 @@ input[type="text"]:disabled {
 
 .unselectedVariation {
   @apply bg-mainBg border-2 border-accentBg text-accentBg
+}
+
+.itemsInput {
+  @apply bg-mainBg px-2 py-1 border-2 border-accentBg border-solid text-accentBg rounded-3xl
 }
   
