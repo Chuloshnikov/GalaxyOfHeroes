@@ -112,7 +112,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
     }
     
   return (
-    <section>
+    <div>
         <form 
                 onSubmit={handleProfileInfoUpdate}
                 className="max-w-md mx-auto mt-4"
@@ -246,7 +246,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                         </div>
                     </div>
                 </form>
-    </section>
+    </div>
   )
 }
 

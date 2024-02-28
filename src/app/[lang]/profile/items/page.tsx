@@ -1,12 +1,13 @@
 import ProfileLayout from '@/components/profile/ProfileLayout';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '../../../../lib/dictionaries';
+import ItemsPage from '@/components/Items/ItemsPage';
 
-export default async function ItemsPage({params: { lang }}: {params: { lang: Locale }}) {
+export default async function Items({params: { lang }}: {params: { lang: Locale }}) {
     const { profilePage } = await getDictionary(lang);
     return (
         <section
-        className="mt-8"
+        className="max-w-container mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px] px-4"
         >
             <div
             className=''
@@ -22,7 +23,7 @@ export default async function ItemsPage({params: { lang }}: {params: { lang: Loc
                   {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang} text={profilePage}>
-                        items
+                       <ItemsPage text={"text"} lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>
