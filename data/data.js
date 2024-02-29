@@ -19,7 +19,7 @@ export default function getData() {
             theater to the seedy nether regions of the city, where the criminal classes ply their questionable trades. 
             Towering above them all is the figure of Solomon, a construction magnate well on his way to rebuilding 
             the five boroughs, come hell or high water.`,
-            genres: [
+            tags: [
                 "Graphic Novels",
                 "Bande Dessinée",
                 "Comics",
@@ -39,7 +39,7 @@ export default function getData() {
                 uah: 2716.50,
             },
             format: "56 pages, ebook",
-            language: "English",
+            language: "english",
             published: "November 17, 2021 by Europe Comics",
             topSeller: false,
         },
@@ -60,7 +60,7 @@ export default function getData() {
             theater to the seedy nether regions of the city, where the criminal classes ply their questionable trades. 
             Towering above them all is the figure of Solomon, a construction magnate well on his way to rebuilding 
             the five boroughs, come hell or high water.`,
-            genres: [
+            tags: [
                 "Graphic Novels",
                 "Bande Dessinée",
                 "Comics",
@@ -80,7 +80,7 @@ export default function getData() {
                 uah: 2716.50,
             },
             format: "56 pages, ebook",
-            language: "English",
+            language: "english",
             published: "November 17, 2021 by Europe Comics",
             topSeller: true
         },
@@ -100,7 +100,7 @@ export default function getData() {
             theater to the seedy nether regions of the city, where the criminal classes ply their questionable trades. 
             Towering above them all is the figure of Solomon, a construction magnate well on his way to rebuilding 
             the five boroughs, come hell or high water.`,
-            genres: [
+            tags: [
                 "Graphic Novels",
                 "Bande Dessinée",
                 "Comics",
@@ -120,7 +120,7 @@ export default function getData() {
                 uah: 2716.50,
             },
             format: "56 pages, ebook",
-            language: "English",
+            language: "english",
             published: "November 17, 2021 by Europe Comics",
             topSeller: false
         },
@@ -141,7 +141,7 @@ export default function getData() {
             theater to the seedy nether regions of the city, where the criminal classes ply their questionable trades. 
             Towering above them all is the figure of Solomon, a construction magnate well on his way to rebuilding 
             the five boroughs, come hell or high water.`,
-            genres: [
+            tags: [
                 "Graphic Novels",
                 "Bande Dessinée",
                 "Comics",
@@ -161,7 +161,7 @@ export default function getData() {
                 uah: 2716.50,
             },
             format: "56 pages, ebook",
-            language: "English",
+            language: "english",
             published: "November 17, 2021 by Europe Comics",
             topSeller: false
         },
