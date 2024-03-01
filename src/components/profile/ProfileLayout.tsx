@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {redirect} from "next/navigation";
 import { usePathname } from "next/navigation";
 import LoaderSpinner from '../ui/LoaderSpinner';
+import { useProfile } from './UseProfile';
 
 const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, lang: any, text: any }) => {
   const session = useSession();
@@ -12,6 +13,7 @@ const ProfileLayout = ({ children, lang, text }: { children: React.ReactNode, la
   const [profileFetched, setProfileFetched] = useState<boolean>(false);
   const status = session?.status;
   const pathname = usePathname();
+  const {loading: profileLoading, data: profileData} = useProfile();
   
 
   useEffect(() => {
@@ -44,6 +46,10 @@ if (status === "unauthenticated") {
     return redirect('/');
 }
 
+if (profileLoading) {
+  return 'Loading user info...';
+}
+
   return (
     <div
     className='max-w-contentContainer mdl:mx-4 xl:mx-auto my-[12px] lg:my-[56px]'
@@ -57,7 +63,7 @@ if (status === "unauthenticated") {
                 >
                     {text.profileInfo}
                 </Link>
-                {isAdmin && (
+                {profileData.admin && (
                   <>
                     <Link
                     href={`/${lang}/profile/categories`}

@@ -50,7 +50,7 @@ const EditableItemsImages = ({images, setImages, setUploading, setError}) => {
                             className='block max-w-max bg-mainBg py-1 px-2 rounded-xl 
                             text-assentBg font-semibold border-2 border-accentBg cursor-pointer text-xs sm:text-base mt-2'
                             >
-                                Add
+                                Add Image
                             </span>
                     </label>
                 </div>
