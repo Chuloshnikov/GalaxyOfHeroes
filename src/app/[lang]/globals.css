@@ -70,4 +70,7 @@ input[type="text"]:disabled {
 .itemsInput {
   @apply bg-mainBg px-2 py-1 border-2 border-accentBg border-solid text-accentBg rounded-3xl
 }
-  
+ 
+.formLabel > label {
+  @apply text-accentBg text-xs
+}
