@@ -1,10 +1,9 @@
 "use client"
 import {useState, useEffect} from 'react';
 import {useSession} from "next-auth/react";
-import Image from 'next/image';
-import Avatar from "../../../public/avatar.png";
 import SavingBox from '../ui/SavingBox';
 import {redirect} from "next/navigation";
+import EditableImage from './EditableImage';
 
 
 const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
@@ -86,23 +85,6 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
             }
     }
 
-    const handleFileChange = async (e) => {
-        const files = e.target.files;
-        if (files?.length === 1) {
-            const data = new FormData;
-            data.set('file', files[0]);
-            setIsUploading(true);
-            const response = await fetch('api/upload', {
-                method: 'POST',
-                body: data,
-            })
-
-            const link = await response.json();
-            setImage(link);
-            setIsUploading(false);
-        }
-    }
-
     if (status === "unauthenticated") {
         return redirect('/');
     }
@@ -130,30 +112,20 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                     {isError && (
                         <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
                     )}
+                    {/*image container*/}
                     <div
                     className="flex gap-4"
                     >
-                        <div
-                        className="w-[200px] h-[200px] mt-2"
-                        >
-                            {image?.length ? (
-                                <Image className="rounded-lg w-full mb-1" src={image} width={250} height={250} alt={'avatar'} />
-                            ) : (
-                                <Image className="rounded-lg w-full mb-1" src={Avatar} width={250} height={250} alt={'avatar'} />
-                            )}
-                            <label>
-                                <input type="file" className='hidden' onChange={handleFileChange}/>
-                                <span 
-                                className='block max-w-max bg-mainBg py-1 px-2 rounded-xl 
-                                text-assentBg font-semibold border-2 border-accentBg cursor-pointer text-xs sm:text-base'
-                                >
-                                    {text.avatarButton}
-                                </span>
-                            </label>
-                        </div>
+                        <EditableImage 
+                        link={image} 
+                        setLink={setImage} 
+                        text={text.avatarButton} 
+                        setError={setIsError} 
+                        setUploading={setIsUploading}
+                        />
+                        {/*form container*/}
                         <div
                         className="grow flex flex-col gap-2"
-                        
                         >
                             <label
                             className='text-xs font-medium text-accentBg -mb-2 ml-2'
