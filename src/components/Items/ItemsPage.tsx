@@ -5,7 +5,7 @@ import Avatar from "../../../public/avatar.png";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const ItemsPage = () => {
-
+const [images, setImages] = useState<any>('');
 
     const handleFileChange = () => {
 
@@ -20,14 +20,14 @@ const ItemsPage = () => {
             Item Details
         </h2>
         <form
-        className='mt-8 max-w-4xl mx-auto flex xs:flex-col-reverse mdl:flex-row gap-4'
+        className='formLabel mt-8 max-w-4xl mx-auto flex xs:flex-col-reverse lg:flex-row gap-4'
         >
         {/*form cantainer start*/}
             <div>
                 <div
                 className='flex flex-col'
                 >
-                    <label>Item name</label>
+                    <label className='text-accentBg text-xs font-semibold'>Item name</label>
                     <input 
                     className='itemsInput'
                     type="text"
@@ -36,7 +36,7 @@ const ItemsPage = () => {
                 <div
                 className='flex flex-col'
                 >
-                    <label>Description</label>
+                    <label className='text-accentBg text-xs font-semibold'>Description</label>
                     <textarea 
                     className='itemsInput'
                     />
@@ -44,7 +44,7 @@ const ItemsPage = () => {
                 <div
                 className='flex flex-col'
                 >
-                    <label>Category</label>
+                    <label className='text-accentBg text-xs font-semibold'>Category</label>
                     <input 
                     className='itemsInput'
                     type="text"
@@ -53,7 +53,7 @@ const ItemsPage = () => {
                 <div
                 className='flex flex-col'
                 >
-                    <label>Brand name</label>
+                    <label className='text-accentBg text-xs font-semibold'>Brand name</label>
                     <input 
                     className='itemsInput'
                     type="text"
@@ -65,7 +65,7 @@ const ItemsPage = () => {
                     <div
                     className='flex flex-col'
                     >
-                        <label>SKU</label>
+                        <label className='text-accentBg text-xs font-semibold'>SKU</label>
                         <input
                         className='itemsInput'
                         type="text"
@@ -74,7 +74,7 @@ const ItemsPage = () => {
                     <div
                     className='flex flex-col'
                     >
-                        <label>Stock Quantity</label>
+                        <label className='text-accentBg text-xs font-semibold'>Stock Quantity</label>
                         <input
                         className='itemsInput'
                         type="text"
@@ -87,7 +87,7 @@ const ItemsPage = () => {
                         <div
                         className='flex flex-col'
                         >
-                            <label>Regular price</label>
+                            <label className='text-accentBg text-xs font-semibold'>Regular price</label>
                             <input
                             className='itemsInput'
                             type="text"
@@ -96,7 +96,7 @@ const ItemsPage = () => {
                         <div
                         className='flex flex-col'
                         >
-                            <label>Sale price</label>
+                            <label className='text-accentBg text-xs font-semibold'>Sale price</label>
                             <input
                             className='itemsInput'
                             type="text"
@@ -108,14 +108,14 @@ const ItemsPage = () => {
                             <div
                             className='flex flex-col'
                             >
-                                <label>Tags</label>
+                                <label className='text-accentBg text-xs font-semibold'>Tags</label>
                                 <input
                                 className='itemsInput'
                                 type="text"
                                 />
                             </div>
                             <div>
-                                <label>Tags list</label>
+                                <label className='text-accentBg text-xs font-semibold'>Tags list</label>
                                 <div
                                 className=' border-2 border-accentBg rounded-2xl min-h-[100px] p-1'
                                 >
@@ -131,7 +131,7 @@ const ItemsPage = () => {
                     <div
                     className='mt-2'
                     >
-                    <label>Lenguage selection</label>
+                    <label className='text-accentBg text-xs font-semibold'>Lenguage selection</label>
                     <div
                     className='border-2 solid border-accentBg rounded-full max-w-max flex items-center'>
                         <select 
@@ -159,11 +159,11 @@ const ItemsPage = () => {
                 {/*form container end*/}
                 {/* image container*/}
             <div
-            
+            className='flex gap-2 flex-col'
             >
-                <label>Item image</label>
+                <label className='text-accentBg text-xs font-semibold'>Item image</label>
                 <div
-                className="xs:w-[300px] xs:h-[300px] mdl:w-[400px] mdl:w-[400px] mt-2  xs:mb-[30px] mdl:mb-0"
+                className="xs:w-[270px] xs:h-[270px] lg:w-[400px] lg:w-[400px] mt-2 xs:mb-[70px] lg:mb-[200px]"
                 >
                     <Image className="rounded-lg w-full mb-1" src={Avatar} width={400} height={400} alt={'avatar'} />
                     <label>
@@ -176,6 +176,13 @@ const ItemsPage = () => {
                             </span>
                     </label>
                 </div>
+                {!images?.length && (
+                    <span
+                    className='block text-accentBg font-semibold'
+                    >
+                        No photos in this item...
+                    </span>
+                )}
             </div>
         </form>
     </div>
