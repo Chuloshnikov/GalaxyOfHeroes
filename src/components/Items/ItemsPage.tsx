@@ -133,17 +133,17 @@ const [images, setImages] = useState<any>('');
                     >
                     <label className='text-accentBg text-xs font-semibold'>Lenguage selection</label>
                     <div
-                    className='border-2 solid border-accentBg rounded-full max-w-max flex items-center'>
+                    className='relative border-2 solid border-accentBg rounded-full max-w-max flex items-center'>
                         <select 
                         required="true"
-                        className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full'
+                        className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-4'
                         name="select"
                         >
                             <option className='bg-mainBg font-semibold' value="english" selected>English</option>
                             <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
                             <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
                         </select>
-                        
+                        <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-0 top-2 text-accentBg w-7 h-7"/>
                     </div>
                     
                     </div>
