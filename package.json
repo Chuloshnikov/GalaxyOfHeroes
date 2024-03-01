@@ -17,6 +17,7 @@
     "@formatjs/intl-localematcher": "^0.5.1",
     "@mui/material": "^5.15.4",
     "@types/js-cookie": "^3.0.6",
+    "@types/multiparty": "^0.0.36",
     "@types/uniqid": "^5.3.4",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -24,6 +25,7 @@
     "js-cookie": "^3.0.5",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.4",
+    "multiparty": "^4.2.3",
     "negotiator": "^0.6.3",
     "next": "^14.0.1",
     "next-auth": "^4.24.5",
@@ -38,6 +40,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
+    "@types/mime-types": "^2.1.4",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",

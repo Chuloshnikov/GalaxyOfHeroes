@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
 }
  
 export const config = {
+  api: {bodyParser: false},
   matcher: [
     // Skip all internal paths (_next)
     '/((?!_next).*)',
