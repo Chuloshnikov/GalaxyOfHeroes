@@ -1,6 +1,6 @@
 import {model, models, Schema} from "mongoose";
 
-const ItemSchema = new mongoose.Schema({
+const ItemsSchema = new Schema({
     title: {
         type: String, required: true, maxlength: 100
     },
@@ -60,10 +60,12 @@ const ItemSchema = new mongoose.Schema({
             review: {type: Number},
             }
         ]
-    }
-            
+    },
+    language: {
+        type: String, required: true, maxlength: 30
+    },       
 }, {timestamps: true}
 );
 
 
-export default models?.Item || model("Item", ItemSchema);
+export default models?.Items || model("Items", ItemsSchema);
