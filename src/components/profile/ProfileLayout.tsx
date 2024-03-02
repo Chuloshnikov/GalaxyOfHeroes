@@ -47,7 +47,7 @@ if (status === "unauthenticated") {
 }
 
 if (profileLoading) {
-  return 'Loading user info...';
+  return <div className='mt-20 w-full flex justify-center items-center'><LoaderSpinner/></div>;
 }
 
   return (
