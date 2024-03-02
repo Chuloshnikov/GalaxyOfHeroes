@@ -20,6 +20,9 @@ const [category, setCategory] = useState<string>('');
 const [sku, setSku] = useState<string>('');
 const [tagText, setTagText] = useState<string>('');
 const [tags, setTags] = useState<any>([]);
+const [quantity, setQuantity] = useState<number>(0);
+const [regularPrice, setRegularPrice] = useState<number>(0);
+const [salePrice, setSalePrice] = useState<number>(0);
 const [language, setLanguage] = useState<string>('');
 console.log(language);
 
@@ -105,18 +108,6 @@ useEffect(() => {
          >
             Item Details
         </h2>
-            {saved && (
-            <SavingBox text={"item saved"} frame="bg-green-100 border border-green-400"/>
-            )}
-            {isSaving && (
-            <SavingBox text={"item saving"} frame="bg-blue-200 border border-blue-400"/>
-            )}
-            {isUploading && (
-            <SavingBox text={"image uploading"} frame="bg-blue-200 border border-blue-400"/>
-            )}
-            {isError && (
-            <SavingBox text={"error"} frame="bg-red-200 border border-bed-400"/>
-            )}
         <form
         onSubmit={handleFormSubmit}
         className='formLabel mt-8 max-w-4xl mx-auto flex xs:flex-col-reverse lg:flex-row gap-4'
@@ -230,8 +221,10 @@ useEffect(() => {
                     >
                         <label className='text-accentBg text-xs font-semibold'>Stock Quantity</label>
                         <input
+                        onChange={e => setQuantity(e.target.value)}
+                        value={quantity}
                         className='itemsInput'
-                        type="text"
+                        type="number"
                         />
                     </div>
                 </div>
@@ -243,6 +236,7 @@ useEffect(() => {
                         >
                             <label className='text-accentBg text-xs font-semibold'>Regular price</label>
                             <input
+                            value={regularPrice}
                             className='itemsInput'
                             type="text"
                             />
@@ -252,6 +246,7 @@ useEffect(() => {
                         >
                             <label className='text-accentBg text-xs font-semibold'>Sale price</label>
                             <input
+                            value={salePrice}
                             className='itemsInput'
                             type="text"
                             />
@@ -338,6 +333,18 @@ useEffect(() => {
                 setError={setIsError}
                 />
         </form>
+        {saved && (
+                    <SavingBox text={"item saved"} frame="bg-green-100 border border-green-400"/>
+                    )}
+                    {isSaving && (
+                    <SavingBox text={"item saving"} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isUploading && (
+                    <SavingBox text={"image uploading"} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isError && (
+                    <SavingBox text={"error"} frame="bg-red-200 border border-bed-400"/>
+                    )}
     </div>
   )
 }
