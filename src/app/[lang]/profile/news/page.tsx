@@ -3,7 +3,7 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '../../../../lib/dictionaries';
 
 
-export default async function Users({params: { lang }}: {params: { lang: Locale }}) {
+export default async function News({params: { lang }}: {params: { lang: Locale }}) {
   const { profilePage } = await getDictionary(lang);
 
 
@@ -25,7 +25,7 @@ export default async function Users({params: { lang }}: {params: { lang: Locale 
               {profilePage.description}
             </p>
             <ProfileLayout lang={lang} text={profilePage}>
-                    Users
+                    News
             </ProfileLayout>
         </div>
     </section>
