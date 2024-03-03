@@ -4,7 +4,7 @@ import { getDictionary } from '../../../../../lib/dictionaries';
 import NewItemPage from '@/components/Items/NewItemPage';
 
 export default async function NewItem({params: { lang }}: {params: { lang: Locale }}) {
-    const { profilePage } = await getDictionary(lang);
+    const { profilePage, newItemPage } = await getDictionary(lang);
 
     return (
         <section
@@ -24,7 +24,7 @@ export default async function NewItem({params: { lang }}: {params: { lang: Local
                   {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang} text={profilePage}>
-                       <NewItemPage text={"text"} lang={lang}/>
+                       <NewItemPage text={newItemPage} lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>

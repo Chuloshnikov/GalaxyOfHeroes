@@ -119,5 +119,29 @@
     "itemsPage": {
         "title": "All Items",
         "newItemButton": "Create new item"
+    },
+    "newItemPage": {
+        "title": "Item Details",
+        "toAllItems": "Show all items",
+        "itemName": "Item name",
+        "itemDescription": "Description",
+        "itemCategory": "Category",
+        "itemBrandName": "Brand name",
+        "itemAuthors": "Authors",
+        "itemIllustrators": "Illustrators",
+        "itemPublished": "Published",
+        "itemFormat": "Format",
+        "itemSku": "SKU",
+        "itemStockQuantity": "Stock Quantity",
+        "itemRegularPrice": "Regular price",
+        "itemSalePrice": "Sale price",
+        "itemTags": "Tags",
+        "addTagButtonText": "Add Tag",
+        "itemTagList": "Tag list",
+        "itemLangSelectionText": "Language selection",
+        "createButton": "Create",
+        "itemImage": "Item image",
+        "addImageButton": "Add Image",
+        "noPhotosText": "No photos in this item..."
     }
 }

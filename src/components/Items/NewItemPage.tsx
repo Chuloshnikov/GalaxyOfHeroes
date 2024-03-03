@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 
-const NewItemPage = () => {
+const NewItemPage = ({text, lang}: {text: any, lang: any}) => {
 const [images, setImages] = useState<any>([]);
 const [title, setTitle] = useState<string>('');
 const [brand, setBrand] = useState<string>('');
@@ -84,15 +84,16 @@ useEffect(() => {
         if (response.ok) {
             setIsSaving(false);
             setSaved(true);   
+            setRedirectToItems(true);
         } else {
             setIsSaving(false);
             setIsError(true);
         }
-        setRedirectToItems(true);
+        
     }
 
     if (redirectToItems) {
-        return redirect('/profile/items');
+        return redirect(`/${lang}/profile/items`);
     }
 
     const handleTagInputChange = (e:ChangeEvent<HTMLInputElement>) => {
@@ -136,14 +137,14 @@ useEffect(() => {
             <h2
             className='text-4xl text-accentBg font-medium'
             >
-                Item Details
+                {text.title}
             </h2>
             <Link 
             className="block max-w-max bg-mainBg text-accentBg px-2 
             py-1 border-2 border-accentBg text-accentBg rounded-3xl
             cursor-pointer font-semibold"
             href={"/profile/items"}>
-                Show all menu items
+                {text.toAllItems}
             </Link>
         </div>
         <form
@@ -156,7 +157,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Item name</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemName}</label>
                     <input 
                     onChange={e => setTitle(e.target.value)}
                     value={title}
@@ -167,7 +168,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Description</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemDescription}</label>
                     <textarea 
                     onChange={e => setDescription(e.target.value)}
                     value={description}
@@ -177,7 +178,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Category</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemCategory}</label>
                     <input 
                     onChange={e => setCategory(e.target.value)}
                     value={category}
@@ -188,7 +189,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Brand name</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemBrandName}</label>
                     <input 
                     onChange={e => setBrand(e.target.value)}
                     value={brand}
@@ -199,7 +200,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Authors</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemAuthors}</label>
                     <input 
                     onChange={e => setAuthors(e.target.value)}
                     value={authors}
@@ -210,7 +211,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Illustrators</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemIllustrators}</label>
                     <input 
                     onChange={e => setIllustrators(e.target.value)}
                     value={illustrators}
@@ -221,7 +222,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Published</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemPublished}</label>
                     <input 
                     onChange={e => setPublished(e.target.value)}
                     value={published}
@@ -232,7 +233,7 @@ useEffect(() => {
                 <div
                 className='flex flex-col'
                 >
-                    <label className='text-accentBg text-xs font-semibold'>Format</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemFormat}</label>
                     <input 
                     onChange={e => setFormat(e.target.value)}
                     value={format}
@@ -246,7 +247,7 @@ useEffect(() => {
                     <div
                     className='flex flex-col'
                     >
-                        <label className='text-accentBg text-xs font-semibold'>SKU</label>
+                        <label className='text-accentBg text-xs font-semibold'>{text.itemSku}</label>
                         <input
                         onChange={e => setSku(e.target.value)}
                         value={sku}
@@ -257,7 +258,7 @@ useEffect(() => {
                     <div
                     className='flex flex-col'
                     >
-                        <label className='text-accentBg text-xs font-semibold'>Stock Quantity</label>
+                        <label className='text-accentBg text-xs font-semibold'>{text.itemStockQuantity}</label>
                         <input
                         onChange={e => setQuantity(e.target.value)}
                         value={quantity}
@@ -272,7 +273,7 @@ useEffect(() => {
                         <div
                         className='flex flex-col'
                         >
-                            <label className='text-accentBg text-xs font-semibold'>Regular price</label>
+                            <label className='text-accentBg text-xs font-semibold'>{text.itemRegularPrice}</label>
                             <input
                             onChange={e => setRegularPrice(e.target.value)}
                             value={regularPrice}
@@ -283,7 +284,7 @@ useEffect(() => {
                         <div
                         className='flex flex-col'
                         >
-                            <label className='text-accentBg text-xs font-semibold'>Sale price</label>
+                            <label className='text-accentBg text-xs font-semibold'>{text.itemSalePrice}</label>
                             <input
                             onChange={e => setSalePrice(e.target.value)}
                             value={salePrice}
@@ -297,7 +298,7 @@ useEffect(() => {
                             <div
                             className='flex flex-col'
                             >
-                                <label className='text-accentBg text-xs font-semibold'>Tags</label>
+                                <label className='text-accentBg text-xs font-semibold'>{text.itemTags}</label>
                                 <input
                                 value={tagText}
                                 onChange={handleTagInputChange}
@@ -310,11 +311,11 @@ useEffect(() => {
                                 cursor-pointer"
                                 onClick={handleAddTag}
                                 >
-                                    Add Tag
+                                    {text.addTagButtonText}
                                 </span>
                             </div>
                             <div>
-                                <label className='text-accentBg text-xs font-semibold'>Tags list</label>
+                                <label className='text-accentBg text-xs font-semibold'>{text.itemTagList}</label>
                                 <div
                                 className=' border-2 border-accentBg rounded-2xl min-h-[100px] max-w-[400px] p-1 flex flex-wrap gap-1'
                                 >
@@ -337,7 +338,7 @@ useEffect(() => {
                     className='mt-2'
                     >
                         {/*form selection*/}
-                    <label className='text-accentBg text-xs font-semibold'>Lenguage selection</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.itemLangSelectionText}</label>
                         <div
                         className='relative border-2 solid border-accentBg rounded-full max-w-max flex items-center'>
                                 <select 
@@ -359,13 +360,14 @@ useEffect(() => {
                         className='mt-2 w-full bg-accentBg text-mainBg px-2 py-1 border-2 border-accentBg text-accentBg rounded-3xl'
                         type="submit"
                         >
-                            Create
+                            {text.createButton}
                         </button>
                     </div>
             </div>
                 {/*form container end*/}
                 {/* image container*/}
                 <EditableItemsImages 
+                text={text}
                 images={images} 
                 setImages={setImages}
                 setUploading={setIsUploading} 
