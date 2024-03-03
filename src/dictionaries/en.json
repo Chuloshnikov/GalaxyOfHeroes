@@ -115,5 +115,9 @@
         "updating": "Updating...",
         "deleting": "Deleting...",
         "error": "Error!"
+    }, 
+    "itemsPage": {
+        "title": "All Items",
+        "newItemButton": "Create new item"
     }
 }

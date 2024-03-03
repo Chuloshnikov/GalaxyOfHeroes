@@ -115,6 +115,10 @@
         "updating": "Oновлення...",
         "deleting": "Видалення...",
         "error": "Помилка!"
+    },
+    "itemsPage": {
+        "title": "Всі товари",
+        "newItemButton": "Створити новий"
     }
 
 }
