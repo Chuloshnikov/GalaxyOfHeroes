@@ -115,6 +115,34 @@
         "updating": "Aktualisiert…",
         "deleting": "Löschen…",
         "error": "Fehler!"
-    }
+    },
+    "itemsPage": {
+        "title": "Alle Elemente",
+        "newItemButton": "Neues Element erstellen"
+    },
+    "newItemPage": {
+        "title": "Artikeldetails",
+        "toAllItems": "Alle Artikel anzeigen",
+        "itemName": "Artikelname",
+        "itemDescription": "Beschreibung",
+        "itemCategory": "Kategorie",
+        "itemBrandName": "Markenname",
+        "itemAuthors": "Autoren",
+        "itemIllustrators": "Illustratoren",
+        "itemPublished": "Veröffentlicht",
+        "itemFormat": "Format",
+        "itemSku": "Artikelnummer",
+        "itemStockQuantity": "Bestand",
+        "itemRegularPrice": "Normaler Preis",
+        "itemSalePrice": "Verkaufspreis",
+        "itemTags": "Tags",
+        "addTagButtonText": "Tag hinzufügen",
+        "itemTagList": "Tag-Liste",
+        "itemLangSelectionText": "Sprachauswahl",
+        "createButton": "Erstellen",
+        "itemImage": "Artikelbild",
+        "addImageButton": "Bild hinzufügen",
+        "noPhotosText": "Keine Fotos zu diesem Artikel..."
+        }
 }
 

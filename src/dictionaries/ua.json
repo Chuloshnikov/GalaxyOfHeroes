@@ -119,6 +119,30 @@
     "itemsPage": {
         "title": "Всі товари",
         "newItemButton": "Створити новий"
-    }
+    },
+    "newItemPage": {
+        "title": "Деталі товару",
+        "toAllItems": "Показати всі товари",
+        "itemName": "Назва товару",
+        "itemDescription": "Опис",
+        "itemCategory": "Категорія",
+        "itemBrandName": "Назва бренду",
+        "itemAuthors": "Автори",
+        "itemIllustrators": "Ілюстратори",
+        "itemPublished": "Опубліковано",
+        "itemFormat": "Формат",
+        "itemSku": "Артикул",
+        "itemStockQuantity": "Кількість на складі",
+        "itemRegularPrice": "Звичайна ціна",
+        "itemSalePrice": "Ціна зі знижкою",
+        "itemTags": "Теги",
+        "addTagButtonText": "Додати тег",
+        "itemTagList": "Список тегів",
+        "itemLangSelectionText": "Вибір мови",
+        "createButton": "Створити",
+        "itemImage": "Зображення товару",
+        "addImageButton": "Додати зображення",
+        "noPhotosText": "Немає фотографій цього товару..."
+        }
 
 }

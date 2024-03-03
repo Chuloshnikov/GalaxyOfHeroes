@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import Link from 'next/link';
 
-const ItemsPage = () => {
+const ItemsPage = ({text, lang}: {text:any, lang:any}) => {
   return (
     <div
     className=''
@@ -13,14 +13,14 @@ const ItemsPage = () => {
             <h2
             className='text-4xl text-accentBg font-medium'
             >
-                All Items
+                {text.title}
             </h2>
             <Link 
             className="block max-w-max bg-mainBg text-accentBg px-2 
             py-1 border-2 border-accentBg text-accentBg rounded-3xl
             cursor-pointer font-semibold"
-            href={"/profile/items/new"}>
-                Create new Item
+            href={`/${lang}/profile/items/new`}>
+                {text.newItemButton}
             </Link>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { MdOutlineImageNotSupported } from "react-icons/md";
 
-const EditableItemsImages = ({images, setImages, setUploading, setError}) => {
+const EditableItemsImages = ({text, images, setImages, setUploading, setError}) => {
 
     const uploadImages = async (e) => {
         setUploading(true);
@@ -31,7 +31,7 @@ const EditableItemsImages = ({images, setImages, setUploading, setError}) => {
     <div
             className='flex gap-2 flex-col'
             >
-                <label className='text-accentBg text-xs font-semibold'>Item image</label>
+                <label className='text-accentBg text-xs font-semibold'>{text.itemImage}</label>
                 <div
                 className="xs:w-[270px] xs:h-[270px] lg:w-[400px] lg:w-[400px] mt-2 xs:mb-[70px] lg:mb-[55%]"
                 >   
@@ -50,7 +50,7 @@ const EditableItemsImages = ({images, setImages, setUploading, setError}) => {
                             className='block max-w-max bg-mainBg py-1 px-2 rounded-xl 
                             text-assentBg font-semibold border-2 border-accentBg cursor-pointer text-xs sm:text-base mt-2'
                             >
-                                Add Image
+                                {text.addImageButton}
                             </span>
                     </label>
                 </div>
@@ -61,7 +61,7 @@ const EditableItemsImages = ({images, setImages, setUploading, setError}) => {
                         <span
                         className='block text-accentBg font-semibold'
                         >
-                            No photos in this item...
+                            {text.noPhotosText}
                         </span>
                     ) : images.map(image => (
                         <div
