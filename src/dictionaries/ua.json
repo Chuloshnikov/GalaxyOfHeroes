@@ -143,6 +143,13 @@
         "itemImage": "Зображення товару",
         "addImageButton": "Додати зображення",
         "noPhotosText": "Немає фотографій цього товару..."
+        },
+        "newsPage": {
+            "title": "Всі новини",
+            "newItemButton": "Створити новину"
+        },
+        "newNewsItemPage": {
+            
         }
 
 }

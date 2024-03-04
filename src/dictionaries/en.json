@@ -143,5 +143,12 @@
         "itemImage": "Item image",
         "addImageButton": "Add Image",
         "noPhotosText": "No photos in this item..."
+    },
+    "newsPage": {
+        "title": "All news",
+        "newItemButton": "Create news item"
+    },
+    "newNewsItemPage": {
+            
     }
 }
