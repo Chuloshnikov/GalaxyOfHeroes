@@ -143,6 +143,13 @@
         "itemImage": "Artikelbild",
         "addImageButton": "Bild hinzufügen",
         "noPhotosText": "Keine Fotos zu diesem Artikel..."
+        },
+        "newsPage": {
+            "title": "Alle Neuigkeiten",
+            "newItemButton": "Neuigkeitseintrag erstellen"
+        },
+        "newNewsItemPage": {
+            
         }
 }
 

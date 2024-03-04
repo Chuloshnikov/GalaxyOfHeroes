@@ -1,6 +1,8 @@
-import React from 'react'
+"use client"
+import {useState, useEffect} from 'react';
+import Link from 'next/link';
 
-const NewsPage = () => {
+const NewsPage = ({text, lang}: {text:any, lang:any}) => {
   return (
     <div
     className=''
@@ -11,7 +13,7 @@ const NewsPage = () => {
             <h2
             className='text-4xl text-accentBg font-medium'
             >
-                All News
+                {text.title}
             </h2>
             <Link 
             className="block max-w-max bg-mainBg text-accentBg px-2 
