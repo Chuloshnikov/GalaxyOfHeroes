@@ -26,7 +26,6 @@ const [quantity, setQuantity] = useState<number>(0);
 const [regularPrice, setRegularPrice] = useState<number>(0);
 const [salePrice, setSalePrice] = useState<number>(0);
 const [language, setLanguage] = useState<string>('english');
-console.log(language);
 
 {/*redirect to items state*/}
 const [redirectToItems, setRedirectToItems] = useState<boolean>(false);
