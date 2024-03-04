@@ -142,7 +142,13 @@
         "createButton": "Create",
         "itemImage": "Item image",
         "addImageButton": "Add Image",
-        "noPhotosText": "No photos in this item..."
+        "noPhotosText": "No photos in this item...",
+        "itemSaved": "Item Saved!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "updating": "Updating...",
+        "deleting": "Deleting...",
+        "error": "Error!"
     },
     "newsPage": {
         "title": "All news",

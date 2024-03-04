@@ -142,7 +142,13 @@
         "createButton": "Erstellen",
         "itemImage": "Artikelbild",
         "addImageButton": "Bild hinzufügen",
-        "noPhotosText": "Keine Fotos zu diesem Artikel..."
+        "noPhotosText": "Keine Fotos zu diesem Artikel...",
+        "itemSaved": "Artikel gespeichert!",
+        "saving": "Speichern...",
+        "uploading": "Hochladen…",
+        "updating": "Aktualisiert…",
+        "deleting": "Löschen…",
+        "error": "Fehler!"
         },
         "newsPage": {
             "title": "Alle Neuigkeiten",
