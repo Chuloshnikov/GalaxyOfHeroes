@@ -375,16 +375,16 @@ useEffect(() => {
                 />
         </form>
         {saved && (
-                    <SavingBox text={"item saved"} frame="bg-green-100 border border-green-400"/>
+                    <SavingBox text={text.itemSaved} frame="bg-green-100 border border-green-400"/>
                     )}
                     {isSaving && (
-                    <SavingBox text={"item saving"} frame="bg-blue-200 border border-blue-400"/>
+                    <SavingBox text={text.saving} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isUploading && (
-                    <SavingBox text={"image uploading"} frame="bg-blue-200 border border-blue-400"/>
+                    <SavingBox text={text.uploading} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isError && (
-                    <SavingBox text={"error"} frame="bg-red-200 border border-bed-400"/>
+                    <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
                     )}
     </div>
   )
