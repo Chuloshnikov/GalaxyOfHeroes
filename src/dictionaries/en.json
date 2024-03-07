@@ -155,6 +155,12 @@
         "newItemButton": "Create news item"
     },
     "newNewsItemPage": {
-            
+        "title": "New details",
+        "toAllNews": "Show all news",
+        "newsName": "News title",
+        "newsDescription": "Description",
+        "newsCategory": "Category",
+        "newsLangSelectionText": "Language selection",
+        "addImageButton": "Add image"
     }
 }
