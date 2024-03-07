@@ -6,13 +6,13 @@ const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
     const handleFileChange = async (e) => {
         const files = e.target.files;
         if (files?.length === 1) {
-            const data = new FormData;
+            const data = new FormData();
             data.set('file', files[0]);
             setUploading(true);
-            const response = await fetch('api/upload', {
+            const response = await fetch('/api/upload', {
                 method: 'POST',
                 body: data,
-            })
+            });
 
             const link = await response.json();
             if (link) {
@@ -28,10 +28,10 @@ const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
 
     return (
         <div
-        className="max-w-[400px] h-[200px] mt-2 flex flex-col gap-2"
+        className="max-w-[400px] h-[200px] mt-2 mb-8 flex flex-col gap-2"
         >
             {link?.length ? (
-                <Image className="rounded-lg w-full mb-1" src={link} width={400} height={250} alt={'image'} />
+                <Image className="rounded-lg w-full mb-1" src={link} width={400} height={250} alt={'image'} />    
             ) : (
                 <div
                 className='h-full w-full border-2 border-accentBg rounded-lg'

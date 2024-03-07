@@ -6,7 +6,7 @@ const EditableImage = ({text, link, setLink, setUploading, setError}) => {
     const handleFileChange = async (e) => {
         const files = e.target.files;
         if (files?.length === 1) {
-            const data = new FormData;
+            const data = new FormData();
             data.set('file', files[0]);
             setUploading(true);
             const response = await fetch('api/upload', {
