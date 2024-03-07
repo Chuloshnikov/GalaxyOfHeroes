@@ -30,7 +30,7 @@ const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
         <div
         className="max-w-[400px] h-[200px] mt-2 flex flex-col gap-2"
         >
-            {link ? (
+            {link?.length ? (
                 <Image className="rounded-lg w-full mb-1" src={link} width={400} height={250} alt={'image'} />
             ) : (
                 <div
