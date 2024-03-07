@@ -155,7 +155,11 @@
             "newItemButton": "Створити новину"
         },
         "newNewsItemPage": {
-            
+            "title": "Деталі новини",
+            "toAllItems": "Показати всі новини",
+            "itemName": "Заголовок",
+            "itemDescription": "Опис",
+            "itemCategory": "Категорія",
+            "addImageButton": "Додати зображення"
         }
-
 }
