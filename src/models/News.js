@@ -7,4 +7,4 @@ const NewsSchema = new Schema({
   image: {type: String}
 }, {timestamps: true});
 
-export const News = models?.News || model('New', NewsSchema);
+export const News = models?.News || model('News', NewsSchema);

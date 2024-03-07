@@ -51,7 +51,7 @@ const handleFormSubmit = async (e:ChangeEvent<HTMLInputElement>) => {
       language, 
       category, 
   };
-  const response = await fetch('/api/items', {
+  const response = await fetch('/api/news', {
       method: 'POST',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(data),
@@ -132,7 +132,7 @@ if (redirectToNews) {
                     <div
                       className='flex flex-col'
                       >
-                          <label className='text-accentBg text-xs font-semibold'>{text.newsDescription}</label>
+                          <label className='text-accentBg text-xs font-semibold'>{text.newsCategory}</label>
                           <input 
                           onChange={e => setCategory(e.target.value)}
                           value={category}
@@ -143,7 +143,7 @@ if (redirectToNews) {
                     <div
                       className='flex flex-col'
                       >
-                          <label className='text-accentBg text-xs font-semibold'>{text.newsCategory}</label>
+                          <label className='text-accentBg text-xs font-semibold'>{text.newsDescription}</label>
                           <textarea 
                           onChange={e => setDescription(e.target.value)}
                           value={description}
@@ -171,9 +171,28 @@ if (redirectToNews) {
                                 <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
+                    <div>
+                        <button 
+                        className='mt-2 w-full bg-accentBg text-mainBg px-2 py-1 border-2 border-accentBg text-accentBg rounded-3xl max-w-[200px]'
+                        type="submit"
+                        >
+                            {text.createButton}
+                        </button>
+                    </div>
               </div>
         </form>
-      
+        {saved && (
+                    <SavingBox text={text.itemSaved} frame="bg-green-100 border border-green-400"/>
+                    )}
+                    {isSaving && (
+                    <SavingBox text={text.saving} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isUploading && (
+                    <SavingBox text={text.uploading} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                    {isError && (
+                    <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
+                    )}
     </div>
   )
 }

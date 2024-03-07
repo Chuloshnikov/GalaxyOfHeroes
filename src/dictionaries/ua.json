@@ -161,6 +161,13 @@
             "newsDescription": "Опис",
             "newsCategory": "Категорія",
             "newsLangSelectionText": "Вибір мови",
-            "addImageButton": "Додати зображення"
+            "addImageButton": "Додати зображення",
+            "createButton": "Створити",
+            "itemSaved": "новина створена!",
+            "saving": "Збереження...",
+            "uploading": "Завантаження...",
+            "updating": "Oновлення...",
+            "deleting": "Видалення...",
+            "error": "Помилка!"
         }
 }

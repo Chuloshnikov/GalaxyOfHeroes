@@ -42,7 +42,7 @@ const EditableItemsImages = ({text, images, setImages, setUploading, setError}) 
                             <MdOutlineImageNotSupported className="w-16 h-16 text-accentBg mt-4 ml-4"/>
                         </div>
                     ) : (
-                        <Image className="rounded-lg w-full mb-1" src={images.length > 1  ? images[images.length - 1] : images[0]} width={400} height={400} alt={'avatar'} />
+                        <Image className="rounded-lg w-full mb-1" src={images.length > 1  ? images[images.length - 1] : images[0]} width={400} height={400} alt={'item image'} />
                     )}
                     <label>
                         <input type="file" className='hidden' onChange={uploadImages}/>
