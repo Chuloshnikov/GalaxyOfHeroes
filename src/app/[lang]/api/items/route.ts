@@ -7,5 +7,5 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
     const itemDoc = await Items.create(data);
 
-    return NextResponse(itemDoc);
+    return new NextResponse(itemDoc);
 }

@@ -4,7 +4,8 @@ const NewsSchema = new Schema({
   title: {type: String, required: true, maxlength: 100},
   description: {type: String, required: true, maxlength: 1000},
   category: {type: String, required: true, maxlength: 100},
-  image: {type: String}
+  image: {type: String},
+  language: {type: String, required: true, maxlength: 30}, 
 }, {timestamps: true});
 
-export const News = models?.News || model('News', NewsSchema);
+export default models?.News || model('News', NewsSchema);
