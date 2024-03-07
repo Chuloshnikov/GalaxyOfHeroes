@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { MdOutlineImageNotSupported } from "react-icons/md";
 
-const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
+const EditableNewsImage = ({text, image, setImage, setUploading, setError}) => {
 
-    const handleFileChange = async (e:ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = async (e) => {
         const files = e.target.files;
         if (files?.length === 1) {
             const data = new FormData;
@@ -16,8 +16,8 @@ const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
 
             const link = await response.json();
             if (link) {
-                setLink(link);
-            setUploading(false);
+                setImage(link);
+                setUploading(false);
             } else {
                 setUploading(false);
                 setError(true);
@@ -30,8 +30,8 @@ const EditableNewsImage = ({text, link, setLink, setUploading, setError}) => {
         <div
         className="max-w-[400px] h-[200px] mt-2 flex flex-col gap-2"
         >
-            {link?.length ? (
-                <Image className="rounded-lg w-full mb-1" src={link} width={400} height={250} alt={'image'} />
+            {image ? (
+                <Image className="rounded-lg w-full mb-1" src={image} width={400} height={250} alt={'image'} />
             ) : (
                 <div
                 className='h-full w-full border-2 border-accentBg rounded-lg'

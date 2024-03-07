@@ -27,7 +27,7 @@ export async function GET() {
 
   export async function DELETE(request: NextRequest) {
     mongoose.connect(process.env.MONGO_URL);
-    const url = new URL(req.url);
+    const url = new URL(request.url);
     const _id = url.searchParams.get('_id');
       await Category.deleteOne({_id});
     return NextResponse.json(true);

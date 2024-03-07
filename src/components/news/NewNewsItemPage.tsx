@@ -1,5 +1,5 @@
 "use client"
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import SavingBox from '../ui/SavingBox';
 import EditableNewsImage from './EditableNewsImage';
 import { useProfile } from '../profile/UseProfile';
@@ -39,7 +39,7 @@ useEffect(() => {
   }
 }, [saved, isError]);
 
-const handleFormSubmit = async (e:ChangeEvent<HTMLInputElement>) => {
+const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
   e.preventDefault();
   setSaved(false);
   setIsSaving(true);
@@ -67,6 +67,10 @@ const handleFormSubmit = async (e:ChangeEvent<HTMLInputElement>) => {
   
 }
 
+if (redirectToNews) {
+  return redirect(`/${lang}/profile/news`);
+}
+
 if (profileLoading) {
   return 'Loading user info...';
 }
@@ -79,10 +83,6 @@ if (!profileData.admin) {
       Error! Not an admin
   </div>
   )
-}
-
-if (redirectToNews) {
-  return redirect(`/${lang}/profile/news`);
 }
 
   return (
