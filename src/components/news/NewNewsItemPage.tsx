@@ -11,7 +11,7 @@ const NewNewsItemPage = ({text, lang}: {text: any, lang: any}) => {
   const [title, setTitle] = useState<string>('');
   const [image, setImage] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [category, setCategory] = useState<string>('');
+  const [topic, setTopic] = useState<string>('');
   const [language, setLanguage] = useState<string>('english');
 
   {/*Admin State*/}
@@ -49,7 +49,7 @@ const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<vo
       title, 
       description, 
       language, 
-      category, 
+      topic, 
   };
   const response = await fetch('/api/news', {
       method: 'POST',
@@ -134,8 +134,8 @@ if (!profileData.admin) {
                       >
                           <label className='text-accentBg text-xs font-semibold'>{text.newsCategory}</label>
                           <input 
-                          onChange={e => setCategory(e.target.value)}
-                          value={category}
+                          onChange={e => setTopic(e.target.value)}
+                          value={topic}
                           className='itemsInput'
                           type="text"
                           />
