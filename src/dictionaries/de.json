@@ -155,7 +155,12 @@
             "newItemButton": "Neuigkeitseintrag erstellen"
         },
         "newNewsItemPage": {
-            
+            "title": "Neue Details",
+            "toAllItems": "Alle Neuigkeiten anzeigen",
+            "newsName": "News-Titel",
+            "newsDescription": "Beschreibung",
+            "newsCategory": "Kategorie",
+            "addImageButton": "Bild hinzufügen"
         }
 }
 

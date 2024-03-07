@@ -93,14 +93,14 @@ if (redirectToNews) {
             <h2
             className='text-4xl text-accentBg font-medium'
             >
-                News Details
+                {text.title}
             </h2>
             <Link 
             className="block max-w-max bg-mainBg text-accentBg px-2 
             py-1 border-2 border-accentBg text-accentBg rounded-3xl
             cursor-pointer font-semibold"
             href={"/profile/news"}>
-                Show all news
+                {text.toAllNews}
             </Link>
         </div>
         <form
@@ -110,7 +110,7 @@ if (redirectToNews) {
           <EditableNewsImage 
                 link={image} 
                 setLink={setImage} 
-                text={"Add image"} 
+                text={text.addImageButton} 
                 setError={setIsError} 
                 setUploading={setIsUploading}
                 />
@@ -121,7 +121,7 @@ if (redirectToNews) {
                     <div
                     className='flex flex-col'
                     >
-                        <label className='text-accentBg text-xs font-semibold'>News title</label>
+                        <label className='text-accentBg text-xs font-semibold'>{text.newsName}</label>
                         <input 
                         onChange={e => setTitle(e.target.value)}
                         value={title}
@@ -132,7 +132,7 @@ if (redirectToNews) {
                     <div
                       className='flex flex-col'
                       >
-                          <label className='text-accentBg text-xs font-semibold'>News category</label>
+                          <label className='text-accentBg text-xs font-semibold'>{text.newsDescription}</label>
                           <input 
                           onChange={e => setCategory(e.target.value)}
                           value={category}
@@ -143,7 +143,7 @@ if (redirectToNews) {
                     <div
                       className='flex flex-col'
                       >
-                          <label className='text-accentBg text-xs font-semibold'>News Description</label>
+                          <label className='text-accentBg text-xs font-semibold'>{text.newsCategory}</label>
                           <textarea 
                           onChange={e => setDescription(e.target.value)}
                           value={description}
@@ -154,7 +154,7 @@ if (redirectToNews) {
                     className='mt-2'
                     >
                         {/*form selection*/}
-                    <label className='text-accentBg text-xs font-semibold'>Select language</label>
+                    <label className='text-accentBg text-xs font-semibold'>{text.newsLangSelectionText}</label>
                         <div
                         className='relative border-2 solid border-accentBg rounded-full max-w-max flex items-center'>
                                 <select 
@@ -168,7 +168,7 @@ if (redirectToNews) {
                                     <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
                                     <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
                                 </select>
-                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-0 top-2 text-accentBg w-7 h-7"/>
+                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
               </div>

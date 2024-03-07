@@ -156,10 +156,11 @@
         },
         "newNewsItemPage": {
             "title": "Деталі новини",
-            "toAllItems": "Показати всі новини",
-            "itemName": "Заголовок",
-            "itemDescription": "Опис",
-            "itemCategory": "Категорія",
+            "toAllNews": "Показати всі новини",
+            "newsName": "Заголовок",
+            "newsDescription": "Опис",
+            "newsCategory": "Категорія",
+            "newsLangSelectionText": "Вибір мови",
             "addImageButton": "Додати зображення"
         }
 }

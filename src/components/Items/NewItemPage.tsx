@@ -351,7 +351,7 @@ useEffect(() => {
                                     <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
                                     <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
                                 </select>
-                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-0 top-2 text-accentBg w-7 h-7"/>
+                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
                     <div>
