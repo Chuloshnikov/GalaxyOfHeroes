@@ -17,7 +17,7 @@ const EditableImage = ({text, link, setLink, setUploading, setError}) => {
             const link = await response.json();
             if (link) {
                 setLink(link);
-            setUploading(false);
+                setUploading(false);
             } else {
                 setUploading(false);
                 setError(true);
