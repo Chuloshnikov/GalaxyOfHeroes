@@ -160,7 +160,15 @@
             "newsName": "News-Titel",
             "newsDescription": "Beschreibung",
             "newsCategory": "Kategorie",
-            "addImageButton": "Bild hinzufügen"
+            "newsLangSelectionText": "Sprachauswahl",
+            "addImageButton": "Bild hinzufügen",
+            "createButton": "Erstellen",
+            "itemSaved": "Gespeichert!",
+            "saving": "Speichern...",
+            "uploading": "Hochladen…",
+            "updating": "Aktualisiert…",
+            "deleting": "Löschen…",
+            "error": "Fehler!"
         }
 }
 

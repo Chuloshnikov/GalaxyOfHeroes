@@ -161,6 +161,13 @@
         "newsDescription": "Description",
         "newsCategory": "Category",
         "newsLangSelectionText": "Language selection",
-        "addImageButton": "Add image"
+        "addImageButton": "Add image",
+        "createButton": "Create",
+        "itemSaved": "Saved!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "updating": "Updating...",
+        "deleting": "Deleting...",
+        "error": "Error!"
     }
 }
