@@ -67,6 +67,10 @@ const handleFormSubmit = async (e:ChangeEvent<HTMLInputElement>) => {
   
 }
 
+if (profileLoading) {
+  return 'Loading user info...';
+}
+
 if (!profileData.admin) {
   return (
   <div
