@@ -114,7 +114,10 @@
         "uploading": "Hochladen…",
         "updating": "Aktualisiert…",
         "deleting": "Löschen…",
-        "error": "Fehler!"
+        "error": "Fehler!",
+        "deleteQuestion": "Sind Sie sicher, dass Sie die Kategorie löschen möchten",
+        "cancel": "Abbrechen",
+        "confirm": "Bestätigen"
     },
     "itemsPage": {
         "title": "Alle Elemente",
