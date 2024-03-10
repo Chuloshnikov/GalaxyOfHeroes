@@ -114,7 +114,10 @@
         "uploading": "Uploading...",
         "updating": "Updating...",
         "deleting": "Deleting...",
-        "error": "Error!"
+        "error": "Error!",
+        "deleteQuestion": "Are you sure you want to delete category",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
     }, 
     "itemsPage": {
         "title": "All Items",

@@ -2,6 +2,7 @@
 import {useState, useEffect} from 'react';
 import SavingBox from '../ui/SavingBox';
 import { useProfile } from '../profile/UseProfile';
+import DeleteButton from '../ui/DeleteButton';
 
 const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
     const [categoryName, setCategoryName] = useState<string>('');
@@ -138,7 +139,7 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                     {editedCategory ? text.updateCategory : text.newCategory}
                     {editedCategory && (
                         <>
-                            :{editedCategory.name}
+                            :{" "}{editedCategory.name}
                         </>
                     )}
                 </label>
@@ -149,12 +150,24 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                 value={categoryName}
                 />
             </div>
-            <div>
+            <div
+            className='flex gap-2'
+            >
                 <button
                 className='bg-mainBg py-2 px-4 rounded-3xl max-w-max text-assentBg font-semibold border-2 border-accentBg'
                 type='submit'
                 >
                     {editedCategory ? text.updateButton : text.createButton}
+                </button>
+                <button
+                className='bg-mainBg py-2 px-4 rounded-3xl max-w-max text-assentBg font-semibold border-2 border-accentBg'
+                type="button"
+                onClick={() => {
+                setEditedCategory(null);
+                setCategoryName('');
+                }}
+                >
+                {text.cancel}
                 </button>
             </div>
         </form>
@@ -184,13 +197,10 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                                 >
                                     {text.editCategory}
                                 </button>
-                                <button
-                                 label="Delete"
-                                 onClick={() => handleDelete(category._id)}
-                                className=' border-2 border-accentBg py-2 px-4 rounded-3xl cursor-pointer'
-                                >
-                                    {text.deleteButton}
-                                </button>
+                                <DeleteButton
+                                 text={text}
+                                 onDelete={() => handleDelete(category._id)}
+                                />
                             </div>
                                
                         </div>
