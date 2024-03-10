@@ -12,7 +12,6 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
     const [deleted, setDeleted] = useState<boolean>(false);
     const [isSaving, setIsSaving] = useState<boolean>(false);
     const [isUpdating, setIsUpdating] = useState<boolean>(false);
-    const [isUploading, setIsUploading] = useState<boolean>(false);
     const [isDeleting, setIsDeleting] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
     const {loading: profileLoading, data: profileData} = useProfile();
@@ -31,7 +30,7 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                 setIsError(false);
             }, 2000);
         }
-    }, [saved, isError]);
+    }, [saved, deleted, isError]);
 
     useEffect(() => {
         fetchCategories(); 
@@ -117,9 +116,6 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                     )}
                     {isSaving && (
                         <SavingBox text={text.saving} frame="bg-blue-200 border border-blue-400"/>
-                    )}
-                    {isUploading && (
-                        <SavingBox text={text.uploading} frame="bg-blue-200 border border-blue-400"/>
                     )}
                     {isUpdating && (
                         <SavingBox text={text.updating} frame="bg-blue-200 border border-blue-400"/>
