@@ -56,7 +56,8 @@ const ItemsPage = ({text, lang}: {text:any, lang:any}) => {
           <div className='grid xs:grid-cols-2 lg:grid-cols-3 xl:mdl:grid-cols-4 gap-1'>
                 {items?.length > 0 && items.map(item => (
                     <Link 
-                    href={'/items/edit/' + item._id}
+                    key={item._id}
+                    href={`items/edit/${item._id}`}
                     className='bg-mainBg shadow-md rounded-lg p-4 mx-auto'>
                         <div className='relative'>
                             <Image src={item.images[0]} alt="item image" width={300} height={300}/>
