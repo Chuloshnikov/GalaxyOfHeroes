@@ -1,4 +1,13 @@
-import {model, models, Schema} from "mongoose";
+import mongoose, {model, models, Schema} from "mongoose";
+
+
+const CommentsSchema = new Schema({
+    name: {type: String}, 
+    date: {type: String}, 
+    title: {type: String}, 
+    description: {type: String}, 
+    review: {type: Number},
+})
 
 const ItemsSchema = new Schema({
     title: {
@@ -22,9 +31,7 @@ const ItemsSchema = new Schema({
     published: {
         type: String, maxlength: 60
     },
-    category: {
-        type: String, required: true, maxlength: 60
-    },
+    category: {type: mongoose.Types.ObjectId},
     sku: {
         type: String, required: true, maxlength: 60
     },
@@ -50,17 +57,7 @@ const ItemsSchema = new Schema({
     ratings: {
         type: Number,
     },
-    comments: {
-        type: [
-            {
-            name: {type: String}, 
-            date: {type: String}, 
-            title: {type: String}, 
-            description: {type: String}, 
-            review: {type: Number},
-            }
-        ]
-    },
+    comments: {type: [CommentsSchema]},
     language: {
         type: String, required: true, maxlength: 30
     },       
