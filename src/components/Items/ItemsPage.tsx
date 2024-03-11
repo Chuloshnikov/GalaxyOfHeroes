@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const ItemsPage = ({text, lang}: {text:any, lang:any}) => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<any>([]);
     const {loading: profileLoading, data: profileData} = useProfile();
 
     useEffect(() => {
