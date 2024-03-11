@@ -19,6 +19,7 @@ const [format, setFormat] = useState<string>('');
 const [published, setPublished] = useState<string>('');
 const [description, setDescription] = useState<string>('');
 const [category, setCategory] = useState<string>('');
+const [categories, setCategories] = useState<any>([]);
 const [sku, setSku] = useState<string>('');
 const [tagText, setTagText] = useState<string>('');
 const [tags, setTags] = useState<any>([]);
@@ -39,6 +40,14 @@ const [saved, setSaved] = useState<boolean>(false);
 
 {/*Admin State*/}
 const {loading: profileLoading, data: profileData} = useProfile();
+
+useEffect(() => {
+    fetch('/api/categories').then(res => {
+        res.json().then(categories => {
+            setCategories(categories);
+        });
+    });
+}, [])
 
 useEffect(() => {
     if (saved) {
@@ -175,15 +184,17 @@ useEffect(() => {
                     />
                 </div>
                 <div
-                className='flex flex-col'
+                className='flex flex-col relative'
                 >
                     <label className='text-accentBg text-xs font-semibold'>{text.itemCategory}</label>
-                    <input 
-                    onChange={e => setCategory(e.target.value)}
-                    value={category}
-                    className='itemsInput'
-                    type="text"
-                    />
+                    <select className='primary relative' value={category} onChange={e => setCategory(e.target.value)}>
+                        {categories?.length > 0 && categories.map(c => (
+                            <option key={c._id} value={c._id}>
+                                {c.name}
+                            </option>
+                        ))}
+                    </select>
+                    <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-5 text-accentBg w-7 h-7"/>
                 </div>
                 <div
                 className='flex flex-col'

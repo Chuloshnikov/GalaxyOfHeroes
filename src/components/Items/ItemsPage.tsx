@@ -53,7 +53,7 @@ const ItemsPage = ({text, lang}: {text:any, lang:any}) => {
             </Link>
         </div>
         <div>
-          <div className='grid xs:grid-cols-2 lg:grid-cols-3 xl:mdl:grid-cols-4 gap-1'>
+          <div className='grid xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1'>
                 {items?.length > 0 && items.map(item => (
                     <Link 
                     key={item._id}

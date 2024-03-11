@@ -7,6 +7,7 @@ import EditableItemsImages from './EditableItemsImages';
 import { useProfile } from '../profile/UseProfile';
 import Link from 'next/link';
 import { redirect, useParams } from 'next/navigation';
+import DeleteButton from '../ui/DeleteButton';
 
 
 const EditItemPage = ({text, lang}: {text: any, lang: any}) => {
@@ -35,6 +36,8 @@ const [redirectToItems, setRedirectToItems] = useState<boolean>(false);
 
 
 {/*UI States*/}
+const [deleted, setDeleted] = useState<boolean>(false);
+const [isDeleting, setIsDeleting] = useState<boolean>(false)
 const [isUploading, setIsUploading] = useState<boolean>(false);
 const [isSaving, setIsSaving] = useState<boolean>(false);
 const [isError, setIsError] = useState<boolean>(false);
@@ -81,8 +84,12 @@ useEffect(() => {
         setTimeout(() => {
             setIsError(false);
         }, 2000);
+    } else if (isDeleting) {
+        setTimeout(() => {
+            setIsDeleting(false);
+        }, 2000);
     }
-}, [saved, isError]);
+}, [saved, isDeleting, isError]);
 
 
     const handleFormSubmit = async (e:ChangeEvent<HTMLInputElement>) => {
@@ -144,6 +151,20 @@ useEffect(() => {
         newTags.splice(index, 1);
         setTags(newTags);
       };
+
+      async function handleDeleteClick() {
+            setIsDeleting(true);
+            const res = await fetch('/api/items?_id=' + id, {
+                method: 'DELETE',
+            });
+            if (res.ok) {
+                setIsDeleting(false);
+                setDeleted(true);
+                setRedirectToItems(true);
+            } else {
+                setIsError(true);
+            }
+        }
 
     if (profileLoading) {
         return 'Loading user info...';
@@ -208,15 +229,17 @@ useEffect(() => {
                     />
                 </div>
                 <div
-                className='flex flex-col'
+                className='flex flex-col relative'
                 >
                     <label className='text-accentBg text-xs font-semibold'>{text.itemCategory}</label>
-                    <input 
-                    onChange={e => setCategory(e.target.value)}
-                    value={category}
-                    className='itemsInput'
-                    type="text"
-                    />
+                    <select className='primary relative' value={category} onChange={e => setCategory(e.target.value)}>
+                        {categories?.length > 0 && categories.map(c => (
+                            <option key={c._id} value={c._id}>
+                                {c.name}
+                            </option>
+                        ))}
+                    </select>
+                    <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-5 text-accentBg w-7 h-7"/>
                 </div>
                 <div
                 className='flex flex-col'
@@ -377,14 +400,14 @@ useEffect(() => {
                                 onChange={e => setLanguage(e.target.value)}
                                 defaultValue={"english"}
                                 required={true}
-                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-4'
+                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-2'
                                 name="select"
                                 >
                                     <option className='bg-mainBg font-semibold' value="english">English</option>
                                     <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
-                                    <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
+                                    <option className='bg-mainBg font-semibold'value="ukraine">Ukraine</option>
                                 </select>
-                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
+                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 -right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
                     <div>
@@ -392,8 +415,16 @@ useEffect(() => {
                         className='mt-2 w-full bg-accentBg text-mainBg px-2 py-1 border-2 border-accentBg text-accentBg rounded-3xl'
                         type="submit"
                         >
-                            {text.createButton}
+                            {text.updateButton}
                         </button>
+                        <div
+                        className='mt-2'
+                        >
+                            <DeleteButton 
+                            text={text}
+                            onDelete={handleDeleteClick}
+                            />
+                        </div>
                     </div>
             </div>
                 {/*form container end*/}
@@ -417,6 +448,12 @@ useEffect(() => {
                     )}
                     {isError && (
                     <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
+                    )}
+                    {isDeleting && (
+                        <SavingBox text={text.deleting} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                     {deleted && (
+                        <SavingBox text={text.categoryDeleted} frame="bg-green-100 border border-green-400"/>
                     )}
     </div>
   )
