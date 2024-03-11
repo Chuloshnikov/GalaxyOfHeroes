@@ -102,7 +102,7 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
 
   return (
     <section
-    className='mt-8 max-w-lg mx-auto'
+    className='mt-8 max-w-2xl mx-auto'
     >
         <form
         onSubmit={handleCategorySubmit}
@@ -176,20 +176,20 @@ const CategoriesPage = ({lang, text }: {lang: any, text: any}) => {
                         className='bg-white rounded-3xl text-accentBg font-semibold  flex justify-between mt-1'
                         >
                             <div
-                            className='py-2 px-4 text-xl'
+                            className='py-1 px-2 text-xl'
                             >
                                 
                                 <span>{category.name}</span>
                             </div>
                             <div
-                            className='flex gap-2'
+                            className='flex gap-1'
                             >
                                 <button
                                 onClick={() => {
                                     setEditedCategory(category);
                                     setCategoryName(category.name);
                                 }}
-                                className='flex gap-2 border-2 border-accentBg py-2 px-4 rounded-3xl cursor-pointer'
+                                className='border-2 border-accentBg py-1 px-4 rounded-3xl cursor-pointer'
                                 >
                                     {text.editCategory}
                                 </button>

@@ -4,7 +4,7 @@ import { getDictionary } from '../../../../../../lib/dictionaries';
 import EditItemPage from '@/components/Items/EditItemPage';
 
 export default async function EditItem({params: { lang }}: {params: { lang: Locale }}) {
-    const { profilePage, newItemPage } = await getDictionary(lang);
+    const { profilePage, updateItemPage } = await getDictionary(lang);
 
     return (
         <section
@@ -24,7 +24,7 @@ export default async function EditItem({params: { lang }}: {params: { lang: Loca
                   {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang} text={profilePage}>
-                       <EditItemPage text={newItemPage} lang={lang}/>
+                       <EditItemPage text={updateItemPage} lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>
