@@ -6,7 +6,7 @@ import ProfileLayout from '@/components/profile/ProfileLayout';
 
 
 export default async function Profile({params: { lang }}: {params: { lang: Locale }}) {
-    const { profilePage, auth } = await getDictionary(lang);
+    const { profilePage } = await getDictionary(lang);
 
     return (
         <section
