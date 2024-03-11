@@ -206,5 +206,25 @@
         "updating": "Updating...",
         "deleting": "Deleting...",
         "error": "Error!"
+    },
+    "updateNewsItemPage": {
+        "title": "New details",
+        "toAllNews": "Show all news",
+        "newsName": "News title",
+        "newsDescription": "Description",
+        "newsCategory": "Topic",
+        "newsLangSelectionText": "Language selection",
+        "addImageButton": "Add image",
+        "updateButton": "Update",
+        "itemSaved": "Saved!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "updating": "Updating...",
+        "deleting": "Deleting...",
+        "error": "Error!",
+        "deleteQuestion": "Are you sure you want to delete news item",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "deleteButton": "Delete"
     }
 }

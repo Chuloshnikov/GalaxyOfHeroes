@@ -1,10 +1,10 @@
 import ProfileLayout from '@/components/profile/ProfileLayout';
 import { Locale } from '@/i18n.config';
-import { getDictionary } from '../../../../../lib/dictionaries';
-import NewNewsItemPage from '@/components/news/NewNewsItemPage';
+import { getDictionary } from '../../../../../../lib/dictionaries';
+import EditNewsItemPage from '@/components/news/EditNewsItemPage';
 
-export default async function NewNewsItem({params: { lang }}: {params: { lang: Locale }}) {
-    const { profilePage, newNewsItemPage } = await getDictionary(lang);
+export default async function EditNewsItem({params: { lang }}: {params: { lang: Locale }}) {
+    const { profilePage, updateNewsItemPage } = await getDictionary(lang);
 
     return (
         <section
@@ -24,7 +24,7 @@ export default async function NewNewsItem({params: { lang }}: {params: { lang: L
                   {profilePage.description}
                 </p>
                 <ProfileLayout lang={lang} text={profilePage}>
-                       <NewNewsItemPage text={newNewsItemPage} lang={lang}/>
+                       <EditNewsItemPage text={updateNewsItemPage} lang={lang}/>
                 </ProfileLayout>
             </div>
         </section>

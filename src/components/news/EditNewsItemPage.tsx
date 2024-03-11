@@ -4,40 +4,64 @@ import SavingBox from '../ui/SavingBox';
 import EditableNewsImage from './EditableNewsImage';
 import { useProfile } from '../profile/UseProfile';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { redirect, useParams } from 'next/navigation';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import DeleteButton from '../ui/DeleteButton';
 
-const NewNewsItemPage = ({text, lang}: {text: any, lang: any}) => {
-  const [title, setTitle] = useState<string>('');
-  const [image, setImage] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
-  const [topic, setTopic] = useState<string>('');
-  const [language, setLanguage] = useState<string>('english');
+const EditNewsItemPage = ({text, lang}: {text: any, lang: any}) => {
 
-  {/*Admin State*/}
+    const {id} = useParams();
+
+const [title, setTitle] = useState<string>('');
+const [image, setImage] = useState<string>('');
+const [description, setDescription] = useState<string>('');
+const [topic, setTopic] = useState<string>('');
+const [language, setLanguage] = useState<string>('english');
+
+{/*Admin State*/}
 const {loading: profileLoading, data: profileData} = useProfile();
 
-  {/*UI States*/}
-  const [saved, setSaved] = useState<boolean>(false);
-  const [isSaving, setIsSaving] = useState<boolean>(false);
-  const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
+{/*UI States*/}
+const [deleted, setDeleted] = useState<boolean>(false);
+const [isDeleting, setIsDeleting] = useState<boolean>(false)
+const [saved, setSaved] = useState<boolean>(false);
+const [isSaving, setIsSaving] = useState<boolean>(false);
+const [isUploading, setIsUploading] = useState<boolean>(false);
+const [isError, setIsError] = useState<boolean>(false);
 
 
-  {/*redirect to items state*/}
+{/*redirect to items state*/}
 const [redirectToNews, setRedirectToNews] = useState<boolean>(false);
 
 useEffect(() => {
-  if (saved) {
-      setTimeout(() => {
-          setSaved(false);
-      }, 2000);
-  } else if (isError) {
-      setTimeout(() => {
-          setIsError(false);
-      }, 2000);
-  }
-}, [saved, isError]);
+    fetch('/api/news').then(res => {
+        res.json().then(items => {
+            const item = items.find(item => item._id === id);
+            setTitle(item.title);
+            setImage(item.image);
+            setDescription(item.description);
+            setTopic(item.topic)
+            setLanguage(item.language);
+        });
+    });
+
+}, [id]);
+
+useEffect(() => {
+    if (saved) {
+        setTimeout(() => {
+            setSaved(false);
+        }, 2000);
+    } else if (isError) {
+        setTimeout(() => {
+            setIsError(false);
+        }, 2000);
+    } else if (isDeleting) {
+        setTimeout(() => {
+            setIsDeleting(false);
+        }, 2000);
+    }
+}, [saved, isDeleting, isError]);
 
 const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
   e.preventDefault();
@@ -50,9 +74,10 @@ const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<vo
       description, 
       language, 
       topic, 
+      _id: id
   };
   const response = await fetch('/api/news', {
-      method: 'POST',
+      method: 'PUT',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(data),
   })
@@ -65,6 +90,20 @@ const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<vo
       setIsError(true);
   }
   
+}
+
+async function handleDeleteClick() {
+    setIsDeleting(true);
+    const res = await fetch('/api/news?_id=' + id, {
+        method: 'DELETE',
+    });
+    if (res.ok) {
+        setIsDeleting(false);
+        setDeleted(true);
+        setRedirectToNews(true);
+    } else {
+        setIsError(true);
+    }
 }
 
 if (redirectToNews) {
@@ -176,8 +215,16 @@ if (!profileData.admin) {
                         className='mt-2 w-full bg-accentBg text-mainBg px-2 py-1 border-2 border-accentBg text-accentBg rounded-3xl max-w-[200px]'
                         type="submit"
                         >
-                            {text.createButton}
+                            {text.updateButton}
                         </button>
+                        <div
+                        className='mt-2 max-w-[200px]'
+                        >
+                            <DeleteButton 
+                            text={text}
+                            onDelete={handleDeleteClick}
+                            />
+                        </div>
                     </div>
               </div>
         </form>
@@ -193,8 +240,14 @@ if (!profileData.admin) {
                     {isError && (
                     <SavingBox text={text.error} frame="bg-red-200 border border-bed-400"/>
                     )}
+                    {isDeleting && (
+                    <SavingBox text={text.deleting} frame="bg-blue-200 border border-blue-400"/>
+                    )}
+                     {deleted && (
+                    <SavingBox text={text.categoryDeleted} frame="bg-green-100 border border-green-400"/>
+                    )}
     </div>
   )
 }
 
-export default NewNewsItemPage;
+export default EditNewsItemPage

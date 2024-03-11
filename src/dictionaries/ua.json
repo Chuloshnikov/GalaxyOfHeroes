@@ -206,5 +206,25 @@
             "updating": "Oновлення...",
             "deleting": "Видалення...",
             "error": "Помилка!"
+        },
+        "updateNewsItemPage": {
+            "title": "Деталі новини",
+            "toAllNews": "Показати всі новини",
+            "newsName": "Заголовок",
+            "newsDescription": "Опис",
+            "newsCategory": "Категорія",
+            "newsLangSelectionText": "Вибір мови",
+            "addImageButton": "Додати зображення",
+            "updateButton": "Створити",
+            "itemSaved": "новина створена!",
+            "saving": "Збереження...",
+            "uploading": "Завантаження...",
+            "updating": "Oновлення...",
+            "deleting": "Видалення...",
+            "error": "Помилка!",
+            "deleteQuestion": "Ви впевнені, що хочете видалити новину",
+            "cancel": "Ні",
+            "confirm": "Так",
+            "deleteButton": "Видалити"
         }
 }

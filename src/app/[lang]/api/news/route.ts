@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from "mongoose";
 import News from '../../../../models/News';
+import {isAdmin} from "../auth/[...nextauth]/route";
 
 export async function POST(request: NextRequest) {
     mongoose.connect(process.env.MONGODB_URL);

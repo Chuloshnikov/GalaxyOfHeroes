@@ -236,6 +236,26 @@
             "updating": "Aktualisiert…",
             "deleting": "Löschen…",
             "error": "Fehler!"
+        },
+        "updateNewsItemPage": {
+            "title": "Neue Details",
+            "toAllItems": "Alle Neuigkeiten anzeigen",
+            "newsName": "News-Titel",
+            "newsDescription": "Beschreibung",
+            "newsCategory": "Kategorie",
+            "newsLangSelectionText": "Sprachauswahl",
+            "addImageButton": "Bild hinzufügen",
+            "updateButton": "Erstellen",
+            "itemSaved": "Gespeichert!",
+            "saving": "Speichern...",
+            "uploading": "Hochladen…",
+            "updating": "Aktualisiert…",
+            "deleting": "Löschen…",
+            "error": "Fehler!",
+            "deleteQuestion": "Sind Sie sicher, dass Sie die Nachricht löschen möchten",
+            "cancel": "Abbrechen",
+            "confirm": "Bestätigen",
+            "deleteButton": "löschen"
         }
 }
 
