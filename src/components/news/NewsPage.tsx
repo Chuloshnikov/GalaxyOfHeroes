@@ -59,7 +59,7 @@ if (!profileData.admin) {
                     href={`news/edit/${item._id}`}
                     className='w-full bg-mainBg shadow-md rounded-lg flex xs:flex-col sml:flex-row gap-2 justify-center items-center'>
                         <div className='rounded-lg'>
-                            <Image src={item.image} alt="news image" className='p-2 rounded-lg w-[150px] h-[100px]' width={200} height={100}/>
+                            <Image src={item.image} alt="news image" className='m-2 rounded-lg w-[250px] h-[180px]' width={200} height={100}/>
                         </div>
                         <div className='text-center flex flex-col gap-1 p-2'>
                             <span className='text-xl font-semibold text-accentBg'>{item.title}</span>
