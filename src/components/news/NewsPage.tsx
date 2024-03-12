@@ -52,14 +52,14 @@ if (!profileData.admin) {
             </Link>
         </div>
         <div>
-          <div className='grid xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1'>
+          <div className='flex flex-col gap-2 max-w-4xl mx-auto'>
                 {news?.length > 0 && news.map(item => (
                     <Link 
                     key={item._id}
                     href={`news/edit/${item._id}`}
-                    className='bg-mainBg shadow-md rounded-lg p-4 mx-auto'>
-                        <div className='relative'>
-                            <Image src={item.image} alt="item image" width={300} height={300}/>
+                    className='w-full bg-mainBg shadow-md rounded-lg p-4 mx-auto flex justify-center items-center'>
+                        <div className='w-[200px] h-[100px]'>
+                            <Image src={item.image} alt="news image" width={400} height={300}/>
                         </div>
                         <div className='text-center flex flex-col gap-1'>
                             <span className='text-xl font-semibold text-accentBg'>{item.title}</span>
