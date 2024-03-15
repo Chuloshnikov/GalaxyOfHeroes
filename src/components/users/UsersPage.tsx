@@ -2,11 +2,12 @@
 import {useState, useEffect} from 'react';
 import { useProfile } from '../profile/UseProfile';
 import Link from 'next/link';
+import UserItem from './UserItem';
 
 const UsersPage = ({text, lang}: {text:any, lang:any}) => {
     const [users, setUsers] = useState<any>([]);
     const {loading: profileLoading, data: profileData} = useProfile();
-
+    console.log(users)
     useEffect(() => {
         fetch('/api/users').then(res => {
             res.json().then(users => {
@@ -37,7 +38,13 @@ const UsersPage = ({text, lang}: {text:any, lang:any}) => {
         >
             {text.title}
         </h2>
-        
+        <div>
+            <div className='flex flex-col gap-2 max-w-4xl mx-auto'>
+                {users?.length > 0 && users.map(user => (
+                    <UserItem user={user}/>
+                ))}
+            </div>
+        </div>
     </div>
   )
 }
