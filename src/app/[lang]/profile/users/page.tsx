@@ -5,7 +5,7 @@ import UsersPage from '@/components/users/UsersPage';
 
 
 export default async function Users({params: { lang }}: {params: { lang: Locale }}) {
-  const { profilePage } = await getDictionary(lang);
+  const { usersPage, profilePage } = await getDictionary(lang);
 
 
   return (
@@ -26,7 +26,7 @@ export default async function Users({params: { lang }}: {params: { lang: Locale 
               {profilePage.description}
             </p>
             <ProfileLayout lang={lang} text={profilePage}>
-                    <UsersPage/>
+                    <UsersPage lang={lang} text={usersPage}/>
             </ProfileLayout>
         </div>
     </section>

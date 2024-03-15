@@ -226,5 +226,8 @@
         "cancel": "Cancel",
         "confirm": "Confirm",
         "deleteButton": "Delete"
+    },
+    "usersPage": {
+        "title": "All users"
     }
 }

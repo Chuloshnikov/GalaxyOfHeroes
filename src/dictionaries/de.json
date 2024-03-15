@@ -256,6 +256,9 @@
             "cancel": "Abbrechen",
             "confirm": "Bestätigen",
             "deleteButton": "löschen"
+        },
+        "usersPage": {
+            "title": "Alle Nutzer"
         }
 }
 

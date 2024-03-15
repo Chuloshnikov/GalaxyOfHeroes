@@ -4,13 +4,13 @@ import { useProfile } from '../profile/UseProfile';
 import Link from 'next/link';
 
 const UsersPage = ({text, lang}: {text:any, lang:any}) => {
-    const [news, setNews] = useState<any>([]);
+    const [users, setUsers] = useState<any>([]);
     const {loading: profileLoading, data: profileData} = useProfile();
 
     useEffect(() => {
         fetch('/api/users').then(res => {
-            res.json().then(news => {
-                setNews(news);
+            res.json().then(users => {
+                setUsers(users);
             })
         })
     }, []);
@@ -29,7 +29,16 @@ const UsersPage = ({text, lang}: {text:any, lang:any}) => {
         )
       }
   return (
-    <div>UsersPage</div>
+    <div
+    className='mt-8 flex flex-col gap-2 ml-4 xl:ml-0'
+    >
+        <h2
+        className='text-4xl text-accentBg font-medium'
+        >
+            {text.title}
+        </h2>
+        
+    </div>
   )
 }
 
