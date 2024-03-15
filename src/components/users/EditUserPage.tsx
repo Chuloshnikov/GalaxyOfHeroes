@@ -244,6 +244,23 @@ const EditUserPage = ({lang, text }: {lang: any, text: any}) => {
                             placeholder={text.country}
                             value={country}
                             />
+                            {profileData.admin && (
+                                <div>
+                                <label className='p-2 flex items-center gap-2 border rounded-xl bg-accentBg mb-2' htmlFor='adminCheckbox'>
+                                    <input 
+                                    onClick={e => setIsAdmin(e.target.checked)}
+                                    checked={isAdmin} 
+                                    value={'1'} 
+                                    id="adminCheckbox" 
+                                    type='checkbox' 
+                                    className=' text-mainBg bg-gray-100 border-gray-300
+                                    rounded focus:ring-primary dark:focus:ring-primary 
+                                  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                                    />
+                                    <span className='text-base text-gray-900'>Admin</span>
+                                </label>
+                            </div>
+                            )}
                             <button 
                             className='bg-mainBg py-2 px-4 rounded-3xl text-assentBg font-semibold border-2 border-accentBg'
                             type="submit"

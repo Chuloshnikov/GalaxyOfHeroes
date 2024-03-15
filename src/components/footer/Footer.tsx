@@ -15,7 +15,7 @@ const Footer = async ({lang}: {lang: Locale}) => {
     className='px-4'
     >
       <div
-      className='max-w-contentContainer mx-auto bg-accentBg text-mainBg rounded-[12px] py-[32px] px-[14px] lg:px-[48px] mb-[18px] '
+      className='shadow max-w-contentContainer mx-auto bg-accentBg text-mainBg rounded-[12px] py-[32px] px-[14px] lg:px-[48px] mb-[18px] '
       >
         <div
         className='flex flex-col mdl:flex-row gap-11 mdl:justify-between'
