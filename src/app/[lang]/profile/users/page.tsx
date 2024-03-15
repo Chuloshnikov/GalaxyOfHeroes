@@ -1,6 +1,7 @@
 import ProfileLayout from '@/components/profile/ProfileLayout';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '../../../../lib/dictionaries';
+import UsersPage from '@/components/users/UsersPage';
 
 
 export default async function Users({params: { lang }}: {params: { lang: Locale }}) {
@@ -25,7 +26,7 @@ export default async function Users({params: { lang }}: {params: { lang: Locale 
               {profilePage.description}
             </p>
             <ProfileLayout lang={lang} text={profilePage}>
-                    Users
+                    <UsersPage/>
             </ProfileLayout>
         </div>
     </section>
