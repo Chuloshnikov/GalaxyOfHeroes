@@ -77,7 +77,8 @@ const EditUserPage = ({lang, text }: {lang: any, text: any}) => {
             streetAddress,
             postalCode,
             city,
-            country
+            country,
+            admin: isAdmin,
         };
         const response = await fetch('/api/users', {
                 method: 'PUT',
@@ -244,20 +245,21 @@ const EditUserPage = ({lang, text }: {lang: any, text: any}) => {
                             placeholder={text.country}
                             value={country}
                             />
+                            {isAdmin}
                             {profileData.admin && (
                                 <div>
-                                <label className='p-2 flex items-center gap-2 border rounded-xl bg-accentBg mb-2' htmlFor='adminCheckbox'>
+                                <label className='p-2 pl-4 flex items-center gap-2 border rounded-3xl bg-accentBg mb-2' htmlFor='adminCheckbox'>
                                     <input 
                                     onClick={e => setIsAdmin(e.target.checked)}
                                     checked={isAdmin} 
                                     value={'1'} 
                                     id="adminCheckbox" 
                                     type='checkbox' 
-                                    className=' text-mainBg bg-gray-100 border-gray-300
-                                    rounded focus:ring-primary dark:focus:ring-primary 
-                                  dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                                    className=' text-accentBg bg-accentBg border-smouthText w-4 h-4
+                                    rounded focus:ring-accentBg dark:focus:ring-accentBg 
+                                  dark:ring-smouthText focus:ring-2 dark:smouthText dark:smouthText'
                                     />
-                                    <span className='text-base text-gray-900'>Admin</span>
+                                    <span className='text-sm lg:text-base  text-smouthText'>Admin</span>
                                 </label>
                             </div>
                             )}
