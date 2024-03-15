@@ -226,5 +226,8 @@
             "cancel": "Ні",
             "confirm": "Так",
             "deleteButton": "Видалити"
+        },
+        "usersPage": {
+            "title": "Всі користувачі"
         }
 }
