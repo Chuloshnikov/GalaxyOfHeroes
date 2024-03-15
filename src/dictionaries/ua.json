@@ -228,6 +228,24 @@
             "deleteButton": "Видалити"
         },
         "usersPage": {
-            "title": "Всі користувачі"
+            "title": "Всі користувачі",
+            "editButton" : "Редагувати"
+        },
+        "updateUser": {
+            "title": "Редагувати користувача",
+            "toAllUsers": "До всіх користувачів",
+            "firstAndLastName": "Ім'я та побатькові",
+            "email": "емейл",
+            "phoneNumber": "номер телефону",
+            "streetAddress": "Вулиця",
+            "postalCode": "поштовий індекс",
+            "city": "Місто",
+            "country": "Крaїна",
+            "profileSaved": "Зміни збережено!",
+            "saving": "Збереження...",
+            "uploading": "Завантаження...",
+            "error": "Помилка!",
+            "saveButton": "Внести зміни",
+            "avatarButton": "Редагувати"
         }
 }

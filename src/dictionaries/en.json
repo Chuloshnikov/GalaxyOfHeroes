@@ -228,6 +228,24 @@
         "deleteButton": "Delete"
     },
     "usersPage": {
-        "title": "All users"
+        "title": "All users",
+        "editButton" : "Edit"
+    },
+    "updateUser": {
+        "title": "Edit user",
+        "toAllUsers": "To all users",
+        "firstAndLastName": "First and last name",
+        "email": "email",
+        "phoneNumber": "Phone number",
+        "streetAddress": "Street address",
+        "postalCode": "Postal code",
+        "city": "City",
+        "country": "Country",
+        "profileSaved": "Profile Saved!",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "error": "Error!",
+        "saveButton": "Update",
+        "avatarButton": "edit"
     }
 }
