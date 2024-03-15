@@ -1,22 +1,23 @@
 "use client"
 import {useState, useEffect} from 'react';
 import {useSession} from "next-auth/react";
+import {useProfile} from '../profile/UseProfile';
+import { redirect, useParams } from 'next/navigation';
 import SavingBox from '../ui/SavingBox';
-import {redirect} from "next/navigation";
-import EditableImage from './EditableImage';
+import EditableImage from '../profile/EditableImage';
+import Link from 'next/link';
 
 
-const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
-    const session = useSession();
-    const {status} = session;
+const EditUserPage = ({lang, text }: {lang: any, text: any}) => {
+    const {id} = useParams();
     const [userName, setUserName] = useState<string>('');
+    const [email, setEmail] = useState('');
     const [image, setImage] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
     const [streetAddress, setStreetAddress] = useState<string>('');
     const [postalCode, setPostalCode] = useState<string>('');
     const [city, setCity] = useState<string>('');
     const [country, setCountry] = useState<string>('');
-    const [user, setUser] = useState<any>(null);
     const [isAdmin, setIsAdmin] = useState<boolean>(false);
     const [profileFetched, setProfileFetched] = useState<boolean>(false);
     const [saved, setSaved] = useState<boolean>(false);
@@ -24,26 +25,31 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
     const [isUploading, setIsUploading] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
 
+    const [redirectToUsers, setRedirectToUsers] = useState(false);
+    const {loading: profileLoading, data: profileData} = useProfile();
+
 
     useEffect(() => {
-        if (status === 'authenticated') {
+        if (id) {
             setProfileFetched(true);
-            fetch('/api/profile', ).then(response => {
+            fetch('/api/users', ).then(response => {
                 response.json().then(data => {
-                    setUserName(data?.name);
-                    setImage(data?.image);
-                    setPhone(data?.phone);
-                    setStreetAddress(data?.streetAddress);
-                    setPostalCode(data?.postalCode);
-                    setCity(data?.city);
-                    setCountry(data?.country);
-                    setIsAdmin(data?.admin);
+                    const user = data.find(users => users._id === id)
+                    setUserName(user?.name);
+                    setEmail(user?.email);
+                    setImage(user?.image);
+                    setPhone(user?.phone);
+                    setStreetAddress(user?.streetAddress);
+                    setPostalCode(user?.postalCode);
+                    setCity(user?.city);
+                    setCountry(user?.country);
+                    setIsAdmin(user?.admin);
                 })
             })
             setProfileFetched(false);
         }
 
-    }, [session, status]);
+    }, [id]);
 
     useEffect(() => {
         if (saved) {
@@ -58,45 +64,74 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
     }, [saved, isError])
 
 
-    const handleProfileInfoUpdate = async (e) => {
+    const handleUserInfoUpdate = async (e) => {
         e.preventDefault();
         setSaved(false);
         setIsSaving(true);
-
-        const response = await fetch('/api/profile', {
+        const data = {
+            _id: id,
+            name: userName,
+            email,
+            image,
+            phone,
+            streetAddress,
+            postalCode,
+            city,
+            country
+        };
+        const response = await fetch('/api/users', {
                 method: 'PUT',
                 headers: {'Content-type': 'application/json'},
-                body: JSON.stringify({
-                    name: userName,
-                    image,
-                    phone,
-                    streetAddress,
-                    postalCode,
-                    city,
-                    country
-                }),
+                body: JSON.stringify(data),
             });
             if (response.ok) {
                 setIsSaving(false);
-                setSaved(true);   
+                setSaved(true); 
+                setRedirectToUsers(true);  
             } else {
                 setIsSaving(false);
                 setIsError(true);
             }
     }
 
-    if (status === "unauthenticated") {
-        return redirect('/');
+    if (redirectToUsers) {
+        return redirect('/profile/users');
     }
 
-    if (profileFetched) {
-        return "Profile fetching..."
-    }
+    if (profileLoading) {
+        return 'Loading user info...';
+      }
+      
+      if (!profileData.admin) {
+        return (
+        <div
+        className='mt-8 text-center text-lg text-red-500'
+        >
+            Error! Not an admin
+        </div>
+        )
+      }
     
   return (
     <div>
+        <div
+        className='mt-8 flex flex-col gap-2 ml-4 xl:ml-0'
+        >
+            <h2
+            className='text-4xl text-accentBg font-medium'
+            >
+                {text.title}
+            </h2>
+            <Link 
+            className="block max-w-max bg-mainBg text-accentBg px-2 
+            py-1 border-2 border-accentBg text-accentBg rounded-3xl
+            cursor-pointer font-semibold"
+            href={"/profile/users"}>
+                {text.toAllUsers}
+            </Link>
+        </div>
         <form 
-                onSubmit={handleProfileInfoUpdate}
+                onSubmit={handleUserInfoUpdate}
                 className="max-w-xl mx-auto mt-4"
                 >
                     {saved && (
@@ -145,9 +180,9 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                                 {text.email}:
                             </label>
                             <input 
+                            onChange={e => setEmail(e.target.value)}
                             type="email" 
-                            disabled={true} 
-                            value={session.data?.user.email}
+                            value={email}
                             />
                             <label
                             className='text-xs font-medium text-accentBg -mb-2 ml-2'
@@ -222,4 +257,4 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
   )
 }
 
-export default ProfilePage
+export default EditUserPage;

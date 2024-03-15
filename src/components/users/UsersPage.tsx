@@ -41,7 +41,7 @@ const UsersPage = ({text, lang}: {text:any, lang:any}) => {
         <div>
             <div className='flex flex-col gap-2 max-w-4xl mx-auto'>
                 {users?.length > 0 && users.map(user => (
-                    <UserItem user={user}/>
+                    <UserItem text={text} key={user._id} user={user}/>
                 ))}
             </div>
         </div>

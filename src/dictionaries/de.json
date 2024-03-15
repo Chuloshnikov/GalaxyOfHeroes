@@ -258,7 +258,25 @@
             "deleteButton": "löschen"
         },
         "usersPage": {
-            "title": "Alle Nutzer"
+            "title": "Alle Nutzer",
+            "editButton" : "Bearbeiten"
+        },
+        "updateUser": {
+            "title": "Bearbeiten Nutzer",
+            "toAllUsers": "Alle Nutzer anzeigen",
+            "firstAndLastName": "Vor- und Nachname",
+            "email": "email",
+            "phoneNumber": "Telefonnummer",
+            "streetAddress": "Straßenadresse",
+            "postalCode": "Postleitzahl",
+            "city": "Stadt",
+            "country": "Land",
+            "profileSaved": "Profil gespeichert!",
+            "saving": "Speichern...",
+            "uploading": "Hochladen…",
+            "error": "Fehler!",
+            "saveButton": "Speichern",
+            "avatarButton": "bearbeiten" 
         }
 }
 

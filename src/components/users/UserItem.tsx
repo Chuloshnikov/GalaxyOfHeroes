@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const UserItem = ({user}: {user: any}) => {
+const UserItem = ({user, text}: {user: any, text: any}) => {
   return (
     <div
     className='shadow-md rounded-lg mb-2 p-4 flex items-center'
@@ -18,8 +18,8 @@ const UserItem = ({user}: {user: any}) => {
             className="block max-w-max bg-mainBg text-accentBg px-2 
             py-1 border-2 border-accentBg text-accentBg rounded-xl
             cursor-pointer font-semibold"
-            href={'/users/' + user._id}>
-                    Edit
+            href={'/profile/users/' + user._id}>
+                    {text.editButton}
             </Link>
         </div>
     </div>
