@@ -248,7 +248,7 @@ const EditUserPage = ({lang, text }: {lang: any, text: any}) => {
                             {isAdmin}
                             {profileData.admin && (
                                 <div>
-                                <label className='p-2 pl-4 flex items-center gap-2 border rounded-3xl bg-accentBg mb-2' htmlFor='adminCheckbox'>
+                                <label className='p-2 pl-4 flex items-center gap-2 border rounded-3xl bg-accentBg mb-2 cursor-pointer' htmlFor='adminCheckbox'>
                                     <input 
                                     onClick={e => setIsAdmin(e.target.checked)}
                                     checked={isAdmin} 
