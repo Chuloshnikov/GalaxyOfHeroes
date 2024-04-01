@@ -8,6 +8,7 @@ import CommunitySection from '../../components/mein/CommunitySection';
 import getData from "../../../data/data";
 import getNews from "../../../data/newsData";
 import CategoriesSection from '../../components/mein/CategoriesSection';
+import { Locale } from '../../../18n.config';
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function Home({params: { lang }}) {
+export default async function Home({params: { lang }}: {params: { lang: Locale }}) {
 
   const { hero, bestSellers, communityMain, mainNews, newProducts, categoriesMain } = await getDictionary(lang);
 

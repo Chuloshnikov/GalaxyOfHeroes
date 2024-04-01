@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n.config';
+import { Locale } from '../../../../18n.config';
 import { getDictionary } from '../../../lib/dictionaries';
 import ProfilePage from '@/components/profile/ProfilePage';
 import ProfileLayout from '@/components/profile/ProfileLayout';
