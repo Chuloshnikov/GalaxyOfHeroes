@@ -31,7 +31,7 @@ const UsersPage = ({text, lang}: {text:any, lang:any}) => {
       }
   return (
     <div
-    className='mt-8 flex flex-col gap-2 ml-4 xl:ml-0'
+    className='mt-8 flex flex-col gap-2 ml-2 xl:ml-0'
     >
         <h2
         className='text-4xl text-accentBg font-medium'
