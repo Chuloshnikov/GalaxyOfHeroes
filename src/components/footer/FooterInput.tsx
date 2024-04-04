@@ -21,8 +21,7 @@ const FooterInput = ({title, button}: Props) => {
         className='border-[2px] border-accentBg2 rounded-3xl max-w-[377px] flex items-center justify-between p-[1px]'
         >
             <input
-            type="email"
-            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+            className=' bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText subscribeInput'
             placeholder='email'
             />
             <button
