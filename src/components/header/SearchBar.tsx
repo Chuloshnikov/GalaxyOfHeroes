@@ -7,21 +7,27 @@ import Link from 'next/link';
 
 const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick, handleSearchBarClick, close }) => {
     const [filteredItems, setFilteredItems] = useState(null);
+    const [data, setData] = useState<any>(null)
     const [query, setQuery] = useState("");
     const [isInputEmpty, setIsInputEmpty] = useState(true); // Додаємо стан для перевірки, чи інпут порожній
-    const data = getData();
 
     useEffect(() => {
+
+        const res = fetch('/api/items').then(res => {
+            res.json().then(dataItems => setData(dataItems));
+            if (!isInputEmpty) {
+                const filtered = data.filter((item:any) =>
+                    item.title.toLowerCase().includes(query.toLowerCase())
+                );
+                setFilteredItems(filtered);
+            }
+        })
         // Перевіряємо, чи інпут не порожній перед фільтрацією
-        if (!isInputEmpty) {
-            const filtered = data.filter((item) =>
-                item.title.toLowerCase().includes(query.toLowerCase())
-            );
-            setFilteredItems(filtered);
-        }
+        
     }, [query, isInputEmpty]);
 
-    const  displayPrice = (prices:any, lang:any) => {
+    {/*
+        const  displayPrice = (prices:any, lang:any) => {
         switch (lang) {
             case 'ua':
                 return `${prices.uah.toFixed(2)} грн`;
@@ -33,6 +39,12 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                 return `$${prices.usd.toFixed(2)}`;
         }
     };
+
+
+
+        */ }
+
+    
 
     return (
         <div
@@ -47,7 +59,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                     className='border-b-2 border-accentBg flex items-center'
                 >
                     <input
-                        className='text-2xl text-accentBg placeholder:text-smouthText w-full px-3 py-2'
+                        className='searchInput'
                         type="text"
                         placeholder={searchPopup.inputHolder}
                         value={query}
@@ -64,7 +76,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                 setQuery('');
                                 setIsInputEmpty(true);
                             }}
-                            className='text-base'
+                            className='text-base ml-2'
                         >
                             {searchPopup.clearBtn}
                         </span>
@@ -88,12 +100,12 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                 >
                                 <Link
                                 onClick={() => close(false)}
-                                href={`/${item._id}`}
+                                href={`/products/${item._id}`}
                                 className='flex gap-2'
                                 >
                                     <Image 
                                     className='rounded-xl'
-                                    src={item.img}
+                                    src={item.images[0]}
                                     width={50}
                                     height={50}
                                     alt="productImg"
@@ -106,7 +118,7 @@ const SearchBar = ({ searchPopup, lang, handlePopupToggle, handleBackgroundClick
                                         >
                                             {item.title}
                                         </h4>
-                                        <span>{displayPrice(item.prices, lang)}</span>
+                                        <span>{item.sku}</span>
                                     </div>
                                 </Link>
                                 </li>
