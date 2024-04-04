@@ -126,7 +126,7 @@ export default function getData() {
         },
         {
             _id: "4556",
-            SKU: "45678",
+            SKU: "#45678",
             img: image,
             title: "They All Fall Down, Part 2",
             brand: "Marvel",
