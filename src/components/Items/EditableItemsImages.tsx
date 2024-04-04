@@ -55,7 +55,7 @@ const EditableItemsImages = ({text, images, setImages, setUploading, setError}) 
                     </label>
                 </div>
                 <div
-                className='flex gap-2'
+                className='flex gap-2 mt-[100px]'
                 >
                     {!images?.length ? (
                         <span
