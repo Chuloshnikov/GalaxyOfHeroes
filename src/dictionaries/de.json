@@ -277,6 +277,9 @@
             "error": "Fehler!",
             "saveButton": "Speichern",
             "avatarButton": "bearbeiten" 
+        },
+        "aboutUsPage": {
+            "title": "МWir wissen alles über die Welt der Comics und Graphic Novels"
         }
 }
 
