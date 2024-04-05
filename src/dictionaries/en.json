@@ -247,5 +247,8 @@
         "error": "Error!",
         "saveButton": "Update",
         "avatarButton": "edit"
+    }, 
+    "aboutUsPage": {
+        "title": "We know everything about the world of comics and graphic novels"
     }
 }
