@@ -93,18 +93,19 @@ if (profileLoading) {
                  
                  
                   )}
-                <button
-                onClick={() => signOut()}
-                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${'unselectedVariation'}`}
-                >
-                  {text.logOut}
-                </button>
                 <Link
                 href={`/${lang}/profile/customer-orders`}
-                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-b-xl mdl:rounded-l-none mdl:rounded-r-xl ${pathname.includes('customer-orders') ? 'selectedVariation' : 'unselectedVariation'}`}
+                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] ${pathname.includes('customer-orders') ? 'selectedVariation' : 'unselectedVariation'}`}
+                
                 >
                     {text.orders}
                 </Link>
+                <button
+                onClick={() => signOut()}
+                className={`cursor-pointer text-center py-4 xs:w-full mdl:w-[50%] xs:rounded-b-xl mdl:rounded-l-none mdl:rounded-r-xl ${'unselectedVariation'}`}
+                >
+                  {text.logOut}
+                </button>
               </div>
         {children}
     </div>
