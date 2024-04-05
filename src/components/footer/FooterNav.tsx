@@ -75,7 +75,7 @@ const FooterNav = ({footer, companyNavigation, navigation, lang}: {lang: Locale}
             <ul
             className='text-mainBg mt-4 flex flex-col gap-3'
             >
-              <li><Link href={`/${lang}/aboutus`}>{companyNavigation.aboutus}</Link></li>
+              <li><Link href={`/${lang}/about-us`}>{companyNavigation.aboutus}</Link></li>
               <li><Link href={`/${lang}/contacts`}>{companyNavigation.contact}</Link></li>
               <li><Link href={`/${lang}/blog`}>{companyNavigation.blog}</Link></li>
             </ul>
