@@ -26,8 +26,9 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
                     </div>
                 </div>
             </div>
-            <div className="mt-20 max-w-[650px] flex justify-center text-center mdl:text-left">
+            <div className="mt-8 lg:mt-20 max-w-[650px] flex flex-col gap-8 text-center mdl:text-left">
                 <h1 className="text-3xl mdl:text-4xl xl:text-5xl  text-accentBg font-medium px-2">{text.title}.</h1>
+                <p className="text-accentBg font-medium px-2 max-w-[450px]">{text.subTitle}</p>
             </div>
             
         </div>
