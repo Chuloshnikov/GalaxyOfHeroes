@@ -38,7 +38,7 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
         </div>
         {/*about us section*/}
         <div className="max-w-full mt-12 flex flex-col xl:flex-row justify-center items-center gap-10">
-            <div className="p-4 text-center flex flex-col gap-8">
+            <div className="text-center flex flex-col gap-8">
                 <h2 className="text-3xl mdl:text-4xl xl:text-5xl text-accentBg font-medium px-2">{text.aboutUsTitle}</h2>
                 <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.aboutUsText}</p>
             </div>
