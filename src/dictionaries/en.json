@@ -250,6 +250,9 @@
     }, 
     "aboutUsPage": {
         "title": "We know everything about the world of comics and graphic novels",
-        "subTitle": "It all started with a simple comic book, board game and souvenir shop back in 2009"
+        "subTitle": "It all started with a simple comic book, board game and souvenir shop back in 2009",
+        "aboutUsTitle": "About Us",
+        "aboutUsText" : "Welcome to Galaxy of Heroes, your go-to online store for an extensive range of top-quality comics and souvenirs in the world. We are passionate about offering you a remarkable selection of comic books and memorabilia that will ignite your imagination and enhance your reading experiences.At Galaxy if Heroes, we understand that the love for comics and collectibles is a vital part of many people’s lives. That’s why we have curated a diverse collection of comics and souvenirs that cater to",
+        "ourMissionTitle": "Our Mission"
     }
 }
