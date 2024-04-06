@@ -30,7 +30,10 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
                 <h1 className="text-3xl mdl:text-4xl xl:text-5xl  text-accentBg font-medium px-2">{text.title}.</h1>
                 <p className="text-accentBg font-medium px-2 max-w-[450px]">{text.subTitle}</p>
             </div>
-            
+        </div>
+
+        <div>
+            About us
         </div>
     </div>
   )

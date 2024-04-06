@@ -1,6 +1,7 @@
 import { Locale } from '../../../../18n.config';
 import { getDictionary } from '../../../lib/dictionaries';
-import AboutUsPage from '@/components/about-us/AboutUsPage';
+import AboutUsPage from '../../../components/about-us/AboutUsPage';
+import { Locale } from '../../../../18n.config';
 
 
 export default async function AboutUs({params: { lang }}: {params: { lang: Locale }}) {
