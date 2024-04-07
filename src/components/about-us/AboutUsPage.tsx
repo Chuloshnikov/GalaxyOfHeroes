@@ -47,6 +47,11 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
                 <Image className="rounded-xl absolute -bottom-2 -left-2 border-2 border-accentBg" src={dsstatue} width={100} height={100} alt="knightimage"/>
             </div>
         </div>
+        {/* our missin section */}
+        <div className="max-w-full mt-12 flex flex-col gap-8 text-center justify-center items-center">
+            <h2 className="text-3xl mdl:text-4xl xl:text-5xl text-accentBg font-medium px-2">{text.ourMissionTitle}</h2>
+            <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.ourMissionText}</p>
+        </div>
     </div>
   )
 }
