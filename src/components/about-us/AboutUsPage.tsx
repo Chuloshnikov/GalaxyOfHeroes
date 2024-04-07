@@ -9,10 +9,15 @@ import deathstroke from "../../assets/deathstrokefigutre.png";
 import dsstatue from "../../assets/dsstatue.png";
 import redhoodjoker from "../../assets/redhoodjoker.png";
 import squad from "../../assets/squad.png";
+import venom from "../../assets/venom.png";
+import parker from "../../assets/parker.png";
+import stubs from "../../assets/stubs.png";
+import dartvader from "../../assets/dartvader.png";
+import bond from "../../assets/bond.png";
 
 const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
   return (
-    <div className="max-w-full">
+    <div className="max-w-full mb-16">
         {/*Title section*/}
         <div className="flex flex-col-reverse mdl:flex-row gap-10">
             <div className="flex gap-2 justify-center">
@@ -64,6 +69,21 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
             <div className="rounded-xl relative">
                 <Image className="z-5 rounded-xl" src={redhoodjoker} width={250} height={400} alt="redhood"/>
                 <Image className="-z-10 rounded-xl absolute -right-6 -top-4 sml:-right-16" src={squad} width={100} height={200} alt="redhood"/>
+            </div>
+        </div>
+        {/* Join us section */}
+        <div className="max-w-full mt-12 flex flex-col justify-center items-center gap-12">
+            <div className="text-center flex flex-col gap-8">
+                <h2 className="text-3xl mdl:text-4xl xl:text-5xl text-accentBg font-medium px-2">{text.joinUsTitle}</h2>
+                <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.joinUsUpText}</p>
+                <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.joinUsDownText}</p>
+            </div>
+            <div className="rounded-xl relative px-4">
+                <Image className="-z-5 rounded-xl" src={venom} width={600} height={400} alt="redhood"/>
+                <Image className="rotate-12 z-5 rounded-xl absolute right-6 top-4" src={parker} width={100} height={200} alt="redhood"/>
+                <Image className="-rotate-12 z-10 rounded-xl absolute left-6 top-4" src={bond} width={100} height={200} alt="redhood"/>
+                <Image className="rotate-12 z-5 rounded-xl absolute right-6 top-20" src={dartvader} width={100} height={200} alt="redhood"/>
+                <Image className="-rotate-12 z-0 rounded-xl absolute left-6 top-20" src={stubs} width={100} height={200} alt="redhood"/>
             </div>
         </div>
     </div>
