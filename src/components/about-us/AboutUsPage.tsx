@@ -7,6 +7,8 @@ import aboutusknight from "../../assets/aboutusknight.png";
 import cybergirl from "../../assets/cybergirl.png";
 import deathstroke from "../../assets/deathstrokefigutre.png";
 import dsstatue from "../../assets/dsstatue.png";
+import redhoodjoker from "../../assets/redhoodjoker.png";
+import squad from "../../assets/squad.png";
 
 const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
   return (
@@ -51,6 +53,18 @@ const AboutUsPage = ({lang, text }: {lang: any, text: any}) => {
         <div className="max-w-full mt-12 flex flex-col gap-8 text-center justify-center items-center">
             <h2 className="text-3xl mdl:text-4xl xl:text-5xl text-accentBg font-medium px-2">{text.ourMissionTitle}</h2>
             <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.ourMissionText}</p>
+        </div>
+        {/* Terms of cooperation*/}
+        <div className="max-w-full mt-12 flex flex-col xl:flex-row justify-center items-center gap-16">
+            <div className="text-center flex flex-col gap-8">
+                <h2 className="text-3xl mdl:text-4xl xl:text-5xl text-accentBg font-medium px-2">{text.termsOfCooperationTitle}</h2>
+                <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.termsOfCooperationUpText}</p>
+                <p className="text-accentBg font-medium px-2 max-w-[500px]">{text.termsOfCooperationDownText}</p>
+            </div>
+            <div className="rounded-xl relative">
+                <Image className="z-5 rounded-xl" src={redhoodjoker} width={250} height={400} alt="redhood"/>
+                <Image className="-z-10 rounded-xl absolute -right-6 -top-4 sml:-right-16" src={squad} width={100} height={200} alt="redhood"/>
+            </div>
         </div>
     </div>
   )
