@@ -37,10 +37,10 @@ const Navbar = async ({lang}: {lang: Locale}) => {
             >
                 <li>
                     <Link
-                    href={`/${lang}/superheroes`}
+                    href={`/${lang}/`}
                     className=''
                     >
-                        {navigation.superheroes}
+                        {navigation.home}
                     </Link>
                 </li>
                 <li>
@@ -48,39 +48,31 @@ const Navbar = async ({lang}: {lang: Locale}) => {
                     href={`/${lang}/horror`}
                     className=''
                     >
-                        {navigation.horror}
+                        {navigation.market}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={`/${lang}/mystery`}
+                    href={`/${lang}/contacts`}
                     className=''
                     >
-                        {navigation.mystery}
+                        {navigation.contacts}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={`/${lang}/adventure`}
+                    href={`/${lang}/blog`}
                     className=''
                     >
-                        {navigation.adventure}
+                        {navigation.blog}
                     </Link>
                 </li>
                 <li>
                     <Link
-                    href={`/${lang}/manga`}
+                    href={`/${lang}/about-us`}
                     className=''
                     >
-                        {navigation.manga}
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                    href={`/${lang}/historical`}
-                    className=''
-                    >
-                        {navigation.historical}
+                        {navigation.aboutUs}
                     </Link>
                 </li>
             </ul>

@@ -1,11 +1,10 @@
 {
     "navigation": {
-        "superheroes": "superheroes",
-        "horror": "horror",
-        "mystery": "mystery",
-        "adventure": "adventure",
-        "manga": "manga",
-        "historical": "historical"
+        "home": "home",
+        "market": "market",
+        "contacts": "contacts",
+        "blog": "blog",
+        "aboutUs": "about us"
     },
     "searchPopup": {
         "inputHolder": "Search...",
