@@ -1,11 +1,10 @@
 {
     "navigation": {
-        "superheroes": "супергерої",
-        "horror": "хорори",
-        "mystery": "загадкові",
-        "adventure": "пригоди",
-        "manga": "манга",
-        "historical": "історичні"
+        "home": "головна",
+        "market": "магазин",
+        "contacts": "контакти",
+        "blog": "блог",
+        "aboutUs": "про нас"
     },
     "searchPopup": {
         "inputHolder": "Пошук...",

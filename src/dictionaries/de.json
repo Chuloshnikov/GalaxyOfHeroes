@@ -1,11 +1,10 @@
 {
     "navigation": {
-    "superheroes": "Superhelden",
-    "horror": "Horror",
-    "mystery": "Mysteriös",
-    "adventure": "Abenteuer",
-    "manga": "Manga",
-    "historical": "Historisch"
+    "home": "startseite",
+    "horror": "markt",
+    "contacts": "kontakte",
+    "blog": "blog",
+    "aboutUs": "über uns"
     },
     "searchPopup": {
         "inputHolder": "Suchen...",

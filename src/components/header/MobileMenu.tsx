@@ -31,14 +31,14 @@ const MobileMenu = ({ lang, handleMenuToggle, handleMenuBackgroundClick, navigat
             </div>
             <div>
                 <ul
-                className='flex-flex-col gap-4 text-xl font-medium my-10 border-b-2 border-accentBg py-2'
+                className='flex flex-col gap-2 text-xl font-medium my-10 py-2'
                 >
                     <li>
                         <Link
-                        href={`/${lang}/superheroes`}
+                        href={`/${lang}/`}
                         className=''
                         >
-                            {navigation.superheroes}
+                            {navigation.home}
                         </Link>
                     </li>
                     <li>
@@ -46,43 +46,35 @@ const MobileMenu = ({ lang, handleMenuToggle, handleMenuBackgroundClick, navigat
                         href={`/${lang}/horror`}
                         className=''
                         >
-                            {navigation.horror}
+                            {navigation.market}
                         </Link>
                     </li>
                     <li>
                         <Link
-                        href={`/${lang}/mystery`}
+                        href={`/${lang}/contacts`}
                         className=''
                         >
-                            {navigation.mystery}
+                            {navigation.contacts}
                         </Link>
                     </li>
                     <li>
                         <Link
-                        href={`/${lang}/adventure`}
+                        href={`/${lang}/blog`}
                         className=''
                         >
-                            {navigation.adventure}
+                            {navigation.blog}
                         </Link>
                     </li>
                     <li>
                         <Link
-                        href={`/${lang}/manga`}
+                        href={`/${lang}/about-us`}
                         className=''
                         >
-                            {navigation.manga}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                        href={`/${lang}/historical`}
-                        className=''
-                        >
-                            {navigation.historical}
+                            {navigation.aboutUs}
                         </Link>
                     </li>
                 </ul>
-                <div>
+                <div className='border-t-2 border-accentBg'>
                     <MobileLocaleSwitcher/>
                 </div>
             </div>
