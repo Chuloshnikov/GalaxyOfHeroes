@@ -30,7 +30,10 @@
         "termsOfUse": "Умови використання",
         "privacyPolicy": "Політика конфіденційності"
     },
-        "companyNavigation": {
+    "footerNavigation": {
+        "superheroes":
+    },
+    "companyNavigation": {
         "aboutus": "Про нас",
         "contact": "Контакти",
         "blog": "Блог"

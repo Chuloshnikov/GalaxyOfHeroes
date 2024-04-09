@@ -1,7 +1,20 @@
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import {useState, useEffect} from 'react';
 
 const FooterNav = ({footer, companyNavigation, navigation, lang}: {lang: Locale}) => {
+  const [navs, setNavs] = useState<any>("");
+
+  useEffect(() => { 
+    fetch('/api/categories').then(response => {
+      response.json().then(categories => {
+        setNavs(categories);
+      })
+    });
+    }, []);
+
+    console.log(navs)
+
   return (
     <div>
         <div
@@ -16,54 +29,17 @@ const FooterNav = ({footer, companyNavigation, navigation, lang}: {lang: Locale}
             <ul
             className='text-mainBg mt-4 flex flex-col gap-3'
             >
-              <li>
-                    <Link
-                    href={`/${lang}/superheroes`}
+             {navs && navs.filter(nav => nav.name in navigation).map(nav => (
+                <li key={nav.name}>
+                  <Link
+                    href={`/${lang}/${nav.name}`}
                     className=''
-                    >
-                        {navigation.superheroes}
-                    </Link>
+                  >
+                    {navigation[nav.name]}
+                  </Link>
                 </li>
-                <li>
-                    <Link
-                    href={`/${lang}/horror`}
-                    className=''
-                    >
-                        {navigation.horror}
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                    href={`/${lang}/mystery`}
-                    className=''
-                    >
-                        {navigation.mystery}
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                    href={`/${lang}/adventure`}
-                    className=''
-                    >
-                        {navigation.adventure}
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                    href={`/${lang}/manga`}
-                    className=''
-                    >
-                        {navigation.manga}
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                    href={`/${lang}/historical`}
-                    className=''
-                    >
-                        {navigation.historical}
-                    </Link>
-                </li>
+                ))
+              }
             </ul>
           </div>
           <div>
