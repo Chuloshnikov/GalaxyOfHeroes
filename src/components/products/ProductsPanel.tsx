@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import SelectedProducts from './SelectedProducts';
 import { FaBookOpen } from "react-icons/fa6";
 
-const ProductsPanel = ({ navigation }) => {
+const ProductsPanel = ({ lang, navigation }) => {
   const [categories, setCategories] = useState<any>("");
   const [selectedCategory, setSelectedCategory] = useState<any>("");
   const [products, setProducts] = useState<any>("");
@@ -21,7 +21,7 @@ const ProductsPanel = ({ navigation }) => {
     if (selectedCategory) {
       fetch('/api/items').then(response => {
         response.json().then(products => {
-          const filteredProducts = products.filter(product => product.category === selectedCategory);
+          const filteredProducts = products.filter(product => product.category === selectedCategory && product.language === lang);
           setProducts(filteredProducts);
         })
       });
@@ -29,7 +29,8 @@ const ProductsPanel = ({ navigation }) => {
     } else {
       fetch('/api/items').then(response => {
         response.json().then(products => {
-          setProducts(products);
+          const langFilter = products.filter(product => product.language === lang);
+          setProducts(langFilter);
         })
       });
     }

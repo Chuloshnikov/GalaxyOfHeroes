@@ -8,7 +8,7 @@ export default async function Products({params: { lang }}: {params: { lang: Loca
     const { categoriesNavigation } = await getDictionary(lang);
     return (
         <section className="max-w-contentContainer mx-auto min-h-max">
-            <ProductsPanel navigation={categoriesNavigation}/>
+            <ProductsPanel lang={lang} navigation={categoriesNavigation}/>
         </section>
     )
 }
