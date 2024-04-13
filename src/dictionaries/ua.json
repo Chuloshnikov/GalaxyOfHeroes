@@ -31,7 +31,13 @@
         "privacyPolicy": "Політика конфіденційності"
     },
     "footerNavigation": {
-        "superheroes":
+        "superheroes": "Cупергерої",
+        "horror": "Xорори",
+        "mystery": "Загадкові",
+        "adventure": "Пригоди",
+        "manga": "Манга",
+        "historical": "Історичні",
+        "figures": "Фігурки"
     },
     "companyNavigation": {
         "aboutus": "Про нас",
