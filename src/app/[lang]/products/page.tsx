@@ -5,10 +5,10 @@ import  {getDictionary } from "../../../lib/dictionaries";
 
 
 export default async function Products({params: { lang }}: {params: { lang: Locale }}) {
-    const { categoriesNavigation } = await getDictionary(lang);
+    const { categoriesNavigation, marketPage } = await getDictionary(lang);
     return (
         <section className="max-w-contentContainer mx-auto min-h-max">
-            <ProductsPanel lang={lang} navigation={categoriesNavigation}/>
+            <ProductsPanel text={marketPage} lang={lang} navigation={categoriesNavigation}/>
         </section>
     )
 }

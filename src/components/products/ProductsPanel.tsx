@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import SelectedProducts from './SelectedProducts';
 import { FaBookOpen } from "react-icons/fa6";
 
-const ProductsPanel = ({ lang, navigation }) => {
+const ProductsPanel = ({ lang, text, navigation }) => {
   const [categories, setCategories] = useState<any>("");
   const [selectedCategory, setSelectedCategory] = useState<any>("");
   const [products, setProducts] = useState<any>("");
@@ -45,7 +45,7 @@ const ProductsPanel = ({ lang, navigation }) => {
   return (
     <div className='mt-12'>
       <div className='text-center'>
-        <h1 className="text-4xl mdl:text-5xl xl:text-7xl text-accentBg font-medium px-2">Market</h1>
+        <h1 className="text-4xl mdl:text-5xl xl:text-7xl text-accentBg font-medium px-2">{text.title}</h1>
       </div>
       <div className='flex gap-2 flex-wrap mx-auto items-center justify-center mt-8'>
       {categories && categories.filter(nav => nav.name in navigation).map(nav => (

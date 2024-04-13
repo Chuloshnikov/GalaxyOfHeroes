@@ -269,5 +269,8 @@
         "joinUsTitle": "Join us",
         "joinUsUpText": "Embark on an exciting journey with us as we create a universe where imagination knows no bounds at Galaxy of Heroes. Discover the limitless possibilities of adventure, indulge in your fandom, and embark on a journey of exploration with Galaxy of Heroes.",
         "joinUsDownText": "Feel free to explore our extensive collection of comics, souvenirs, and collectible editions. We are here to support and guide you every step of the way, ensuring that your experience with Galaxy of Heroes is unforgettable."
+    },
+    "marketPage": {
+        "title": "Market"
     }
 }
