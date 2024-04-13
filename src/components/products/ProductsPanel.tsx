@@ -48,6 +48,14 @@ const ProductsPanel = ({ lang, text, navigation }) => {
         <h1 className="text-4xl mdl:text-5xl xl:text-7xl text-accentBg font-medium px-2">{text.title}</h1>
       </div>
       <div className='flex gap-2 flex-wrap mx-auto items-center justify-center mt-8'>
+                <div className='cursor-pointer'>
+                  <div
+                      className='flex gap-2 px-4 py-2 border-2 rounded-xl border-accentBg items-center'
+                    >
+                    <FaBookOpen className='text-accentBg h-6 w-6'/>
+                    <span className='font-semibold text-accentBg text-lg'>all</span>
+                  </div>
+                </div>
       {categories && categories.filter(nav => nav.name in navigation).map(nav => (
                 <div key={nav.name} onClick={() => setSelectedCategory(nav._id)} className='cursor-pointer'>
                   <div
