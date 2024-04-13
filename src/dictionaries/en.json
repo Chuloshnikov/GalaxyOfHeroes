@@ -30,6 +30,15 @@
     "termsOfUse": "Terms Of Use",
     "privacyPolicy": "Privacy Policy"
     },
+    "footerNavigation": {
+        "superheroes": "Superheroes",
+        "horror": "Horror",
+        "mystery": "Mystery",
+        "adventure": "Adventure",
+        "manga": "Manga",
+        "historical": "Historical",
+        "figures": "Figures"
+    },
     "companyNavigation": {
     "aboutus": "About us",
     "contact": "Contact",
