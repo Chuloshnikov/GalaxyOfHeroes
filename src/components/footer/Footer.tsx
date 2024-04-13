@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { getDictionary } from '../../lib/dictionaries';
 
 const Footer = async ({lang}: {lang: Locale}) => {
-  const { footer, companyNavigation, footerNavigation } = await getDictionary(lang);
+  const { footer, companyNavigation, categoriesNavigation } = await getDictionary(lang);
 
   return (
     <footer
@@ -30,7 +30,7 @@ const Footer = async ({lang}: {lang: Locale}) => {
         >
           <FooterNav 
           companyNavigation={companyNavigation} 
-          navigation={footerNavigation} 
+          navigation={categoriesNavigation} 
           lang={lang}
           footer={footer}
           />

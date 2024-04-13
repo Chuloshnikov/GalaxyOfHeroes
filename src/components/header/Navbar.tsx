@@ -45,7 +45,7 @@ const Navbar = async ({lang}: {lang: Locale}) => {
                 </li>
                 <li>
                     <Link
-                    href={`/${lang}/horror`}
+                    href={`/${lang}/products`}
                     className=''
                     >
                         {navigation.market}
