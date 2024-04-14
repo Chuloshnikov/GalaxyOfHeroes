@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ReviewsComponent from "../../components/ui/ReviewsComponent";
 import StarRating from "../../components/ui/StarRating";
 import ProductSection from "../../components/mein/ProductSection";
+import LoaderSpinner from '../ui/LoaderSpinner';
 import { redirect, useParams } from 'next/navigation';
 import displayPrice from "../../lib/displayPrice";
 
@@ -32,9 +33,11 @@ const ProductPage = ({ text, lang }) => {
 
     if (loading) {
         return (
-            <div>Loading...</div>
+          <div className='w-full h-full flex items-center justify-center pt-[10%] pb-[10%]'>
+              <LoaderSpinner/>
+          </div>
         )
-    }
+      }
     
   return (
     <>
@@ -85,14 +88,29 @@ const ProductPage = ({ text, lang }) => {
           <div
           className="flex gap-5"
           >
-              <div
-              className="border-2 border-green-500 rounded-full px-1 sm:px-2 max-w-max"
-              >
-                <p
-                className="text-green-500 text-sm font-medium "
-                >{text.stockOn}
-                </p>
-              </div>
+            {/* in stock or not */}
+              
+                {item.quantity > 0 ? (
+                    <div
+                    className="border-2 border-green-500 rounded-full px-1 sm:px-2 max-w-max"
+                    >
+                        <p
+                        className="text-green-500 text-sm font-medium "
+                        >
+                            {text.stockOn}
+                        </p>
+                    </div>
+                ) : (
+                    <div
+                    className="border-2 border-red-500 rounded-full px-1 sm:px-2 max-w-max"
+                    >
+                        <p
+                        className="text-red-500 text-sm font-medium "
+                        >
+                            {text.stockOut}
+                        </p>
+                    </div>
+                )}
               <StarRating/>
           </div>
           <div
