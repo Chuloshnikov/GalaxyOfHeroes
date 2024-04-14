@@ -3,21 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LuShoppingCart } from 'react-icons/lu';
 import { RiHeartLine } from 'react-icons/ri';
+import displayPrice from "../../lib/displayPrice";
 
 const SelectedProducts = ({text, lang, products}) => {
 
-    const  displayPrice = (price:any, lang:any) => {
-        switch (lang) {
-            case 'ua':
-                return `${price.toFixed(2)} грн`;
-            case 'de':
-                return `${price.toFixed(2)} EUR`;
-            case 'en':
-                return `${price.toFixed(2)} USD`;
-            default:
-                return `${price.toFixed(2)} USD`;
-        }
-    };
+    
 
   return (
     <div className='p-4 flex flex-wrap gap-4'>

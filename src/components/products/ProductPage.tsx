@@ -6,26 +6,28 @@ import ReviewsComponent from "../../components/ui/ReviewsComponent";
 import StarRating from "../../components/ui/StarRating";
 import ProductSection from "../../components/mein/ProductSection";
 import { redirect, useParams } from 'next/navigation';
+import displayPrice from "../../lib/displayPrice";
 
 const ProductPage = ({ text, lang }) => {
-    const {id} = useParams();
+    const {_id} = useParams();
     const [loading, setLoading] = useState(false);
     const [item, setItem] = useState<any>("");
     const [images, setImages] = useState<any>("");
     const [tags, setTags] = useState<any>("");
+    console.log(item);
 
     useEffect(() => {
         setLoading(true);
         fetch('/api/items').then(res => {
             res.json().then(items => {
-                const item = items.find(item => item._id === id);
+                const item = items.find(item => item._id === _id);
                 setItem(item);
                 setImages(item.images);
                 setTags(item.tags);
                 setLoading(false);
             });
         });
-    }, [id]);
+    }, [_id]);
 
 
     if (loading) {
@@ -99,15 +101,15 @@ const ProductPage = ({ text, lang }) => {
             {/*prise*/}
             {item.salePrice ? (
                 <p
-                className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
+                className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-yellow-500 border-2 border-red-500 p-4 text-2xl font-bold text-mainBg"
                 >
-                  {item.salePrice}
+                 {displayPrice(item.salePrice, lang)}
                 </p>
             ) : (
                 <p
                 className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
                 >
-                  { item.regularPrice}
+                  {displayPrice(item.regularPrice, lang)}
                 </p>
             )}
            
