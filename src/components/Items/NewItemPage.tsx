@@ -26,7 +26,7 @@ const [tags, setTags] = useState<any>([]);
 const [quantity, setQuantity] = useState<number>(0);
 const [regularPrice, setRegularPrice] = useState<number>(0);
 const [salePrice, setSalePrice] = useState<number>(0);
-const [language, setLanguage] = useState<string>('english');
+const [language, setLanguage] = useState<string>('en');
 
 {/*redirect to items state*/}
 const [redirectToItems, setRedirectToItems] = useState<boolean>(false);
@@ -358,9 +358,9 @@ useEffect(() => {
                                 className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-4'
                                 name="select"
                                 >
-                                    <option className='bg-mainBg font-semibold' value="english">English</option>
-                                    <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
-                                    <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
+                                    <option className='bg-mainBg font-semibold' value="en">English</option>
+                                    <option className='bg-mainBg font-semibold' value="de">Deutch</option>
+                                    <option className='bg-mainBg font-semibold' value="ua">Ukraine</option>
                                 </select>
                                 <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>

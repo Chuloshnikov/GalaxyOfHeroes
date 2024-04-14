@@ -1,7 +1,7 @@
 {
     "navigation": {
     "home": "startseite",
-    "horror": "markt",
+    "market": "markt",
     "contacts": "kontakte",
     "blog": "blog",
     "aboutUs": "über uns"
@@ -37,7 +37,8 @@
         "adventure": "Abenteuer",
         "manga": "Manga",
         "historical": "Historisch",
-        "figures": "Figuren"
+        "figures": "Figuren",
+        "souvenirs": "Souvenirs"
     },
     "companyNavigation": {
     "aboutus": "Über uns",
@@ -301,7 +302,10 @@
             "joinUsDownText": "Fühlen Sie sich frei, unsere umfangreiche Sammlung von Comics, Souvenirs und Sammlerausgaben zu erkunden. Wir sind hier, um Sie bei jedem Schritt zu unterstützen und zu führen, und stellen sicher, dass Ihre Erfahrung mit Galaxy of Heroes unvergesslich ist"
         },
         "marketPage": {
-            "title": "Markt"
+            "title": "Markt",
+            "allProducts": "Alle",
+            "basketLink": "zum warenkorb hinzufügen",
+            "topSeller": "Top Verkäufe"
         }
 }
 
