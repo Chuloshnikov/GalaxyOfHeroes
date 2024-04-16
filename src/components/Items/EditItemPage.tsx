@@ -400,14 +400,13 @@ useEffect(() => {
                                 onChange={e => setLanguage(e.target.value)}
                                 defaultValue={"english"}
                                 required={true}
-                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-2'
+                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full'
                                 name="select"
                                 >
                                     <option className='bg-mainBg font-semibold' value="en">English</option>
                                     <option className='bg-mainBg font-semibold' value="de">Deutch</option>
                                     <option className='bg-mainBg font-semibold'value="ua">Ukraine</option>
                                 </select>
-                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 -right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
                     <div>

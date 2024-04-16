@@ -117,19 +117,19 @@ const ProductPage = ({ text, lang }) => {
               <StarRating/>
           </div>
           <div
-          className="relative max-w-xl mt-4 flex flex-col gap-2"
+          className="max-w-xl mt-4 flex flex-col gap-2"
           >
             {/*prise*/}
             {item.salePrice ? (
                 <p
-                className="absolute top-6 -right-4 sm:right-1 md:top-5 md:right-4 rounded-full flex flex-col gap-1 border-2 border-red-500 p-2 text-2xl font-bold text-red-500 items-center justify-center"
+                className="max-w-max rounded-full flex flex-col gap-1 border-2 border-red-500 p-2 text-2xl font-bold text-red-500 items-center justify-center"
                 >
                  <span>{displayPrice(item.salePrice, lang)}</span>
                  <span className='line-through text-accentBg text-sm'>{displayPrice(item.regularPrice, lang)}</span>
                 </p>
             ) : (
                 <p
-                className="absolute top-6 -right-4 sm:right-1 md:-top-3 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
+                className="max-w-max rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
                 >
                   {displayPrice(item.regularPrice, lang)}
                 </p>
@@ -141,7 +141,7 @@ const ProductPage = ({ text, lang }) => {
             {item?.authors && ( item.authors)} {" "} {item?.illustrators && (item.illustrators)}
             </p>
             <p
-            className="font-medium xs:mt-4 sm:mt-10 sml:mt-0"
+            className="font-medium"
             >
               {item?.format && (item.format)}
             </p>

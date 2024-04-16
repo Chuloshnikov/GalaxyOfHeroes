@@ -133,7 +133,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                                 {text.firstAndLastName}:
                             </label>
                             <input 
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className='text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             onChange={e => setUserName(e.target.value)}
                             type="text" 
                             placeholder={text.firstAndLastName}
@@ -156,7 +156,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                             </label>
                             <input 
                             onChange={e => setPhone(e.target.value)}
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className='text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="tel"
                             placeholder={text.phoneNumber}
                             value={phone}
@@ -168,7 +168,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                             </label>
                             <input 
                             onChange={e => setStreetAddress(e.target.value)}
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className=' text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder={text.streetAddress}
                             value={streetAddress}
@@ -180,7 +180,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                             </label>
                             <input 
                             onChange={e => setPostalCode(e.target.value)}
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className=' text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder={text.postalCode}
                             value={postalCode}
@@ -192,7 +192,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                             </label>
                              <input 
                             onChange={e => setCity(e.target.value)}
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className=' text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder={text.city}
                             value={city}
@@ -204,7 +204,7 @@ const ProfilePage = ({lang, text }: {lang: any, text: any}) => {
                             </label>
                             <input 
                             onChange={e => setCountry(e.target.value)}
-                            className='bg-accentBg text-smouthText text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
+                            className='text-sm lg:text-base py-[2px] mdl:py-2 px-1 mdl:px-5 rounded-3xl placeholder:text-smouthText'
                             type="text" 
                             placeholder={text.country}
                             value={country}
