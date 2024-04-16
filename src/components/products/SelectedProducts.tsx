@@ -32,7 +32,7 @@ const SelectedProducts = ({text, lang, products}) => {
                         className="w-6 h-6 text-mainBg z-30 absolute top-2 right-2 cursor-grab"
                         />
                     <Image 
-                    src={"https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1637321508i/59653763.jpg"} 
+                    src={product.images[0]} 
                     width={300} 
                     height={300}
                     className='object-fill hover:scale-105 duration-300'

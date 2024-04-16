@@ -14,8 +14,9 @@ const ProductPage = ({ text, lang }) => {
     const [loading, setLoading] = useState(false);
     const [item, setItem] = useState<any>("");
     const [images, setImages] = useState<any>("");
+    const [titleImage, setTitleImage] = useState<any>("");
     const [tags, setTags] = useState<any>("");
-    console.log(item);
+    console.log(titleImage);
 
     useEffect(() => {
         setLoading(true);
@@ -26,6 +27,7 @@ const ProductPage = ({ text, lang }) => {
                 setImages(item.images);
                 setTags(item.tags);
                 setLoading(false);
+                setTitleImage(item.images[0]);
             });
         });
     }, [_id]);
@@ -55,7 +57,7 @@ const ProductPage = ({ text, lang }) => {
           </p>
           <Image 
           className="rounded-xl"
-          src={images[0]} 
+          src={titleImage} 
           width={400} 
           height={500} 
           alt="comics"
@@ -66,12 +68,13 @@ const ProductPage = ({ text, lang }) => {
             {/*small images*/}
             {images?.length > 1 && images.map((img, index) => (
                 <Image
+                onClick={e => setTitleImage(img)}
                 key={index}
                 className="rounded-md"
                 src={img} 
                 width={60} 
                 height={70} 
-                alt="comics"
+                alt={index}
                 />
             ))}
           </div>
@@ -119,13 +122,14 @@ const ProductPage = ({ text, lang }) => {
             {/*prise*/}
             {item.salePrice ? (
                 <p
-                className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-yellow-500 border-2 border-red-500 p-4 text-2xl font-bold text-mainBg"
+                className="absolute top-6 -right-4 sm:right-1 md:top-5 md:right-4 rounded-full flex flex-col gap-1 border-2 border-red-500 p-2 text-2xl font-bold text-red-500 items-center justify-center"
                 >
-                 {displayPrice(item.salePrice, lang)}
+                 <span>{displayPrice(item.salePrice, lang)}</span>
+                 <span className='line-through text-accentBg text-sm'>{displayPrice(item.regularPrice, lang)}</span>
                 </p>
             ) : (
                 <p
-                className="absolute top-14 -right-4 sm:right-1 md:top-8 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
+                className="absolute top-6 -right-4 sm:right-1 md:-top-3 md:right-4 rounded-full bg-accentBg p-4 text-2xl font-bold text-mainBg"
                 >
                   {displayPrice(item.regularPrice, lang)}
                 </p>
@@ -134,17 +138,12 @@ const ProductPage = ({ text, lang }) => {
             <p
             className="font-medium"
             >
-            {item?.authors && ( item.authors)} , {" "} {item?.illustrators && (item.illustrators)}
+            {item?.authors && ( item.authors)} {" "} {item?.illustrators && (item.illustrators)}
             </p>
             <p
-            className="font-medium"
+            className="font-medium xs:mt-4 sm:mt-10 sml:mt-0"
             >
               {item?.format && (item.format)}
-            </p>
-            <p
-            className="font-medium"
-            >
-              {item?.language && (item.language)}
             </p>
             <p
             className="font-medium"
