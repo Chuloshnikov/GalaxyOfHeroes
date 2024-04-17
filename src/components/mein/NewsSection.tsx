@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import NewsCard from './NewsCard';
 
@@ -11,6 +11,19 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 
 const NewsSection = ({ data, sectionText }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [news, setNews] = useState<any>('');
+  console.log(news);
+
+  useEffect(() => {
+    fetch('/api/news').then(res => {
+        res.json().then(news => {
+            setNews(news);
+        })
+    })
+}, []);
+
+
   return (
     <section
     className='max-w-contentContainer mdl:mx-10 xl:mx-auto my-[12px] lg:my-[56px]'
@@ -37,11 +50,11 @@ const NewsSection = ({ data, sectionText }) => {
                 className="mySwiper"
                 >
                 {
-                    data?.map(news => (
+                 news && news?.map(item => (
                       <SwiperSlide 
-                      key={news._id}
+                      key={item._id}
                       >
-                        <NewsCard news={news} />
+                        <NewsCard news={item} />
                       </SwiperSlide> 
                     ))
                 }

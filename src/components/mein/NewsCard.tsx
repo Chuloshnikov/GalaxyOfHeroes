@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
 import { IoMdTime } from "react-icons/io";
-import newsImg from "../../assets/Screenshot_1.png";
 
 const NewsCard = ({ news }) => {
   return (
@@ -17,7 +16,7 @@ const NewsCard = ({ news }) => {
               height={800}
               loading="lazy" 
               className="object-cover rounded-[30px] max-w-container max-h-[400px]" 
-              src={newsImg}
+              src={news.image}
               alt="NewsImg"
               />
               <span
