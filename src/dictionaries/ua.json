@@ -3,7 +3,7 @@
         "home": "головна",
         "market": "магазин",
         "contacts": "контакти",
-        "blog": "блог",
+        "news": "новини",
         "aboutUs": "про нас"
     },
     "searchPopup": {
@@ -43,7 +43,7 @@
     "companyNavigation": {
         "aboutus": "Про нас",
         "contact": "Контакти",
-        "blog": "Блог"
+        "news": "Новини"
     },
     "bestSellers": {
     "title": "Топ продажів",

@@ -61,10 +61,10 @@ const Navbar = async ({lang}: {lang: Locale}) => {
                 </li>
                 <li>
                     <Link
-                    href={`/${lang}/blog`}
+                    href={`/${lang}/news`}
                     className=''
                     >
-                        {navigation.blog}
+                        {navigation.news}
                     </Link>
                 </li>
                 <li>
