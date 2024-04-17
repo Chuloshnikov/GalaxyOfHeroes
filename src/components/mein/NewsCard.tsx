@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import { IoMdTime } from "react-icons/io";
+import DateConverter from '../ui/DateConverter';
 
 const NewsCard = ({ news }) => {
   return (
@@ -28,14 +29,8 @@ const NewsCard = ({ news }) => {
         <div
           className="text-accentBg2 xs:text-sm mdl:text-base flex gap-3"
           >
-            <span>{news.date}</span>
-            <span>|</span>
-            <div
-            className="flex gap-2 items-center"
-            >
-              <IoMdTime/> 
-              <span>{news.time}</span>
-            </div>
+            
+            <DateConverter mongoDate={news.createdAt}/>
         </div>
         <h3
           className="text-accentBg font-medium text-base"
