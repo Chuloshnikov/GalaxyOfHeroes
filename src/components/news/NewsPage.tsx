@@ -57,11 +57,11 @@ if (!profileData.admin) {
                     <Link 
                     key={item._id}
                     href={`news/edit/${item._id}`}
-                    className='w-full bg-mainBg shadow-md rounded-lg flex xs:flex-col sml:flex-row gap-2 justify-center items-center'>
+                    className='w-full bg-mainBg shadow-md rounded-lg flex xs:flex-col sml:flex-row gap-2 justify-start items-center'>
                         <div className='rounded-lg'>
                             <Image src={item.image} alt="news image" className='m-2 rounded-lg w-[250px] h-[180px]' width={200} height={100}/>
                         </div>
-                        <div className='text-center flex flex-col gap-1 p-2'>
+                        <div className='text-center flex flex-col gap-1 p-2 grow'>
                             <span className='text-xl font-semibold text-accentBg'>{item.title}</span>
                             <span className='text-sm font-semibold'>{item.language}</span>
                         </div>

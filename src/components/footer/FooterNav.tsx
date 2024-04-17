@@ -53,7 +53,7 @@ const FooterNav = ({footer, companyNavigation, navigation, lang}: {lang: Locale}
             >
               <li><Link href={`/${lang}/about-us`}>{companyNavigation.aboutus}</Link></li>
               <li><Link href={`/${lang}/contacts`}>{companyNavigation.contact}</Link></li>
-              <li><Link href={`/${lang}/blog`}>{companyNavigation.blog}</Link></li>
+              <li><Link href={`/${lang}/news`}>{companyNavigation.news}</Link></li>
             </ul>
           </div>
         </div>

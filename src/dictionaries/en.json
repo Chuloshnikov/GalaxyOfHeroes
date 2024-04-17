@@ -3,7 +3,7 @@
         "home": "home",
         "market": "market",
         "contacts": "contacts",
-        "blog": "blog",
+        "news": "news",
         "aboutUs": "about us"
     },
     "searchPopup": {
@@ -43,7 +43,7 @@
     "companyNavigation": {
     "aboutus": "About us",
     "contact": "Contacts",
-    "blog": "Blog"
+    "news": "News"
     },
     "bestSellers": {
     "title": "Best sellers",

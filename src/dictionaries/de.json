@@ -3,7 +3,7 @@
     "home": "startseite",
     "market": "markt",
     "contacts": "kontakte",
-    "blog": "blog",
+    "news": "nachricht",
     "aboutUs": "über uns"
     },
     "searchPopup": {
@@ -43,7 +43,7 @@
     "companyNavigation": {
     "aboutus": "Über uns",
     "contact": "Kontakt",
-    "blog": "Blog"
+    "news": "Nachricht"
     },
     "bestSellers": {
     "title": "Bestseller",
