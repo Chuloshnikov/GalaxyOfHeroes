@@ -16,7 +16,7 @@ const [title, setTitle] = useState<string>('');
 const [image, setImage] = useState<string>('');
 const [description, setDescription] = useState<string>('');
 const [topic, setTopic] = useState<string>('');
-const [language, setLanguage] = useState<string>('english');
+const [language, setLanguage] = useState<string>('en');
 
 {/*Admin State*/}
 const {loading: profileLoading, data: profileData} = useProfile();
@@ -200,14 +200,13 @@ if (!profileData.admin) {
                                 onChange={e => setLanguage(e.target.value)}
                                 defaultValue={"english"}
                                 required={true}
-                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full mr-4'
+                                className=' bg-mainBg font-semibold text-accentBg p-2 rounded-full'
                                 name="select"
                                 >
-                                    <option className='bg-mainBg font-semibold' value="english">English</option>
-                                    <option className='bg-mainBg font-semibold' value="deutch">Deutch</option>
-                                    <option className='bg-mainBg font-semibold' value="ukraine">Ukraine</option>
+                                    <option className='bg-mainBg font-semibold' value="en">English</option>
+                                    <option className='bg-mainBg font-semibold' value="de">Deutch</option>
+                                    <option className='bg-mainBg font-semibold' value="ua">Ukraine</option>
                                 </select>
-                                <IoMdArrowDropdown className="pointer-events-none absolute inset-y-0 right-1 top-2 text-accentBg w-7 h-7"/>
                         </div>
                     </div>
                     <div>

@@ -1,10 +1,12 @@
 "use client"
 import { useState, useEffect } from 'react';
 import LoaderSpinner from '../../ui/LoaderSpinner';
+import NewsItem from './NewsItem';
 
 const NewsContainer = ({ lang }) => {
     const [loading, setLoading] = useState(false);
     const [news, setNews] = useState<any>("");
+    console.log(news);
 
     useEffect(() => {
         setLoading(true);
@@ -28,7 +30,10 @@ const NewsContainer = ({ lang }) => {
 
   return (
     <div>
-        
+        {news && news.map(item => (
+          <NewsItem item={item} key={item._id}/>
+        ))
+        }
     </div>
   )
 }
