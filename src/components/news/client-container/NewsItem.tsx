@@ -1,11 +1,14 @@
 import Image from "next/image";
+import DateConverter from "@/components/ui/DateConverter";
 
 const NewsItem = ({ item }) => {
   return (
     <div className='flex flex-col gap-4 items-center justify-center'>
-        <div>
-            <span>{item.topic}</span>
-            <span>{item.createdAt}</span>
+        <div className="flex items-center justify-between w-full">
+            <span className="border border-accentBg text-accentBg font-semibold px-2 py-1 rounded-xl">{item.topic}</span>
+            <div className="text-accentBg">
+                <DateConverter mongoDate={item.createdAt}/>
+            </div>
         </div>
         <div className="w-full max-h-[400px] overflow-hidden rounded-2xl">
             <Image className="rounded-2xl" src={item.image} width={800} height={400} alt="newsimage"/>
