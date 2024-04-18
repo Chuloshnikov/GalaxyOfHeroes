@@ -6,7 +6,7 @@ const NewsItem = ({ item }) => {
     <div className='flex flex-col gap-4 items-center justify-center'>
         <div className="flex items-center justify-between w-full">
             <span className="border border-accentBg text-accentBg font-semibold px-2 py-1 rounded-xl">{item.topic}</span>
-            <div className="text-accentBg">
+            <div className="text-accentBg font-medium">
                 <DateConverter mongoDate={item.createdAt}/>
             </div>
         </div>
@@ -15,7 +15,7 @@ const NewsItem = ({ item }) => {
         </div>
         <div className="text-accentBg max-w-[800px] flex flex-col gap-4">
             <h2 className="text-2xl font-bold">{item.title}</h2>
-            <p className="">{item.description}</p>
+            <p className="font-medium">{item.description}</p>
         </div>
     </div>
   )
