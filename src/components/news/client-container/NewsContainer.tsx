@@ -6,14 +6,13 @@ import NewsItem from './NewsItem';
 const NewsContainer = ({ lang }) => {
     const [loading, setLoading] = useState(false);
     const [news, setNews] = useState<any>("");
-    console.log(news);
 
     useEffect(() => {
         setLoading(true);
         fetch('/api/news').then(response => {
             response.json().then(news => {
               const filteredNews = news.filter(newsItem => newsItem.language === lang);
-              setNews(filteredNews);
+              setNews(filteredNews.reverse());
               setLoading(false);
             })
           });
@@ -29,7 +28,7 @@ const NewsContainer = ({ lang }) => {
       }
 
   return (
-    <div>
+    <div className='flex flex-col gap-12 items-center justify-center'>
         {news && news.map(item => (
           <NewsItem item={item} key={item._id}/>
         ))
