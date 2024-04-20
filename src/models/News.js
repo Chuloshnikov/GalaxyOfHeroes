@@ -2,7 +2,7 @@ import {model, models, Schema} from "mongoose";
 
 const NewsSchema = new Schema({
   title: {type: String, required: true, maxlength: 100},
-  description: {type: String, required: true, maxlength: 1000},
+  description: {type: String, required: true, maxlength: 2000},
   topic: {type: String, required: true, maxlength: 30},
   image: {type: String},
   language: {type: String, required: true, maxlength: 30}, 

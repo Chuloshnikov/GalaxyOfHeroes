@@ -22,31 +22,31 @@ const IconsContainer = ({title}: Props) => {
         >
             <Link
             className='border-mainBg hover:border-smouthText hover:text-smouthText border-[1px] rounded-full p-[6px] duration-300'
-            href={"/"}
+            href={"/instagram"}
             >
                 <AiOutlineInstagram/>
             </Link>
             <Link
             className='border-mainBg hover:border-smouthText hover:text-smouthText border-[1px] rounded-full p-[6px] duration-300'
-            href={"/"}
+            href={"/twitter"}
             >
                 <AiOutlineTwitter/>
             </Link>
             <Link
             className='border-mainBg hover:border-smouthText hover:text-smouthText border-[1px] rounded-full p-[6px] duration-300'
-            href={"/"}
+            href={"/tictoc"}
             >
                 <BiLogoTiktok/>
             </Link>
             <Link
             className='border-mainBg hover:border-smouthText hover:text-smouthText border-[1px] rounded-full p-[6px] duration-300'
-            href={"/"}
+            href={"/youtube"}
             >
                 <AiFillYoutube/>
             </Link>
             <Link
             className='border-mainBg hover:border-smouthText hover:text-smouthText border-[1px] rounded-full p-[6px] duration-300'
-            href={"/"}
+            href={"/linkedin"}
             >
                 <AiFillLinkedin/>
             </Link>

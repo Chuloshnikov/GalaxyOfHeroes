@@ -50,8 +50,8 @@ const Footer = async ({lang}: {lang: Locale}) => {
             <div
             className='flex gap-10'
             >
-              <Link href={"/"}>{footer.termsOfUse}</Link>
-              <Link href={"/"}>{footer.privacyPolicy}</Link>
+              <Link href={"/term-of-use"}>{footer.termsOfUse}</Link>
+              <Link href={"/privacy-policy"}>{footer.privacyPolicy}</Link>
             </div>
             <p
               className='text-sm text-center cursor-auto'

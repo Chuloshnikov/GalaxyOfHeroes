@@ -306,6 +306,9 @@
             "allProducts": "Alle",
             "basketLink": "zum warenkorb hinzufügen",
             "topSeller": "Top Verkäufe"
+        },
+        "contactsPage": {
+            "title": "Nehmen Sie Kontakt mit Galaxy of Heroes auf"
         }
 }
 

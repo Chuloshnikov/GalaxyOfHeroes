@@ -276,5 +276,8 @@
             "allProducts": "Всі",
             "basketLink": "додати в кошик",
             "topSeller": "Топ продажів"
+        },
+        "contactsPage": {
+            "title": "Будьмо на зв'язку з Galaxy of Heroes"
         }
 }
