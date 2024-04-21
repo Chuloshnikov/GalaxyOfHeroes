@@ -105,3 +105,7 @@ select.primary {
   @apply text-accentBg text-xs
 }
 
+.contactsInput {
+  @apply w-full bg-mainBg border border-accentBg
+}
+

@@ -309,7 +309,25 @@
         },
         "contactsPage": {
             "title": "Nehmen Sie Kontakt mit Galaxy of Heroes auf",
-            "subTitle": "Danke, dass Sie vorbeischauen! Egal, ob Sie eine Frage oder einen Kommentar haben oder einfach nur Hallo sagen möchten, seien Sie kein Fremder. Wir sind hier, um zu helfen, und wir lieben es, mit unserer Community in Kontakt zu treten. Schreiben Sie uns eine Rufen Sie uns an oder nutzen Sie das Kontaktformular unten, um mit uns in Kontakt zu treten."
+            "subTitle": "Danke, dass Sie vorbeischauen! Egal, ob Sie eine Frage oder einen Kommentar haben oder einfach nur Hallo sagen möchten, seien Sie kein Fremder. Wir sind hier, um zu helfen, und wir lieben es, mit unserer Community in Kontakt zu treten. Schreiben Sie uns eine Rufen Sie uns an oder nutzen Sie das Kontaktformular unten, um mit uns in Kontakt zu treten.",
+            "nameInputTitle": "Wie heißen Sie?",
+            "nameInputPlaceholder": "Geben Sie Ihren Namen ein...",
+            "emailInputTitle": "Was ist Ihre E-Mail-Adresse?",
+            "emailInputPlaceholder": "Geben Sie Ihre E-Mail ein...",
+            "phoneInputTitle": "Was ist Ihre Telefonnummer?",
+            "phoneInputPlaceholder": "Geben Sie Ihre Telefonnummer ein...",
+            "questionInputTitle": "Was ist Ihre Frage oder Ihr Vorschlag?",
+            "questionInputPlaceholder": "Geben Sieihre Frage oder Ihr Vorschlag...",
+            "agree": "Ich stimme zu",
+            "policy": "Nutzungsbedingungen",
+            "sendButton": "Nachricht senden",
+            "chatWithUsTitle": "Schreiben Sie uns",
+            "chatWithUsSubTitle": "Unser freundliches Team hilft Ihnen gerne weiter",
+            "callUsTitle": "Rufen Sie uns an",
+            "callUsSubTitle": "Wir sind immer erreichbar",
+            "visitUsTitle": "Besuchen Sie uns",
+            "visitUsSubTitle": "Besuchen Sie unser Büro",
+            "address": "Etage 4, 441 Seneca Pr., New York"
         }
 }
 

@@ -279,6 +279,25 @@
     },
     "contactsPage": {
         "title": "Get in touch with Galaxy of Heroes",
-        "subTitle": "Thanks for stopping by! Whether you have a question, comment, or just want to say hi, don't be a stranger. We're here to help, and we love connecting with our community. Drop us a line or use the contact form below to get in touch."
+        "subTitle": "Thanks for stopping by! Whether you have a question, comment, or just want to say hi, don't be a stranger. We're here to help, and we love connecting with our community. Drop us a line or use the contact form below to get in touch.",
+        "nameInputTitle": "What’s your name?",
+        "nameInputPlaceholder": "Type your name...",
+        "emailInputTitle": "What’s your email address?",
+        "emailInputPlaceholder": "Type your email...",
+        "phoneInputTitle": "What’s your phone number?",
+        "phoneInputPlaceholder": "Type your phone number...",
+        "questionInputTitle": "What’s your question/proposal?",
+        "questionInputPlaceholder": "Type your question/proposal...",
+        "agree": "I agree with the",
+        "policy": "Private Policy",
+        "sendButton": "Send message",
+        "chatWithUsTitle": "Chat with us",
+        "chatWithUsSubTitle": "Our friendly team is here to help",
+        "callUsTitle": "Call us",
+        "callUsSubTitle": "Our friendly team is here to help",
+        "visitUsTitle": "Visit us",
+        "visitUsSubTitle": "Come say hello at our office",
+        "address": "Level 4, 441 Seneca pr, New York"
     }
+
 }
